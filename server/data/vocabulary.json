@@ -1,0 +1,32 @@
+{
+  "1": {
+    "en": "I have a small dog.",
+    "bg": "Имам малко куче.",
+    "isAlreadyLearnedBg": false,
+    "isAlreadyLearnedEn": false
+  },
+  "2": {
+    "en": "She likes to read books.",
+    "bg": "Тя обича да чете книги.",
+    "isAlreadyLearnedBg": false,
+    "isAlreadyLearnedEn": false
+  },
+  "3": {
+    "en": "We live in a big city.",
+    "bg": "Живеем в голям град.",
+    "isAlreadyLearnedBg": false,
+    "isAlreadyLearnedEn": false
+  },
+  "4": {
+    "en": "They go to school by bus.",
+    "bg": "Te ходят на училище c автобус.",
+    "isAlreadyLearnedBg": false,
+    "isAlreadyLearnedEn": false
+  },
+  "5": {
+    "en": "My favorite color is blue.",
+    "bg": "Любимият ми цвят e син.",
+    "isAlreadyLearnedBg": false,
+    "isAlreadyLearnedEn": false
+  }
+}
