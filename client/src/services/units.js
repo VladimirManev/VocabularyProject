@@ -2,7 +2,7 @@ import { get, post, put, del } from "./api.js";
 
 const endpoints = {
   catalog: "/jsonstore/campers",
-  byId: "/jsonstore/vocabulary",
+  byId: "/data/vocabulary",
   like: "/data/likes",
 };
 
@@ -21,8 +21,13 @@ export async function createUnit(data) {
 export async function updateUnit(id, data) {
   return put(endpoints.byId + "/" + id, data);
 }
+
 export async function deleteUnit(id) {
   return del(endpoints.byId + "/" + id);
+}
+
+export async function getUnitsCount() {
+  return get(`/data/vocabulary?count`);
 }
 
 //Option search
@@ -33,12 +38,6 @@ export async function searchUnits(query) {
 //Option Like
 export async function likeUnit(data) {
   return post(endpoints.like, data);
-}
-
-export async function getLikesCount(factId) {
-  return get(
-    `/data/likes?where=factId%3D%22${factId}%22&distinct=_ownerId&count`
-  );
 }
 
 export async function isAlreadyLiked(factId, userId) {

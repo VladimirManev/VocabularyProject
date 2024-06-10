@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Caveat";
+  src: url("../../fonts/Caveat-VariableFont_wght.ttf");
+}
+
+.vocabulary-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 40px 30px;
+  font-size: 18px;
+  align-items: center;
+}
+
+.vocabulary-container .task-container {
+  height: 160px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px lightslategray;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vocabulary-container .solution-container {
+  height: 160px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px lightslategray;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vocabulary-container p {
+  text-align: center;
+}
+
+.vocabulary-container .btn-container {
+  display: flex;
+  gap: 20px;
+  padding: 30px 0;
+  width: 100%;
+}
+
+.vocabulary-container button {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  font-size: 28px;
+  width: 50%;
+  font-family: "Caveat";
+  font-weight: bold;
+}
