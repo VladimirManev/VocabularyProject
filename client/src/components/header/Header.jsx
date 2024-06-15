@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 export function Header(props) {
@@ -8,13 +8,34 @@ export function Header(props) {
         <nav className="nav">
           <ul className="list">
             <li className="list-item">
-              <Link to="/">Welcome</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "active-link" : undefined
+                }
+              >
+                Welcome
+              </NavLink>
             </li>
             <li className="list-item">
-              <Link to="/vocabulary">Vocabulary</Link>
+              <NavLink
+                to="/vocabulary"
+                className={({ isActive }) =>
+                  isActive ? "active-link" : undefined
+                }
+              >
+                Vocabulary
+              </NavLink>
             </li>
             <li className="list-item">
-              <Link to="/settings">Settings</Link>
+              <NavLink
+                to="/settings"
+                className={({ isActive }) =>
+                  isActive ? "active-link" : undefined
+                }
+              >
+                Settings
+              </NavLink>
             </li>
           </ul>
         </nav>

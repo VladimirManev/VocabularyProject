@@ -24,3 +24,7 @@
   text-decoration: none;
   color: black;
 }
+
+.active-link {
+  color: rgb(20, 163, 220) !important;
+}
