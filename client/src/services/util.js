@@ -29,3 +29,8 @@ export function unknownSentencesSorter(allSentances, knownSentences) {
   }
   return [];
 }
+
+export function getRandomElementFromArr(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}

@@ -1,19 +1,33 @@
-import { useEffect, useState } from "react";
 import "./Vocabulary.css";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  unknownSentencesSorter,
+  getRandomElementFromArr,
+} from "../../services/util";
 import {
   getAllUnits,
   getKnownSentences,
   iKnowItUnit,
 } from "../../services/units";
-import { unknownSentencesSorter } from "../../services/util";
-
-const translateMode = "bgToEn";
 
 export function Vocabulary(props) {
   const [allSentences, setAllSentences] = useState([]);
-  const [knownSentences, setKnownSentences] = useState([]);
   const [unknownSentences, setUnknownSentences] = useState([]);
+  const [currentSentence, setCurrentSentence] = useState({});
+  const [lastSentence, setLastSentence] = useState({});
 
+  const navigate = useNavigate();
+
+  //temporary hardcored. It will be set in context
+  const translateMode = {
+    sourceLanguage: "bg",
+    traslationLanguage: "en",
+  };
+  //set abbreviation for backend
+  const abbreviationTranslateMode = `${translateMode.sourceLanguage}_${translateMode.traslationLanguage}`;
+
+  //get all sentences
   useEffect(() => {
     const fetchFunction = async () => {
       try {
@@ -30,14 +44,27 @@ export function Vocabulary(props) {
     fetchFunction();
   }, []);
 
+  //get known sentences for current user and set all unknown sentences
   useEffect(() => {
-    const _ownerId = JSON.parse(sessionStorage.getItem("userData"))._id;
+    const userData = JSON.parse(sessionStorage.getItem("userData"));
+    let _ownerId;
+    if (userData) {
+      _ownerId = userData._id;
+    } else {
+      navigate("/login");
+    }
+
     const fetchFunction = async () => {
       try {
         props.loading(true);
-        const data = await getKnownSentences(_ownerId, translateMode);
-        if (data) {
-          setKnownSentences(data);
+        const knownSentences = await getKnownSentences(
+          _ownerId,
+          abbreviationTranslateMode
+        );
+        if (knownSentences) {
+          setUnknownSentences(
+            unknownSentencesSorter(allSentences, knownSentences)
+          );
         }
         props.loading(false);
       } catch (error) {
@@ -45,57 +72,60 @@ export function Vocabulary(props) {
       }
     };
     fetchFunction();
-  }, []);
+  }, [allSentences]);
+
+  //sets the current sentence as learned
+  function iKnowItClickHandler(e) {
+    iKnowItUnit(currentSentence._id, abbreviationTranslateMode);
+    setUnknownSentences((data) =>
+      data.filter((x) => x._id !== currentSentence._id)
+    );
+  }
+
+  function nextClickHandler(e) {
+    currentSentenceSetter();
+  }
+
+  //check if there are unknown sentences and set currentSentence
+  function currentSentenceSetter() {
+    let randomSentence = getRandomElementFromArr(unknownSentences);
+    if (unknownSentences.length > 0) {
+      if (unknownSentences.length > 1) {
+        while (randomSentence === lastSentence) {
+          randomSentence = getRandomElementFromArr(unknownSentences);
+        }
+        setLastSentence(randomSentence);
+      }
+      setCurrentSentence(randomSentence);
+    } else {
+      //todo
+    }
+  }
 
   useEffect(() => {
-    setUnknownSentences(unknownSentencesSorter(allSentences, knownSentences));
-  }, [knownSentences, allSentences]);
-
-  let currentSentence = { bg: "", en: "" };
-
-  if (unknownSentences.length > 0) {
-    const randomIndex = Math.floor(Math.random() * unknownSentences.length);
-    currentSentence = unknownSentences[randomIndex];
-  }
-
-  // const id = 1;
-
-  // useEffect(() => {
-  //   const currentSentence = async () => {
-  //     try {
-  //       props.loading(true);
-  //       const data = await getById(id);
-  //       if (data) {
-  //         setSentence(data);
-  //       }
-  //       props.loading(false);
-  //     } catch (error) {
-  //       alert(error);
-  //     }
-  //   };
-  //   currentSentence();
-  // }, []);
-
-  // const res = arr1.filter((x) => arr2.every((y) => y !== x));
-
-  function iKnowItClickHandler(e) {
-    iKnowItUnit(currentSentence._id, translateMode);
-  }
+    currentSentenceSetter();
+  }, [unknownSentences]);
 
   return (
     <>
       <div className="vocabulary-container">
         <div className="task-container">
-          <p className="task">{currentSentence.bg}</p>
+          <p className="task">
+            {currentSentence[translateMode.sourceLanguage]}
+          </p>
         </div>
         <div className="solution-container">
-          <p className="solution">{currentSentence.en}</p>
+          <p className="solution">
+            {currentSentence[translateMode.traslationLanguage]}
+          </p>
         </div>
         <div className="btn-container">
           <button onClick={iKnowItClickHandler} className="known-btn">
             I know it !
           </button>
-          <button className="next-btn">Next</button>
+          <button onClick={nextClickHandler} className="next-btn">
+            Next
+          </button>
         </div>
       </div>
     </>
