@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Vocabulary.css";
-import { getAllUnits, getAllUserData, iKnowItUnit } from "../../services/units";
+import {
+  getAllUnits,
+  getKnownSentences,
+  iKnowItUnit,
+} from "../../services/units";
 import { unknownSentencesSorter } from "../../services/util";
+
+const translateMode = "bgToEn";
 
 export function Vocabulary(props) {
   const [allSentences, setAllSentences] = useState([]);
@@ -26,11 +32,10 @@ export function Vocabulary(props) {
 
   useEffect(() => {
     const _ownerId = JSON.parse(sessionStorage.getItem("userData"))._id;
-
     const fetchFunction = async () => {
       try {
         props.loading(true);
-        const data = await getAllUserData(_ownerId);
+        const data = await getKnownSentences(_ownerId, translateMode);
         if (data) {
           setKnownSentences(data);
         }
@@ -46,16 +51,12 @@ export function Vocabulary(props) {
     setUnknownSentences(unknownSentencesSorter(allSentences, knownSentences));
   }, [knownSentences, allSentences]);
 
-  console.log(unknownSentences);
-
   let currentSentence = { bg: "", en: "" };
 
   if (unknownSentences.length > 0) {
     const randomIndex = Math.floor(Math.random() * unknownSentences.length);
     currentSentence = unknownSentences[randomIndex];
   }
-
-  console.log(currentSentence);
 
   // const id = 1;
 
@@ -78,7 +79,7 @@ export function Vocabulary(props) {
   // const res = arr1.filter((x) => arr2.every((y) => y !== x));
 
   function iKnowItClickHandler(e) {
-    iKnowItUnit({ id: currentSentence._id });
+    iKnowItUnit(currentSentence._id, translateMode);
   }
 
   return (

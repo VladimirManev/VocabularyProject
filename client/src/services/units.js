@@ -7,12 +7,17 @@ const endpoints = {
   userData: "/data/a1UserData",
 };
 
-export async function getAllUserData(_ownerId) {
-  return get(endpoints.userData + `?where=_ownerId%3D%22${_ownerId}%22`);
+//get all known sentences for current owner
+export async function getKnownSentences(_ownerId, translateMode) {
+  return get(
+    endpoints.userData +
+      `?where=_ownerId%3D%22${_ownerId}%22%20AND%20translateMode%3D%22${translateMode}%22`
+  );
 }
 
-export async function iKnowItUnit(data) {
-  return post(endpoints.userData, data);
+//set unknown sentence to known sentence
+export async function iKnowItUnit(id, translateMode) {
+  return post(endpoints.userData, { id, translateMode });
 }
 
 export async function getAllUnits() {
