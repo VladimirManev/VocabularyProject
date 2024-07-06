@@ -16,6 +16,7 @@ export function Vocabulary(props) {
   const [unknownSentences, setUnknownSentences] = useState([]);
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
+  const [showTranslation, setShowTranslation] = useState(false);
 
   const navigate = useNavigate();
 
@@ -77,13 +78,19 @@ export function Vocabulary(props) {
   //sets the current sentence as learned
   function iKnowItClickHandler(e) {
     iKnowItUnit(currentSentence._id, abbreviationTranslateMode);
+    setShowTranslation(false);
     setUnknownSentences((data) =>
       data.filter((x) => x._id !== currentSentence._id)
     );
   }
 
   function nextClickHandler(e) {
+    setShowTranslation(false);
     currentSentenceSetter();
+  }
+
+  function translateClickHandler() {
+    setShowTranslation(true);
   }
 
   //check if there are unknown sentences and set currentSentence
@@ -114,10 +121,14 @@ export function Vocabulary(props) {
             {currentSentence[translateMode.sourceLanguage]}
           </p>
         </div>
-        <div className="solution-container">
-          <p className="solution">
-            {currentSentence[translateMode.traslationLanguage]}
-          </p>
+        <div className="solution-container" onClick={translateClickHandler}>
+          {showTranslation ? (
+            <p className="solution">
+              {currentSentence[translateMode.traslationLanguage]}
+            </p>
+          ) : (
+            <p className="click-to-translate">Click to translate!</p>
+          )}
         </div>
         <div className="btn-container">
           <button onClick={iKnowItClickHandler} className="known-btn">

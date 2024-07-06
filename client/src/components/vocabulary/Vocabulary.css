@@ -59,3 +59,10 @@
   font-family: "Caveat";
   font-weight: bold;
 }
+
+.vocabulary-container .click-to-translate {
+  color: rgb(20, 163, 220);
+  font-family: Caveat, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}

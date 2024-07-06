@@ -6,11 +6,6 @@ import { useForm } from "../../hooks/useForm";
 
 export function Login(params) {
   const navigate = useNavigate();
-  //   const [values, setValues] = useState({ email: "", password: "" });
-
-  //   function changeHandler(e) {
-  //     setValues((state) => ({ ...state, [e.target.name]: e.target.value }));
-  //   }
 
   const { values, changeHandler } = useForm({ email: "", password: "" });
 

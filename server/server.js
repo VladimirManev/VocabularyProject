@@ -1742,36 +1742,41 @@
         _updatedOn: 1616237293676,
       },
     },
-    vocabulary: {
-      1: {
+    a1UserData: {
+      "34a1cab1-81f1-47e5-aec3-afff9810efe1": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        id: "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
+        translateMode: "bg_en",
+        _createdOn: 1718553150484,
+      },
+      "34a1cab1-81f1-47e5-aec3-afff9810efe2": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        id: "bb9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
+        translateMode: "en_bg",
+        _createdOn: 1718553150484,
+      },
+    },
+
+    a1: {
+      "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
         en: "I have a small dog.",
         bg: "Имам малко куче.",
-        isAlreadyLearnedBg: true,
-        isAlreadyLearnedEn: false,
       },
-      2: {
+      "61a19986-3b86-4347-8ca4-8c074ed87591": {
         en: "She likes to read books.",
         bg: "Тя обича да чете книги.",
-        isAlreadyLearnedBg: true,
-        isAlreadyLearnedEn: false,
       },
-      3: {
+      "e797fa57-bf0a-4749-8028-72dba715e5f8": {
         en: "We live in a big city.",
         bg: "Живеем в голям град.",
-        isAlreadyLearnedBg: false,
-        isAlreadyLearnedEn: true,
       },
-      4: {
+      "280b4a1a-d0f3-4639-aa54-6d9158365152": {
         en: "They go to school by bus.",
         bg: "Te ходят на училище c автобус.",
-        isAlreadyLearnedBg: false,
-        isAlreadyLearnedEn: false,
       },
-      5: {
+      "9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
         en: "My favorite color is blue.",
         bg: "Любимият ми цвят e син.",
-        isAlreadyLearnedBg: false,
-        isAlreadyLearnedEn: false,
       },
     },
   };
