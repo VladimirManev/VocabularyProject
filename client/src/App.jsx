@@ -7,6 +7,7 @@ import { Vocabulary } from "./components/vocabulary/Vocabulary";
 import { Settings } from "./components/settings/Settings";
 import { Spinner } from "./components/spinner/Spinner";
 import { Login } from "./components/login/Login";
+import { Register } from "./components/register/Register";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +25,7 @@ function App() {
         <Route path="/vocabulary" element={<Vocabulary loading={loading} />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );

@@ -29,6 +29,16 @@ export function Header(props) {
             </li>
             <li className="list-item">
               <NavLink
+                to="/register"
+                className={({ isActive }) =>
+                  isActive ? "active-link" : undefined
+                }
+              >
+                Register
+              </NavLink>
+            </li>
+            <li className="list-item">
+              <NavLink
                 to="/vocabulary"
                 className={({ isActive }) =>
                   isActive ? "active-link" : undefined
