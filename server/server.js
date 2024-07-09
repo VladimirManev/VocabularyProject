@@ -1,15 +1,15 @@
 (function (global, factory) {
   typeof exports === "object" && typeof module !== "undefined"
     ? (module.exports = factory(
-        require("http"),
-        require("fs"),
-        require("crypto")
-      ))
+      require("http"),
+      require("fs"),
+      require("crypto")
+    ))
     : typeof define === "function" && define.amd
-    ? define(["http", "fs", "crypto"], factory)
-    : ((global =
+      ? define(["http", "fs", "crypto"], factory)
+      : ((global =
         typeof globalThis !== "undefined" ? globalThis : global || self),
-      (global.Server = factory(global.http, global.fs, global.crypto)));
+        (global.Server = factory(global.http, global.fs, global.crypto)));
 })(this, function (http, fs, crypto) {
   "use strict";
 
@@ -349,16 +349,16 @@
 
   const data = fs__default["default"].existsSync("./data")
     ? fs__default["default"].readdirSync("./data").reduce((p, c) => {
-        const content = JSON.parse(
-          fs__default["default"].readFileSync("./data/" + c)
-        );
-        const collection = c.slice(0, -5);
-        p[collection] = {};
-        for (let endpoint in content) {
-          p[collection][endpoint] = content[endpoint];
-        }
-        return p;
-      }, {})
+      const content = JSON.parse(
+        fs__default["default"].readFileSync("./data/" + c)
+      );
+      const collection = c.slice(0, -5);
+      p[collection] = {};
+      for (let endpoint in content) {
+        p[collection][endpoint] = content[endpoint];
+      }
+      return p;
+    }, {})
     : {};
 
   const actions = {
@@ -1741,6 +1741,34 @@
         _createdOn: 1616237272948,
         _updatedOn: 1616237293676,
       },
+    },
+    vocabulary: {
+      "34a1cab1-81f1-47e5-aec3-afff9810e001": {
+        title: "Present simple tense",
+        level: "A1",
+        data: {
+          "id1": { 'bg': "Аз съм Владо", "en": "I am Vlado" }, "id2": { "bg": "Как си?", "en": "How are you?" },
+          describtion: "This is a colection that includes 2 sentences level A1"
+        }
+      },
+      "34a1cab1-81f1-47e5-aec3-afff9810e002": {
+        title: "Past simple tense",
+        level: "A2",
+        data: {
+          "id1": { 'bg': "Аз бях Владо", "en": "I was Vlado" }, "id2": { "bg": "Как беше ти?", "en": "How were you?" },
+          describtion: "This is a colection that includes 2 sentences level A2"
+        }
+      }
+    },
+    testData: {
+      "1": {
+        name: "a1",
+        sentences: { "id1": { 'bg': "Аз съм Владо", "en": "I am Vlado" }, "id2": { "bg": "Как си", "en": "How are you" } }
+      },
+      "2": {
+        name: "a2",
+        sentences: { "id1": { 'bg': "Аз съм Рони", "en": "I am Roni" }, "id2": { "bg": "Как си", "en": "How are you" } }
+      }
     },
     a1UserData: {
       "34a1cab1-81f1-47e5-aec3-afff9810efe1": {

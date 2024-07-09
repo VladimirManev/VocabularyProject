@@ -1,0 +1,18 @@
+.training-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px;
+    align-items: center;
+
+}
+
+.training-container .btn {
+    padding: 6px 16px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 18px;
+  }
+  
