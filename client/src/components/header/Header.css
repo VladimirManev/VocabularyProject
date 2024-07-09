@@ -9,11 +9,14 @@
 .header .nav {
   display: flex;
   margin: 0 auto;
+
 }
 
 .header .list {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .header .list-item {

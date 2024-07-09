@@ -8,6 +8,7 @@ import { Settings } from "./components/settings/Settings";
 import { Spinner } from "./components/spinner/Spinner";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
+import { AllTraining } from "./components/allTrainig/AllTraining";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/allTraining" element={<AllTraining loading={loading}/>} />
       </Routes>
     </>
   );

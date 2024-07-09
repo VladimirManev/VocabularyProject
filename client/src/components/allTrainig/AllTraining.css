@@ -1,0 +1,13 @@
+.allTraining-container .list {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.allTraining-container .list .list-item {
+    list-style-type: none;
+    border-radius: 14px;
+    box-shadow: 0 0 10px gray;
+}

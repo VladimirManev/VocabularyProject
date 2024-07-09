@@ -5,7 +5,16 @@ const endpoints = {
   byId: "/data/a1",
   like: "/data/likes",
   userData: "/data/a1UserData",
+  allTraining: "/data/vocabulary"
 };
+
+//get all training
+
+export async function getAllTraining() {
+  return get(endpoints.allTraining);
+}
+
+
 
 //get all known sentences for current owner
 export async function getKnownSentences(_ownerId, translateMode) {

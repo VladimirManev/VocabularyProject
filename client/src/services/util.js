@@ -22,7 +22,7 @@ export function createSubmitHandler(callback) {
 }
 
 export function unknownSentencesSorter(allSentances, knownSentences) {
-  if (allSentances.length !== 0 && knownSentences.length !== 0) {
+  if (allSentances.length !== 0) {
     return allSentances.filter((x) =>
       knownSentences.every((y) => y.id !== x._id)
     );
