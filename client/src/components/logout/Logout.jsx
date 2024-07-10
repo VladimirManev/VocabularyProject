@@ -1,23 +1,26 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../context/Context";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
 export function Logout(props) {
-  const {contextData, setContextData} = useContext(Context);
+  const { contextData, setContextData } = useContext(Context);
   const navigate = useNavigate();
 
-  if (confirm("Are you sure?")) {
+  useEffect(() => {
     try {
-      prevData => ({
+      setContextData(prevData => ({
         ...prevData,
-        userData:undefined
-      });
+        userData: undefined
+      }))
+      navigate("/")
     } catch (error) {
-      
+      alert(error);
     }
+  }, [])
 
-  }
+
+
 
 } 
