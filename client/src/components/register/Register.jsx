@@ -13,7 +13,7 @@ export function Register(params) {
         e.preventDefault();
         await register(values.email, values.password);
         //TODO errorHandler
-        navigate("/vocabulary");
+        navigate("/allTraining");
     }
 
     return (
