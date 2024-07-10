@@ -1,22 +1,16 @@
-import { useContext } from "react";
 import "./Training.css"
-import { Context } from "../../context/Context";
+import { Link } from "react-router-dom";
 
 
 export function Training(props) {
+    const { _id, title } = props.data;
 
-    const {contextData, setContextData} = useContext(Context);
-  
-
-    function openClickHandler(e) {
-        console.log(contextData);
-    }
-
-    const currentTrainingData = props.data;
     return (
         <div className="training-container">
-            <h3 className="heading">{currentTrainingData.title}</h3>
-            <button onClick={openClickHandler} className="btn">Open</button>
+            <h3 className="heading">{title}</h3>
+            <Link to={`/trainingDetails/${_id}`}>
+                <button  className="btn">Open</button>
+            </Link>
         </div>
     )
 }

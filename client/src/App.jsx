@@ -11,6 +11,7 @@ import { Register } from "./components/register/Register";
 import { AllTraining } from "./components/allTrainig/AllTraining";
 import { Provider } from "./components/context/Context";
 import { Logout } from "./components/logout/Logout";
+import { TrainingDetails } from "./components/allTrainig/trainingDetails/TrainingDetails";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +33,7 @@ function App() {
           <Route path="/register" element={<Register loading={loading} />} />
           <Route path="/allTraining" element={<AllTraining loading={loading} />} />
           <Route path="/logout" element={<Logout loading={loading} />} />
+          <Route path="/trainingDetails/:id" element={<TrainingDetails loading={loading} />} />
         </Routes>
       </Provider>
     </>

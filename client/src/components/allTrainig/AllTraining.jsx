@@ -27,7 +27,7 @@ export function AllTraining(props) {
         <div className="allTraining-container">
             <h1>All Training</h1>
             <ul className="list">
-                {allTrainigData.map(x => <li className="list-item" key={x._id}><Training data={x} /></li>)}
+                {allTrainigData.map(x => <li className="list-item" key={x._id}><Training data={x} loading={props.loading}/></li>)}
             </ul>
         </div>
     )
