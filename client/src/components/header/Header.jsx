@@ -1,7 +1,13 @@
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
 export function Header(props) {
+  const {contextData, setContextData} = useContext(Context);
+
+  console.log(contextData.userData);
+
   return (
     <>
       <header className="header">
