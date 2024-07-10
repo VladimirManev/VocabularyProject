@@ -1,19 +1,33 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./Register.css";
 import { register } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
+import { Context } from "../context/Context";
 
-export function Register(params) {
+export function Register(props) {
     const navigate = useNavigate();
+    const {contextData, setContextData} = useContext(Context);
 
     const { values, changeHandler } = useForm({ email: "", password: "", repass: "" });
 
     async function onSubmit(e) {
         e.preventDefault();
-        await register(values.email, values.password);
-        //TODO errorHandler
-        navigate("/allTraining");
+
+        try {
+            props.loading(true);
+            const user = await register(values.email, values.password);
+            setContextData(prevData => ({
+                ...prevData,
+                userData: user
+            }));
+            navigate("/allTraining");
+            props.loading(false);
+        } catch (error) {
+            props.loading(false);
+            alert(error);
+        }
+
     }
 
     return (
