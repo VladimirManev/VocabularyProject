@@ -42,7 +42,7 @@ export function Header(props) {
                 Register
               </NavLink>
             </li>}
-            {userData && <li className="list-item">
+            <li className="list-item">
               <NavLink
                 to="/allTraining"
                 className={({ isActive }) =>
@@ -51,7 +51,7 @@ export function Header(props) {
               >
                 Training
               </NavLink>
-            </li>}
+            </li>
             {/* <li className="list-item">
               <NavLink
                 to="/vocabulary"

@@ -9,7 +9,7 @@ export function Training(props) {
         <div className="training-container">
             <h3 className="heading">{title}</h3>
             <Link to={`/trainingDetails/${_id}`}>
-                <button  className="btn">Open</button>
+                <button  className="btn">Details</button>
             </Link>
         </div>
     )
