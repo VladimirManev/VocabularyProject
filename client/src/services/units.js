@@ -5,7 +5,7 @@ const endpoints = {
   byId: "/data/a1",
   like: "/data/likes",
   userData: "/data/a1UserData",
-  allTraining: "/data/vocabulary"
+  allTraining: "/data/vocabulary?select=_id%2Ctitle"
 };
 
 //get all training
