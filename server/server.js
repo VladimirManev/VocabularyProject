@@ -1746,17 +1746,17 @@
       "34a1cab1-81f1-47e5-aec3-afff9810e001": {
         title: "Present simple tense",
         level: "A1",
+        description: "This is a colection that includes 2 sentences level A1",
         data: {
           "id1": { 'bg': "Аз съм Владо", "en": "I am Vlado" }, "id2": { "bg": "Как си?", "en": "How are you?" },
-          describtion: "This is a colection that includes 2 sentences level A1"
         }
       },
       "34a1cab1-81f1-47e5-aec3-afff9810e002": {
         title: "Past simple tense",
         level: "A2",
+        description: "This is a colection that includes 2 sentences level A2",
         data: {
           "id1": { 'bg': "Аз бях Владо", "en": "I was Vlado" }, "id2": { "bg": "Как беше ти?", "en": "How were you?" },
-          describtion: "This is a colection that includes 2 sentences level A2"
         }
       }
     },
