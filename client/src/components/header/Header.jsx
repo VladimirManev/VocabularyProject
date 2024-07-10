@@ -4,16 +4,15 @@ import { useContext } from "react";
 import { Context } from "../context/Context";
 
 export function Header(props) {
-  const {contextData, setContextData} = useContext(Context);
-
-  console.log(contextData.userData);
+  const { contextData, setContextData } = useContext(Context);
+  const userData = contextData.userData
 
   return (
     <>
       <header className="header">
         <nav className="nav">
           <ul className="list">
-            <li className="list-item">
+            {/* {userData && <li className="list-item">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -22,8 +21,8 @@ export function Header(props) {
               >
                 Welcome
               </NavLink>
-            </li>
-            <li className="list-item">
+            </li>} */}
+            {!userData && <li className="list-item">
               <NavLink
                 to="/login"
                 className={({ isActive }) =>
@@ -32,8 +31,8 @@ export function Header(props) {
               >
                 Login
               </NavLink>
-            </li>
-            <li className="list-item">
+            </li>}
+            {!userData && <li className="list-item">
               <NavLink
                 to="/register"
                 className={({ isActive }) =>
@@ -42,8 +41,8 @@ export function Header(props) {
               >
                 Register
               </NavLink>
-            </li>
-            <li className="list-item">
+            </li>}
+            {userData && <li className="list-item">
               <NavLink
                 to="/allTraining"
                 className={({ isActive }) =>
@@ -52,8 +51,8 @@ export function Header(props) {
               >
                 Training
               </NavLink>
-            </li>
-            <li className="list-item">
+            </li>}
+            {/* <li className="list-item">
               <NavLink
                 to="/vocabulary"
                 className={({ isActive }) =>
@@ -62,7 +61,7 @@ export function Header(props) {
               >
                 Vocabulary
               </NavLink>
-            </li>
+            </li> */}
             <li className="list-item">
               <NavLink
                 to="/settings"
@@ -73,6 +72,16 @@ export function Header(props) {
                 Settings
               </NavLink>
             </li>
+            {userData && <li className="list-item">
+              <NavLink
+                to="/logout"
+                className={({ isActive }) =>
+                  isActive ? "active-link" : undefined
+                }
+              >
+                Logout
+              </NavLink>
+            </li>}
           </ul>
         </nav>
       </header>

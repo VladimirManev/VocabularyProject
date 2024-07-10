@@ -10,6 +10,7 @@ import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { AllTraining } from "./components/allTrainig/AllTraining";
 import { Provider } from "./components/context/Context";
+import { Logout } from "./components/logout/Logout";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           <Route path="/login" element={<Login loading={loading} />} />
           <Route path="/register" element={<Register loading={loading} />} />
           <Route path="/allTraining" element={<AllTraining loading={loading} />} />
+          <Route path="/logout" element={<Logout loading={loading} />} />
         </Routes>
       </Provider>
     </>
