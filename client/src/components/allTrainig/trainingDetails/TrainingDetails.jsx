@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/Context';
 import './TrainingDetails.css';
-import { getCurrentTraining } from '../../../services/units';
-import { useParams, Link } from 'react-router-dom';
+import { deleteTraining, getCurrentTraining } from '../../../services/units';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 export function TrainingDetails(props) {
     const { contextData, setContextData } = useContext(Context);
@@ -10,7 +10,7 @@ export function TrainingDetails(props) {
     const { currentTrainingId } = useParams();
     const isUser = Boolean(contextData.userData);
     let isOwner = Boolean(currentTrainingData && contextData.userData && currentTrainingData._ownerId === contextData.userData._id);
-
+    const navigate = useNavigate();
 
     //get currentTrainingData
     useEffect(() => {
@@ -27,7 +27,18 @@ export function TrainingDetails(props) {
             props.loading(false);
         }
         fetchFunction();
-    }, [])
+    }, []);
+
+    async function deleteClickHandler(e) {
+        try {
+            await deleteTraining(currentTrainingData._id);
+            navigate("/allTraining")
+        } catch (error) {
+            alert(error.message);
+        }
+
+
+    }
 
     if (currentTrainingData) {
         return (
@@ -37,7 +48,7 @@ export function TrainingDetails(props) {
                 <p>Number of items:{Object.keys(currentTrainingData.data).length}</p>
                 <p>Description:{currentTrainingData.description}</p>
                 {isOwner && <Link><button>Edit</button></Link>}
-                {isOwner && <Link><button>Delete</button></Link>}
+                {isOwner && <Link><button onClick={deleteClickHandler}>Delete</button></Link>}
                 {isUser && <Link><button>Training</button></Link>}
             </>
         )

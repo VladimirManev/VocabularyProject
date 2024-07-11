@@ -7,8 +7,6 @@ const endpoints = {
   userData: "/data/a1UserData",
   allTraining: "/data/vocabulary?select=_id%2Ctitle",
   currentTraining:"/data/vocabulary/",
-  createTraining:"/data/vocabulary/"
-
 };
 
 //get all training
@@ -24,8 +22,18 @@ export async function getCurrentTraining(trainingId) {
 
 //create new training
 export async function createTraining(data) {
-  return post(endpoints.createTraining, data);
+  return post(endpoints.currentTraining, data);
 }
+
+//delete a training
+export async function deleteTraining(id) {
+  return del(endpoints.currentTraining + "/" + id);
+}
+
+
+
+
+
 
 
 //get all known sentences for current owner

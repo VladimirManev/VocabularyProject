@@ -67,7 +67,7 @@ export function CreateTraining(props) {
                     placeholder="data"
                     value={values.data}
                 />
-                <input type="submit" className="btn" value="Register" />
+                <input type="submit" className="btn" value="Create" />
             </form>
         </div>
     );
