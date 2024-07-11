@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/header/Header";
@@ -12,9 +12,15 @@ import { AllTraining } from "./components/allTrainig/AllTraining";
 import { Provider } from "./components/context/Context";
 import { Logout } from "./components/logout/Logout";
 import { TrainingDetails } from "./components/allTrainig/trainingDetails/TrainingDetails";
+import { CreateTraining } from "./components/allTrainig/createTraining/CreateTraining";
+import { clearUserData } from "./services/util";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    clearUserData();
+  }, []);
 
   function loading(status) {
     setIsLoading(status);
@@ -34,6 +40,7 @@ function App() {
           <Route path="/allTraining" element={<AllTraining loading={loading} />} />
           <Route path="/logout" element={<Logout loading={loading} />} />
           <Route path="/trainingDetails/:currentTrainingId" element={<TrainingDetails loading={loading} />} />
+          <Route path="/createTraining" element={<CreateTraining loading={loading} />} />
         </Routes>
       </Provider>
     </>
