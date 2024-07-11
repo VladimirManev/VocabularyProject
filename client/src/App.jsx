@@ -33,7 +33,7 @@ function App() {
           <Route path="/register" element={<Register loading={loading} />} />
           <Route path="/allTraining" element={<AllTraining loading={loading} />} />
           <Route path="/logout" element={<Logout loading={loading} />} />
-          <Route path="/trainingDetails/:id" element={<TrainingDetails loading={loading} />} />
+          <Route path="/trainingDetails/:currentTrainingId" element={<TrainingDetails loading={loading} />} />
         </Routes>
       </Provider>
     </>

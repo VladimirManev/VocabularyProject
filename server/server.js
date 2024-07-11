@@ -1747,6 +1747,7 @@
         title: "Present simple tense",
         level: "A1",
         description: "This is a colection that includes 2 sentences level A1",
+        _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
         data: {
           "id1": { 'bg': "Аз съм Владо", "en": "I am Vlado" }, "id2": { "bg": "Как си?", "en": "How are you?" },
         }
@@ -1755,6 +1756,7 @@
         title: "Past simple tense",
         level: "A2",
         description: "This is a colection that includes 2 sentences level A2",
+        _ownerId:"847ec027-f659-4086-8032-5173e2f9c93a",
         data: {
           "id1": { 'bg': "Аз бях Владо", "en": "I was Vlado" }, "id2": { "bg": "Как беше ти?", "en": "How were you?" },
         }
