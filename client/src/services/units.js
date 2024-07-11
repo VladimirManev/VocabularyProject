@@ -6,7 +6,9 @@ const endpoints = {
   like: "/data/likes",
   userData: "/data/a1UserData",
   allTraining: "/data/vocabulary?select=_id%2Ctitle",
-  currentTraining:"/data/vocabulary/"
+  currentTraining:"/data/vocabulary/",
+  createTraining:"/data/vocabulary/"
+
 };
 
 //get all training
@@ -20,6 +22,10 @@ export async function getCurrentTraining(trainingId) {
   return get(endpoints.currentTraining + trainingId);
 }
 
+//create new training
+export async function createTraining(data) {
+  return post(endpoints.createTraining, data);
+}
 
 
 //get all known sentences for current owner
