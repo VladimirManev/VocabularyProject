@@ -52,16 +52,6 @@ export function Header(props) {
                 Training
               </NavLink>
             </li>
-            {/* <li className="list-item">
-              <NavLink
-                to="/vocabulary"
-                className={({ isActive }) =>
-                  isActive ? "active-link" : undefined
-                }
-              >
-                Vocabulary
-              </NavLink>
-            </li> */}
             <li className="list-item">
               <NavLink
                 to="/settings"

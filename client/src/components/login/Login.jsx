@@ -23,7 +23,7 @@ export function Login(props) {
       props.loading(false);
     } catch (error) {
       props.loading(false);
-      alert(error);
+      alert(error.message);
     }
    
   }

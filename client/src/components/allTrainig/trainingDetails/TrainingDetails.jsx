@@ -11,9 +11,6 @@ export function TrainingDetails(props) {
     const isUser = Boolean(contextData.userData);
     let isOwner = Boolean(currentTrainingData && contextData.userData && currentTrainingData._ownerId === contextData.userData._id);
 
-    ;
-
-    console.log(isUser, isOwner);
 
     //get currentTrainingData
     useEffect(() => {
@@ -25,7 +22,7 @@ export function TrainingDetails(props) {
                     setCurrentTrainingData(currentTrainingData);
                 }
             } catch (error) {
-                alert(error);
+                alert(error.message);
             }
             props.loading(false);
         }
