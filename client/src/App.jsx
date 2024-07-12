@@ -14,6 +14,7 @@ import { Logout } from "./components/logout/Logout";
 import { TrainingDetails } from "./components/allTrainig/trainingDetails/TrainingDetails";
 import { CreateTraining } from "./components/allTrainig/createTraining/CreateTraining";
 import { clearUserData } from "./services/util";
+import { EditTraining } from "./components/allTrainig/editTraining/EditTraining";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,6 +42,8 @@ function App() {
           <Route path="/logout" element={<Logout loading={loading} />} />
           <Route path="/trainingDetails/:currentTrainingId" element={<TrainingDetails loading={loading} />} />
           <Route path="/createTraining" element={<CreateTraining loading={loading} />} />
+          <Route path="/editTraining" element={<EditTraining loading={loading} />} />
+
         </Routes>
       </Provider>
     </>

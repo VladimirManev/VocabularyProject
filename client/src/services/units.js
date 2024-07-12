@@ -30,6 +30,11 @@ export async function deleteTraining(id) {
   return del(endpoints.currentTraining + "/" + id);
 }
 
+//edit a trining
+export async function updateTraining(id, data) {
+  return put(endpoints.currentTraining + "/" + id, data);
+}
+
 
 
 

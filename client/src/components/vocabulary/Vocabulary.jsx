@@ -1,5 +1,5 @@
 import "./Vocabulary.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   unknownSentencesSorter,
@@ -10,6 +10,7 @@ import {
   getKnownSentences,
   iKnowItUnit,
 } from "../../services/units";
+import { Context } from "../context/Context";
 
 export function Vocabulary(props) {
   const [allSentences, setAllSentences] = useState([]);
@@ -17,6 +18,11 @@ export function Vocabulary(props) {
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
+  const {contextData} = useContext(Context);
+  const allSentences1 = Object.entries(contextData.currentTrainingData.data).map(([_id,data]) =>({_id,...data}))
+
+  console.log(allSentences1);
+  console.log(allSentences);
 
   const navigate = useNavigate();
 
@@ -64,7 +70,7 @@ export function Vocabulary(props) {
         );
         if (knownSentences) {
           setUnknownSentences(
-            unknownSentencesSorter(allSentences, knownSentences)
+            unknownSentencesSorter(allSentences1, knownSentences)
           );
         }
         props.loading(false);
