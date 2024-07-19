@@ -24,14 +24,3 @@
   color: rgb(20, 163, 220);
   font-family: Caveat, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
-
-.welcome-container .btn {
-  margin-top: 80px;
-  padding: 10px 30px;
-  border: 1px solid black;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  font-size: 22px;
-}

@@ -1,42 +1,27 @@
 @font-face {
-    font-family: "Caveat";
-    src: url("../../fonts/Caveat-VariableFont_wght.ttf");
-  }
-  
-  .register-container {
-    margin: 0 auto;
-    padding: 40px 70px;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  .register-container .form {
-    padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-  
-  .register-container .input {
-    font-size: 20px;
-    border: none;
-    border-bottom: 1px solid grey;
-    box-shadow: none;
-    background-color: transparent;
-    /* outline: none; */
-  }
-  
-  .register-container .btn {
-    padding: 10px 30px;
-    border: 1px solid black;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    font-size: 30px;
-    font-family: "Caveat";
-    font-weight: bold;
-    margin: 0 auto;
-    margin-top: 80px;
-  }
-  
+  font-family: "Caveat";
+  src: url("../../fonts/Caveat-VariableFont_wght.ttf");
+}
+
+.register-container {
+  margin: 0 auto;
+  padding: 40px 70px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.register-container .form {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.register-container .input {
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid grey;
+  box-shadow: none;
+  background-color: transparent;
+  /* outline: none; */
+}

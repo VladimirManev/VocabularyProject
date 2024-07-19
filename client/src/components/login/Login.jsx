@@ -4,20 +4,21 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
+import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Login(props) {
   const navigate = useNavigate();
   const { values, changeHandler } = useForm({ email: "", password: "" });
-  const {contextData, setContextData} = useContext(Context);
+  const { contextData, setContextData } = useContext(Context);
 
   async function onSubmit(e) {
     e.preventDefault();
     try {
       props.loading(true);
       const user = await login(values.email, values.password);
-      setContextData(prevData => ({
+      setContextData((prevData) => ({
         ...prevData,
-        userData:user
+        userData: user,
       }));
       navigate("/allTraining");
       props.loading(false);
@@ -25,7 +26,6 @@ export function Login(props) {
       props.loading(false);
       alert(error.message);
     }
-   
   }
 
   return (
@@ -48,7 +48,7 @@ export function Login(props) {
           placeholder="password"
           value={values.password}
         />
-        <input type="submit" className="btn" value="Login" />
+        <PrimaryButton text="Login" type="submit" />
       </form>
     </div>
   );

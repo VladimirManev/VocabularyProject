@@ -11,6 +11,7 @@ import {
   iKnowItUnit,
 } from "../../services/units";
 import { Context } from "../../context/Context";
+import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Vocabulary(props) {
   const [allSentences, setAllSentences] = useState([]);
@@ -18,8 +19,10 @@ export function Vocabulary(props) {
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
-  const {contextData} = useContext(Context);
-  const allSentences1 = Object.entries(contextData.currentTrainingData.data).map(([_id,data]) =>({_id,...data}))
+  const { contextData } = useContext(Context);
+  const allSentences1 = Object.entries(
+    contextData.currentTrainingData.data
+  ).map(([_id, data]) => ({ _id, ...data }));
 
   console.log(allSentences1);
   console.log(allSentences);
@@ -137,12 +140,12 @@ export function Vocabulary(props) {
           )}
         </div>
         <div className="btn-container">
-          <button onClick={iKnowItClickHandler} className="known-btn">
-            I know it !
-          </button>
-          <button onClick={nextClickHandler} className="next-btn">
-            Next
-          </button>
+          <PrimaryButton
+            className="test"
+            text="I know it !"
+            onClick={iKnowItClickHandler}
+          />
+          <PrimaryButton text="Next" onClick={nextClickHandler} />
         </div>
       </div>
     </>

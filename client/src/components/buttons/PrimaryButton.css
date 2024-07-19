@@ -1,0 +1,10 @@
+.primaryButton {
+  padding: 6px 30px;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  font-size: 30px;
+  font-family: "Caveat";
+  /* font-weight: bold; */
+  margin: 10px;
+}
