@@ -9,7 +9,7 @@ export function Welcome(props) {
         <h2 className="subtitle">
           Welcome to <span>Vocabulary</span>
         </h2>
-        <Link to="/vocabulary" className="btn">
+        <Link to="/login" className="btn">
           Get started!
         </Link>
       </div>
