@@ -3,7 +3,7 @@ import { login } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useContext } from "react";
-import { Context } from "../context/Context";
+import { Context } from "../../context/Context";
 
 export function Login(props) {
   const navigate = useNavigate();

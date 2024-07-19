@@ -9,7 +9,7 @@ import { Spinner } from "./components/spinner/Spinner";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { AllTraining } from "./components/allTrainig/AllTraining";
-import { Provider } from "./components/context/Context";
+import { Provider } from "./context/Context";
 import { Logout } from "./components/logout/Logout";
 import { TrainingDetails } from "./components/allTrainig/trainingDetails/TrainingDetails";
 import { CreateTraining } from "./components/allTrainig/createTraining/CreateTraining";

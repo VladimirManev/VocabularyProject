@@ -10,7 +10,7 @@ import {
   getKnownSentences,
   iKnowItUnit,
 } from "../../services/units";
-import { Context } from "../context/Context";
+import { Context } from "../../context/Context";
 
 export function Vocabulary(props) {
   const [allSentences, setAllSentences] = useState([]);

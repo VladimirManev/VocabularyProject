@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import "./EditTraining.css";
 import { useNavigate } from "react-router-dom";
-import { Context } from "../../context/Context";
+import { Context } from "../../../context/Context";
 import { useForm } from "../../../hooks/useForm";
 import { updateTraining } from "../../../services/units";
 

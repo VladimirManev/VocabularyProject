@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Context } from '../../context/Context';
+import { Context } from '../../../context/Context';
 import './TrainingDetails.css';
 import { deleteTraining, getCurrentTraining } from '../../../services/units';
 import { useParams, Link, useNavigate } from 'react-router-dom';
