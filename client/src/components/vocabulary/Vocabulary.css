@@ -57,3 +57,20 @@
   font-size: 32px;
   font-weight: bold;
 }
+
+.congratulation-modal {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.938);
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.congratulation-modal .congratulation-text {
+  width: 60%;
+}

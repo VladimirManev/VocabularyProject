@@ -1,39 +1,36 @@
+.createTraining-container {
+  margin: 0 auto;
+  padding: 20px 70px;
+  font-size: 24px;
+  font-weight: 600;
+}
 
-  
-  .createTraining-container {
-    margin: 0 auto;
-    padding: 40px 70px;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  .createTraining-container .form {
-    padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-  
-  .createTraining-container .input {
-    font-size: 20px;
-    border: none;
-    border-bottom: 1px solid grey;
-    box-shadow: none;
-    background-color: transparent;
-    /* outline: none; */
-  }
-  
-  .createTraining-container .btn {
-    padding: 10px 30px;
-    border: 1px solid black;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    font-size: 30px;
-    font-family: "Caveat";
-    font-weight: bold;
-    margin: 0 auto;
-    margin-top: 80px;
-  }
-  
+.createTraining-container .form {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.createTraining-container .input {
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid grey;
+  box-shadow: none;
+  background-color: transparent;
+  /* outline: none; */
+}
+
+.createTraining-container .btn {
+  padding: 10px 30px;
+  border: 1px solid black;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  font-size: 30px;
+  font-family: "Caveat";
+  font-weight: bold;
+  margin: 0 auto;
+  margin-top: 80px;
+}

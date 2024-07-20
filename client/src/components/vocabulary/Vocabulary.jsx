@@ -1,6 +1,6 @@
 import "./Vocabulary.css";
 import { useContext, useEffect, useState } from "react";
-import { Await, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   unknownSentencesSorter,
   getRandomElementFromArr,
@@ -11,8 +11,8 @@ import { Context } from "../../context/Context";
 import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Vocabulary(props) {
-  // const [allSentences, setAllSentences] = useState([]);
   const [unknownSentences, setUnknownSentences] = useState([]);
+  const [showCongratulationModal, setShowCongratulationModal] = useState(false);
 
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
@@ -30,23 +30,6 @@ export function Vocabulary(props) {
   //set abbreviation for backend
   const abbreviationTranslateMode = `${translateMode.sourceLanguage}_${translateMode.traslationLanguage}`;
 
-  //get all sentences
-  // useEffect(() => {
-  //   const fetchFunction = async () => {
-  //     try {
-  //       props.loading(true);
-  //       const data = await getAllUnits();
-  //       if (data) {
-  //         setAllSentences(data);
-  //       }
-  //       props.loading(false);
-  //     } catch (error) {
-  //       alert(error);
-  //     }
-  //   };
-  //   fetchFunction();
-  // }, []);
-
   useEffect(() => {
     // get all known sentences and set all unknown sentences
     const fetchFunction = async () => {
@@ -57,8 +40,7 @@ export function Vocabulary(props) {
           contextData.currentTrainingData._id,
           abbreviationTranslateMode
         );
-        console.log(knownSentences);
-        console.log("saasa");
+
         if (knownSentences) {
           setUnknownSentences(
             unknownSentencesSorter(allSentences, knownSentences)
@@ -85,6 +67,10 @@ export function Vocabulary(props) {
 
   //sets the current sentence as learned
   async function iKnowItClickHandler(e) {
+    if (unknownSentences.length === 1) {
+      setShowCongratulationModal(true);
+    }
+
     try {
       props.loading(true);
       await iKnowItUnit(
@@ -133,6 +119,16 @@ export function Vocabulary(props) {
 
   return (
     <>
+      {showCongratulationModal && (
+        <div className="congratulation-modal">
+          <h2 className="congratulation-text">
+            Congratulations! You learned all the sentences!
+          </h2>
+          <Link to="/allTraining">
+            <PrimaryButton text="OK" />
+          </Link>
+        </div>
+      )}
       <div className="vocabulary-container">
         <div className="task-container">
           <p className="task">

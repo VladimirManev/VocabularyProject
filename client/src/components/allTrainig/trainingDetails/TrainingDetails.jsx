@@ -1,13 +1,19 @@
-import { useContext, useEffect, useState } from "react";
-import { Context } from "../../../context/Context";
 import "./TrainingDetails.css";
+import { useContext, useEffect } from "react";
+import { Context } from "../../../context/Context";
 import { deleteTraining, getCurrentTraining } from "../../../services/units";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
+import { useProgress } from "../../../hooks/useProgress";
 
 export function TrainingDetails(props) {
   const { contextData, setContextData } = useContext(Context);
   const { currentTrainingId } = useParams();
+  const { knownSentencesCount, progressInPercent } = useProgress(
+    currentTrainingId,
+    contextData.currentTrainingData?.sentencesCount
+  );
+
   const isUser = Boolean(contextData.userData);
   let isOwner = Boolean(
     contextData.currentTrainingData &&
@@ -49,6 +55,12 @@ export function TrainingDetails(props) {
     return (
       <>
         <h2>{contextData.currentTrainingData.title}</h2>
+        {isUser && (
+          <p>
+            Your progress: {progressInPercent}% {knownSentencesCount}/
+            {contextData.currentTrainingData.sentencesCount}
+          </p>
+        )}
         <p>Level:{contextData.currentTrainingData.level}</p>
         <p>
           Number of items:
@@ -65,7 +77,7 @@ export function TrainingDetails(props) {
             <PrimaryButton text="Delete" onClick={deleteClickHandler} />
           )}
 
-          {isUser && (
+          {isUser && progressInPercent < 100 && (
             <Link to={"/vocabulary"}>
               <PrimaryButton text="Training" />
             </Link>
