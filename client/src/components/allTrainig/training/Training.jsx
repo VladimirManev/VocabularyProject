@@ -3,7 +3,7 @@ import "./Training.css";
 import { Link } from "react-router-dom";
 
 export function Training(props) {
-  const { _id, title } = props.data;
+  const { _id, title, sentencesCount } = props.data;
 
   return (
     <div className="training-container">

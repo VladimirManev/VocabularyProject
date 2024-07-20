@@ -1744,10 +1744,12 @@
     },
     vocabulary: {
       "34a1cab1-81f1-47e5-aec3-afff9810e001": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: "1721469649111",
         title: "Present simple tense",
         level: "A1",
         description: "This is a colection that includes 2 sentences level A1",
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        sentencesCount: "2",
         data: {
           "1kkyrnha-81f1-47e5-aec3-afff9810efe1": {
             bg: "Аз съм Владо",
@@ -1762,10 +1764,12 @@
         },
       },
       "34a1cab1-81f1-47e5-aec3-afff9810e002": {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: "1725876809111",
         title: "Past simple tense",
         level: "A2",
         description: "This is a colection that includes 2 sentences level A2",
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        sentencesCount: "2",
         data: {
           "3kentmas-81f1-47e5-aec3-afff9810efe1": {
             bg: "Аз бях Владо",
