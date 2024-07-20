@@ -4,7 +4,7 @@ const endpoints = {
   catalog: "/data/a1",
   byId: "/data/a1",
   like: "/data/likes",
-  userData: "/data/learnedSentences",
+  learnedSentences: "/data/learnedSentences",
   allTraining: "/data/vocabulary?select=_id%2Ctitle%2CsentencesCount",
   currentTraining: "/data/vocabulary/",
 };
@@ -34,23 +34,30 @@ export async function updateTraining(id, data) {
   return put(endpoints.currentTraining + "/" + id, data);
 }
 
-//get all known sentences for current owner
-export async function getKnownSentences(_ownerId, translateMode) {
+//get all known sentences for current user
+export async function getKnownSentences(_ownerId, trainingId, translateMode) {
   return get(
-    endpoints.userData +
-      `?where=_ownerId%3D%22${_ownerId}%22%20AND%20translateMode%3D%22${translateMode}%22`
+    endpoints.learnedSentences +
+      `?where=_ownerId%3D%22${_ownerId}%22%20AND%20translateMode%3D%22${translateMode}%22%20AND%20trainingId%3D%22${trainingId}%22`
+  );
+}
+
+//get count to all known sentences for current user
+export async function getKnownSentencesCount(_ownerId, trainingId) {
+  return get(
+    endpoints.learnedSentences +
+      `?where=_ownerId%3D%22${_ownerId}%22%20AND%20trainingId%3D%22${trainingId}%22&distinct=sentenceId&count`
   );
 }
 
 //set unknown sentence to known sentence
 export async function iKnowItUnit(sentenceId, trainingId, translateMode) {
-  return post(endpoints.userData, {
+  return post(endpoints.learnedSentences, {
     sentenceId,
     trainingId,
     translateMode,
   });
 }
-
 export async function getAllUnits() {
   return get(endpoints.catalog);
 }

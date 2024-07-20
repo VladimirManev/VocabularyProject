@@ -20,8 +20,8 @@ export function CreateTraining(props) {
     title: "",
     level: "",
     description: "",
-    data: "",
     sentencesCount: "",
+    data: "",
   });
 
   async function onSubmit(e) {
@@ -75,7 +75,6 @@ export function CreateTraining(props) {
         />
         <input
           onChange={changeHandler}
-          type="text"
           className="input"
           name="data"
           placeholder="data"

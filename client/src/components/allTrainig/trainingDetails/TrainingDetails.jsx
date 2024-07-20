@@ -52,7 +52,7 @@ export function TrainingDetails(props) {
         <p>Level:{contextData.currentTrainingData.level}</p>
         <p>
           Number of items:
-          {Object.keys(contextData.currentTrainingData.data).length}
+          {Object.keys(JSON.parse(contextData.currentTrainingData.data)).length}
         </p>
         <p>Description:{contextData.currentTrainingData.description}</p>
         <div className="buttons">

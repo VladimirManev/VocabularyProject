@@ -54,8 +54,11 @@ export function Vocabulary(props) {
         props.loading(true);
         const knownSentences = await getKnownSentences(
           contextData.userData._id,
+          contextData.currentTrainingData._id,
           abbreviationTranslateMode
         );
+        console.log(knownSentences);
+        console.log("saasa");
         if (knownSentences) {
           setUnknownSentences(
             unknownSentencesSorter(allSentences, knownSentences)
@@ -70,9 +73,9 @@ export function Vocabulary(props) {
     //creates allSentaces if currentTrainingData and userData exist else navigates to login page
     let allSentences = [];
     if (contextData.currentTrainingData && contextData.userData) {
-      allSentences = Object.entries(contextData.currentTrainingData.data).map(
-        ([_id, data]) => ({ _id, ...data })
-      );
+      allSentences = Object.entries(
+        JSON.parse(contextData.currentTrainingData.data)
+      ).map(([_id, data]) => ({ _id, ...data }));
       fetchFunction();
     } else {
       navigate("/login");

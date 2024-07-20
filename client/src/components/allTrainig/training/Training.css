@@ -2,10 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10px;
+  position: relative;
 }
 
 .training-container .primaryButton {
   padding: 8px 16px;
   font-size: 20px;
+}
+
+.training-container .heading {
+  margin-left: 10px;
 }
