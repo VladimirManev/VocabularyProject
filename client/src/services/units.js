@@ -6,14 +6,13 @@ const endpoints = {
   like: "/data/likes",
   userData: "/data/a1UserData",
   allTraining: "/data/vocabulary?select=_id%2Ctitle",
-  currentTraining:"/data/vocabulary/",
+  currentTraining: "/data/vocabulary/",
 };
 
 //get all training
 export async function getAllTraining() {
   return get(endpoints.allTraining);
 }
-
 
 //get a training
 export async function getCurrentTraining(trainingId) {
@@ -35,12 +34,6 @@ export async function updateTraining(id, data) {
   return put(endpoints.currentTraining + "/" + id, data);
 }
 
-
-
-
-
-
-
 //get all known sentences for current owner
 export async function getKnownSentences(_ownerId, translateMode) {
   return get(
@@ -50,8 +43,12 @@ export async function getKnownSentences(_ownerId, translateMode) {
 }
 
 //set unknown sentence to known sentence
-export async function iKnowItUnit(id, translateMode) {
-  return post(endpoints.userData, { id, translateMode });
+export async function iKnowItUnit(sentenceId, trainingId, translateMode) {
+  return post(endpoints.userData, {
+    sentenceId,
+    trainingId,
+    translateMode,
+  });
 }
 
 export async function getAllUnits() {

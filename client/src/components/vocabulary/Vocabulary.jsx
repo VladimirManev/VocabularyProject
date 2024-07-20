@@ -1,31 +1,23 @@
 import "./Vocabulary.css";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Await, useNavigate } from "react-router-dom";
 import {
   unknownSentencesSorter,
   getRandomElementFromArr,
 } from "../../services/util";
-import {
-  getAllUnits,
-  getKnownSentences,
-  iKnowItUnit,
-} from "../../services/units";
+import { getKnownSentences, iKnowItUnit } from "../../services/units";
 import { Context } from "../../context/Context";
+
 import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Vocabulary(props) {
-  const [allSentences, setAllSentences] = useState([]);
+  // const [allSentences, setAllSentences] = useState([]);
   const [unknownSentences, setUnknownSentences] = useState([]);
+
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
   const { contextData } = useContext(Context);
-  const allSentences1 = Object.entries(
-    contextData.currentTrainingData.data
-  ).map(([_id, data]) => ({ _id, ...data }));
-
-  console.log(allSentences1);
-  console.log(allSentences);
 
   const navigate = useNavigate();
 
@@ -34,63 +26,77 @@ export function Vocabulary(props) {
     sourceLanguage: "bg",
     traslationLanguage: "en",
   };
+
   //set abbreviation for backend
   const abbreviationTranslateMode = `${translateMode.sourceLanguage}_${translateMode.traslationLanguage}`;
 
   //get all sentences
-  useEffect(() => {
-    const fetchFunction = async () => {
-      try {
-        props.loading(true);
-        const data = await getAllUnits();
-        if (data) {
-          setAllSentences(data);
-        }
-        props.loading(false);
-      } catch (error) {
-        alert(error);
-      }
-    };
-    fetchFunction();
-  }, []);
+  // useEffect(() => {
+  //   const fetchFunction = async () => {
+  //     try {
+  //       props.loading(true);
+  //       const data = await getAllUnits();
+  //       if (data) {
+  //         setAllSentences(data);
+  //       }
+  //       props.loading(false);
+  //     } catch (error) {
+  //       alert(error);
+  //     }
+  //   };
+  //   fetchFunction();
+  // }, []);
 
-  //get known sentences for current user and set all unknown sentences
   useEffect(() => {
-    const userData = JSON.parse(sessionStorage.getItem("userData"));
-    let _ownerId;
-    if (userData) {
-      _ownerId = userData._id;
-    } else {
-      navigate("/login");
-    }
-
+    // get all known sentences and set all unknown sentences
     const fetchFunction = async () => {
       try {
         props.loading(true);
         const knownSentences = await getKnownSentences(
-          _ownerId,
+          contextData.userData._id,
           abbreviationTranslateMode
         );
         if (knownSentences) {
           setUnknownSentences(
-            unknownSentencesSorter(allSentences1, knownSentences)
+            unknownSentencesSorter(allSentences, knownSentences)
           );
         }
-        props.loading(false);
       } catch (error) {
         alert(error);
       }
+      props.loading(false);
     };
-    fetchFunction();
-  }, [allSentences]);
+
+    //creates allSentaces if currentTrainingData and userData exist else navigates to login page
+    let allSentences = [];
+    if (contextData.currentTrainingData && contextData.userData) {
+      allSentences = Object.entries(contextData.currentTrainingData.data).map(
+        ([_id, data]) => ({ _id, ...data })
+      );
+      fetchFunction();
+    } else {
+      navigate("/login");
+      return;
+    }
+  }, []);
 
   //sets the current sentence as learned
-  function iKnowItClickHandler(e) {
-    iKnowItUnit(currentSentence._id, abbreviationTranslateMode);
+  async function iKnowItClickHandler(e) {
+    try {
+      props.loading(true);
+      await iKnowItUnit(
+        currentSentence._id,
+        contextData.currentTrainingData._id,
+        abbreviationTranslateMode
+      );
+      setUnknownSentences((data) =>
+        data.filter((x) => x._id !== currentSentence._id)
+      );
+    } catch (error) {
+      alert(error);
+    }
     setShowTranslation(false);
-    setUnknownSentences((data) =>
-      data.filter((x) => x._id !== currentSentence._id)
-    );
+    props.loading(false);
   }
 
   function nextClickHandler(e) {

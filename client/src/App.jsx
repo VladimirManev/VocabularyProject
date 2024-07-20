@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "./App.css";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { Welcome } from "./components/welcome/Welcome";
@@ -34,16 +34,30 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Welcome />} />
-          <Route path="/vocabulary" element={<Vocabulary loading={loading} />} />
+          <Route
+            path="/vocabulary"
+            element={<Vocabulary loading={loading} />}
+          />
           <Route path="/settings" element={<Settings />} />
           <Route path="/login" element={<Login loading={loading} />} />
           <Route path="/register" element={<Register loading={loading} />} />
-          <Route path="/allTraining" element={<AllTraining loading={loading} />} />
+          <Route
+            path="/allTraining"
+            element={<AllTraining loading={loading} />}
+          />
           <Route path="/logout" element={<Logout loading={loading} />} />
-          <Route path="/trainingDetails/:currentTrainingId" element={<TrainingDetails loading={loading} />} />
-          <Route path="/createTraining" element={<CreateTraining loading={loading} />} />
-          <Route path="/editTraining" element={<EditTraining loading={loading} />} />
-
+          <Route
+            path="/trainingDetails/:currentTrainingId"
+            element={<TrainingDetails loading={loading} />}
+          />
+          <Route
+            path="/createTraining"
+            element={<CreateTraining loading={loading} />}
+          />
+          <Route
+            path="/editTraining"
+            element={<EditTraining loading={loading} />}
+          />
         </Routes>
       </Provider>
     </>

@@ -16,10 +16,10 @@ export function AllTraining(props) {
         if (fetchedData) {
           setAllTrainingdata(fetchedData);
         }
-        props.loading(false);
       } catch (error) {
         alert(error);
       }
+      props.loading(false);
     };
     fetchFunction();
   }, []);

@@ -1,15 +1,15 @@
 (function (global, factory) {
   typeof exports === "object" && typeof module !== "undefined"
     ? (module.exports = factory(
-      require("http"),
-      require("fs"),
-      require("crypto")
-    ))
+        require("http"),
+        require("fs"),
+        require("crypto")
+      ))
     : typeof define === "function" && define.amd
-      ? define(["http", "fs", "crypto"], factory)
-      : ((global =
+    ? define(["http", "fs", "crypto"], factory)
+    : ((global =
         typeof globalThis !== "undefined" ? globalThis : global || self),
-        (global.Server = factory(global.http, global.fs, global.crypto)));
+      (global.Server = factory(global.http, global.fs, global.crypto)));
 })(this, function (http, fs, crypto) {
   "use strict";
 
@@ -349,16 +349,16 @@
 
   const data = fs__default["default"].existsSync("./data")
     ? fs__default["default"].readdirSync("./data").reduce((p, c) => {
-      const content = JSON.parse(
-        fs__default["default"].readFileSync("./data/" + c)
-      );
-      const collection = c.slice(0, -5);
-      p[collection] = {};
-      for (let endpoint in content) {
-        p[collection][endpoint] = content[endpoint];
-      }
-      return p;
-    }, {})
+        const content = JSON.parse(
+          fs__default["default"].readFileSync("./data/" + c)
+        );
+        const collection = c.slice(0, -5);
+        p[collection] = {};
+        for (let endpoint in content) {
+          p[collection][endpoint] = content[endpoint];
+        }
+        return p;
+      }, {})
     : {};
 
   const actions = {
@@ -1747,30 +1747,42 @@
         title: "Present simple tense",
         level: "A1",
         description: "This is a colection that includes 2 sentences level A1",
-        _ownerId:"35c62d76-8152-4626-8712-eeb96381bea8",
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
         data: {
-          "id1": { 'bg': "Аз съм Владо", "en": "I am Vlado" }, "id2": { "bg": "Как си?", "en": "How are you?" },
-        }
+          id1: { bg: "Аз съм Владо", en: "I am Vlado", de: "Ich bin Vlado" },
+          id2: { bg: "Как си?", en: "How are you?", de: "Wie get es dir?" },
+        },
       },
       "34a1cab1-81f1-47e5-aec3-afff9810e002": {
         title: "Past simple tense",
         level: "A2",
         description: "This is a colection that includes 2 sentences level A2",
-        _ownerId:"847ec027-f659-4086-8032-5173e2f9c93a",
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
         data: {
-          "id1": { 'bg': "Аз бях Владо", "en": "I was Vlado" }, "id2": { "bg": "Как беше ти?", "en": "How were you?" },
-        }
-      }
+          id3: { bg: "Аз бях Владо", en: "I was Vlado", de: "Ich war Vlado" },
+          id4: {
+            bg: "Как беше ти?",
+            en: "How were you?",
+            de: "Wie ging es dir?",
+          },
+        },
+      },
     },
     testData: {
-      "1": {
+      1: {
         name: "a1",
-        sentences: { "id1": { 'bg': "Аз съм Владо", "en": "I am Vlado" }, "id2": { "bg": "Как си", "en": "How are you" } }
+        sentences: {
+          id1: { bg: "Аз съм Владо", en: "I am Vlado" },
+          id2: { bg: "Как си", en: "How are you" },
+        },
       },
-      "2": {
+      2: {
         name: "a2",
-        sentences: { "id1": { 'bg': "Аз съм Рони", "en": "I am Roni" }, "id2": { "bg": "Как си", "en": "How are you" } }
-      }
+        sentences: {
+          id1: { bg: "Аз съм Рони", en: "I am Roni" },
+          id2: { bg: "Как си", en: "How are you" },
+        },
+      },
     },
     a1UserData: {
       "34a1cab1-81f1-47e5-aec3-afff9810efe1": {
