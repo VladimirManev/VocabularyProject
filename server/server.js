@@ -1749,8 +1749,16 @@
         description: "This is a colection that includes 2 sentences level A1",
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
         data: {
-          id1: { bg: "Аз съм Владо", en: "I am Vlado", de: "Ich bin Vlado" },
-          id2: { bg: "Как си?", en: "How are you?", de: "Wie get es dir?" },
+          "1kkyrnha-81f1-47e5-aec3-afff9810efe1": {
+            bg: "Аз съм Владо",
+            en: "I am Vlado",
+            de: "Ich bin Vlado",
+          },
+          "2kajrbgm-81f1-47e5-aec3-afff9810efe1": {
+            bg: "Как си?",
+            en: "How are you?",
+            de: "Wie get es dir?",
+          },
         },
       },
       "34a1cab1-81f1-47e5-aec3-afff9810e002": {
@@ -1759,8 +1767,12 @@
         description: "This is a colection that includes 2 sentences level A2",
         _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
         data: {
-          id3: { bg: "Аз бях Владо", en: "I was Vlado", de: "Ich war Vlado" },
-          id4: {
+          "3kentmas-81f1-47e5-aec3-afff9810efe1": {
+            bg: "Аз бях Владо",
+            en: "I was Vlado",
+            de: "Ich war Vlado",
+          },
+          "4f58r2hj-81f1-47e5-aec3-afff9810efe1": {
             bg: "Как беше ти?",
             en: "How were you?",
             de: "Wie ging es dir?",
@@ -1768,58 +1780,22 @@
         },
       },
     },
-    testData: {
-      1: {
-        name: "a1",
-        sentences: {
-          id1: { bg: "Аз съм Владо", en: "I am Vlado" },
-          id2: { bg: "Как си", en: "How are you" },
-        },
-      },
-      2: {
-        name: "a2",
-        sentences: {
-          id1: { bg: "Аз съм Рони", en: "I am Roni" },
-          id2: { bg: "Как си", en: "How are you" },
-        },
-      },
-    },
-    a1UserData: {
-      "34a1cab1-81f1-47e5-aec3-afff9810efe1": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        id: "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
-        translateMode: "bg_en",
-        _createdOn: 1718553150484,
-      },
-      "34a1cab1-81f1-47e5-aec3-afff9810efe2": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        id: "bb9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
-        translateMode: "en_bg",
-        _createdOn: 1718553150484,
-      },
-    },
 
-    a1: {
-      "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-        en: "I have a small dog.",
-        bg: "Имам малко куче.",
-      },
-      "61a19986-3b86-4347-8ca4-8c074ed87591": {
-        en: "She likes to read books.",
-        bg: "Тя обича да чете книги.",
-      },
-      "e797fa57-bf0a-4749-8028-72dba715e5f8": {
-        en: "We live in a big city.",
-        bg: "Живеем в голям град.",
-      },
-      "280b4a1a-d0f3-4639-aa54-6d9158365152": {
-        en: "They go to school by bus.",
-        bg: "Te ходят на училище c автобус.",
-      },
-      "9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-        en: "My favorite color is blue.",
-        bg: "Любимият ми цвят e син.",
-      },
+    learnedSentences: {
+      // "34a1cab1-81f1-47e5-aec3-afff9810efe1": {
+      //   trainingId: "34a1cab1-81f1-47e5-aec3-afff9810e001",
+      //   _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+      //   sentenceId: "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
+      //   translateMode: "bg_en",
+      //   _createdOn: 1718553150484,
+      // },
+      // "34a1cab1-81f1-47e5-aec3-afff9810efe2": {
+      //   trainingId: "34a1cab1-81f1-47e5-aec3-afff9810e001",
+      //   _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+      //   sentenceId: "bb9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
+      //   translateMode: "en_bg",
+      //   _createdOn: 1718553150484,
+      // },
     },
   };
   var rules$1 = {

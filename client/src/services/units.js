@@ -4,7 +4,7 @@ const endpoints = {
   catalog: "/data/a1",
   byId: "/data/a1",
   like: "/data/likes",
-  userData: "/data/a1UserData",
+  userData: "/data/learnedSentences",
   allTraining: "/data/vocabulary?select=_id%2Ctitle",
   currentTraining: "/data/vocabulary/",
 };
