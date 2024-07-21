@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import "./ProgressBar.css";
+import { Context } from "../../context/Context";
 
-export function ProgressBar({ progress, color }) {
+export function ProgressBar({ progress }) {
+  const { contextData } = useContext(Context);
   const progressBarStyle = {
     width: `${progress}%`,
-    backgroundColor: color,
+    backgroundColor: contextData.currentThemenData?.color3,
   };
 
   return <div className="progress-bar" style={progressBarStyle}></div>;

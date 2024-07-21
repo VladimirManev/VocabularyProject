@@ -10,7 +10,7 @@ export function Training(props) {
 
   return (
     <div className="training-container">
-      <ProgressBar progress={progressInPercent} color={"rgb(20, 163, 220)"} />
+      <ProgressBar progress={progressInPercent} />
       {/* <span className="progress-counter">{`${knownSentencesCount}/${sentencesCount}`}</span> */}
       <h3 className="heading">{title}</h3>
       <Link to={`/trainingDetails/${_id}`}>

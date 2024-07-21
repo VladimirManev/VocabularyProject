@@ -23,7 +23,9 @@ export function useProgress(trainingId, sentencesCount) {
     }
   }, []);
 
-  const progressInPercent = (knownSentencesCount / sentencesCount) * 100;
+  const progressInPercent = Math.round(
+    (knownSentencesCount / sentencesCount) * 100
+  );
 
   return { knownSentencesCount, progressInPercent };
 }

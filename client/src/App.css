@@ -13,3 +13,9 @@
   padding: 0;
   text-align: center;
 }
+
+.global-div {
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+}

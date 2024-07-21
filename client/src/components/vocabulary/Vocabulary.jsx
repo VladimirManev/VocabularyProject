@@ -108,8 +108,6 @@ export function Vocabulary(props) {
         setLastSentence(randomSentence);
       }
       setCurrentSentence(randomSentence);
-    } else {
-      //todo
     }
   }
 

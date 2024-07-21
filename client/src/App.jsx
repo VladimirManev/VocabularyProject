@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { Welcome } from "./components/welcome/Welcome";
@@ -9,18 +9,22 @@ import { Spinner } from "./components/spinner/Spinner";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { AllTraining } from "./components/allTrainig/AllTraining";
-import { Provider } from "./context/Context";
+import { Context, Provider } from "./context/Context";
 import { Logout } from "./components/logout/Logout";
 import { TrainingDetails } from "./components/allTrainig/trainingDetails/TrainingDetails";
 import { CreateTraining } from "./components/allTrainig/createTraining/CreateTraining";
-import { clearUserData } from "./services/util";
+import { getUserData } from "./services/util";
 import { EditTraining } from "./components/allTrainig/editTraining/EditTraining";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const { contextData, setContextData } = useContext(Context);
 
   useEffect(() => {
-    clearUserData();
+    const userData = getUserData();
+    if (userData) {
+      setContextData((prevData) => ({ ...prevData, userData }));
+    }
   }, []);
 
   function loading(status) {
@@ -28,39 +32,40 @@ function App() {
   }
 
   return (
-    <>
-      <Provider>
-        {isLoading && <Spinner />}
-        <Header />
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route
-            path="/vocabulary"
-            element={<Vocabulary loading={loading} />}
-          />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/login" element={<Login loading={loading} />} />
-          <Route path="/register" element={<Register loading={loading} />} />
-          <Route
-            path="/allTraining"
-            element={<AllTraining loading={loading} />}
-          />
-          <Route path="/logout" element={<Logout loading={loading} />} />
-          <Route
-            path="/trainingDetails/:currentTrainingId"
-            element={<TrainingDetails loading={loading} />}
-          />
-          <Route
-            path="/createTraining"
-            element={<CreateTraining loading={loading} />}
-          />
-          <Route
-            path="/editTraining"
-            element={<EditTraining loading={loading} />}
-          />
-        </Routes>
-      </Provider>
-    </>
+    <div
+      className="global-div"
+      style={{
+        backgroundColor: contextData.currentThemenData?.color1,
+        color: contextData.currentThemenData?.color2,
+      }}
+    >
+      {isLoading && <Spinner />}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/vocabulary" element={<Vocabulary loading={loading} />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/login" element={<Login loading={loading} />} />
+        <Route path="/register" element={<Register loading={loading} />} />
+        <Route
+          path="/allTraining"
+          element={<AllTraining loading={loading} />}
+        />
+        <Route path="/logout" element={<Logout loading={loading} />} />
+        <Route
+          path="/trainingDetails/:currentTrainingId"
+          element={<TrainingDetails loading={loading} />}
+        />
+        <Route
+          path="/createTraining"
+          element={<CreateTraining loading={loading} />}
+        />
+        <Route
+          path="/editTraining"
+          element={<EditTraining loading={loading} />}
+        />
+      </Routes>
+    </div>
   );
 }
 
