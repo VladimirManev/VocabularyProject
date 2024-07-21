@@ -5,6 +5,7 @@ import { deleteTraining, getCurrentTraining } from "../../../services/units";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { useProgress } from "../../../hooks/useProgress";
+import { ProgressBar } from "../../progressBar/ProgressBar";
 
 export function TrainingDetails(props) {
   const { contextData, setContextData } = useContext(Context);
@@ -53,20 +54,22 @@ export function TrainingDetails(props) {
 
   if (contextData.currentTrainingData) {
     return (
-      <>
+      <div className="training-details-container">
         <h2>{contextData.currentTrainingData.title}</h2>
+
+        <span className="level">{contextData.currentTrainingData.level}</span>
         {isUser && (
-          <p>
-            Your progress: {progressInPercent}% {knownSentencesCount}/
-            {contextData.currentTrainingData.sentencesCount}
-          </p>
+          <div className="progress">
+            <ProgressBar progress={progressInPercent} />
+            <p className="progress-text">
+              Your progress: {progressInPercent}% {knownSentencesCount}/
+              {contextData.currentTrainingData.sentencesCount}
+            </p>
+          </div>
         )}
-        <p>Level:{contextData.currentTrainingData.level}</p>
-        <p>
-          Number of items:
-          {Object.keys(JSON.parse(contextData.currentTrainingData.data)).length}
+        <p className="description">
+          Description:{contextData.currentTrainingData.description}
         </p>
-        <p>Description:{contextData.currentTrainingData.description}</p>
         <div className="buttons">
           {isOwner && (
             <Link to={"/editTraining"}>
@@ -83,7 +86,7 @@ export function TrainingDetails(props) {
             </Link>
           )}
         </div>
-      </>
+      </div>
     );
   } else {
     return null;

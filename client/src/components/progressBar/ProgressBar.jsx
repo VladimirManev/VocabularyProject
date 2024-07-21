@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import "./ProgressBar.css";
+import { useContext } from "react";
 import { Context } from "../../context/Context";
 
 export function ProgressBar({ progress }) {

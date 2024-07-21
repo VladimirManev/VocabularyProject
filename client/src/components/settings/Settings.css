@@ -1,53 +1,13 @@
-/* @font-face {
-  font-family: "Caveat";
-  src: url("../../fonts/Caveat-VariableFont_wght.ttf");
-}
-
-.vocabulary-container {
+.settings-container .list {
+  margin: 20px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  margin: 40px 30px;
-  font-size: 18px;
-  align-items: center;
+  gap: 16px;
 }
 
-.vocabulary-container .task-container {
-  height: 160px;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0px 0px 10px lightslategray;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  align-items: center;
+.settings-container .list .list-item {
+  list-style-type: none;
+  border-radius: 14px;
+  box-shadow: 0 0 20px gray;
+  overflow: hidden;
 }
-
-.vocabulary-container .solution-container {
-  height: 160px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px lightslategray;
-  background-color: rgb(255, 255, 255);
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.vocabulary-container .btn-container {
-  display: flex;
-  gap: 20px;
-  padding: 30px 0;
-  width: 100%;
-}
-
-.vocabulary-container button {
-  padding: 10px 20px;
-  border: 1px solid black;
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  background-color: black;
-  font-size: 28px;
-  width: 50%;
-  font-family: "Caveat";
-  font-weight: bold;
-} */

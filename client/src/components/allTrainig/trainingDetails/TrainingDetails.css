@@ -1,0 +1,29 @@
+.training-details-container .progress {
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgb(66, 64, 64);
+}
+
+.training-details-container .progress-text {
+  margin: 8px;
+}
+
+.training-details-container .level {
+  font-size: 30px;
+  box-shadow: 0 0 10px rgb(66, 64, 64);
+  border-radius: 100%;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+}
+
+.training-details-container .description {
+  box-shadow: 0 0 10px rgb(66, 64, 64);
+  border-radius: 10px;
+  padding: 10px;
+  width: 80%;
+  margin: 20px auto;
+}

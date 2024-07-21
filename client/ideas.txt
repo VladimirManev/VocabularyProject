@@ -4,7 +4,14 @@ flags in fields
 
 progress review
 
-"{
+search
+
+my training
+
+favorite
+
+
+{
     "1kkyrnha-81f1-47e5-aec3-afff9810efe2": {
       "bg": "Вчера ходих на кино.",
       "en": "I went to the cinema yesterday.",
@@ -80,5 +87,5 @@ progress review
       "en": "What is your favorite food?",
       "de": "Was ist dein Lieblingsessen?"
     }
-  }"
+  }
   

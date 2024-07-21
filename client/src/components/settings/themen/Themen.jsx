@@ -1,4 +1,6 @@
+import "./Themen.css";
 import { useContext, useEffect, useState } from "react";
+
 import { Context } from "../../../context/Context";
 import { themenData } from "./themenData";
 
@@ -22,11 +24,25 @@ export function Themen(props) {
   return (
     <div className="themen-container">
       <h3>Theme</h3>
-      <select onChange={themeChangeHandler} value={currentTheme} name="" id="">
-        <option value="piano">Piano</option>
-        <option value="moon">Moon</option>
-        <option value="fruits">Fruits</option>
-        <option value="crazy">Crazy</option>
+      <select
+        className="select-item"
+        onChange={themeChangeHandler}
+        value={currentTheme}
+        name=""
+        id=""
+      >
+        <option className="option-item" value="piano">
+          Piano
+        </option>
+        <option className="option-item" value="moon">
+          Moon
+        </option>
+        <option className="option-item" value="fruits">
+          Fruits
+        </option>
+        <option className="option-item" value="crazy">
+          Crazy
+        </option>
       </select>
     </div>
   );

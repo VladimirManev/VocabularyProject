@@ -1,3 +1,28 @@
-.s {
-  color: rgb(241, 0, 0);
+.themen-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.themen-container .select-item {
+  margin: 14px;
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(66, 64, 64);
+  background-color: inherit;
+  font: inherit;
+  text-align: center;
+  appearance: none;
+}
+
+.themen-container .option-item {
+  padding: 10px;
+}
+
+.themen-container select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }

@@ -2,7 +2,7 @@ export const themenData = {
   piano: {
     name: "piano",
     color1: "rgb(255, 255, 255)",
-    color2: "rgba(0, 0, 0)",
+    color2: "rgb(51, 51, 51)",
     color3: "rgb(20, 163, 220)",
     color4: "rgba(0, 0, 0)",
   },
