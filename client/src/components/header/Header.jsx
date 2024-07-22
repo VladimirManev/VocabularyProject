@@ -4,8 +4,7 @@ import { useContext } from "react";
 import { Context } from "../../context/Context";
 
 export function Header(props) {
-  const { contextData, setContextData } = useContext(Context);
-  const userData = contextData.userData;
+  const { userData } = useContext(Context);
 
   return (
     <>

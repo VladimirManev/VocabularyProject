@@ -8,25 +8,25 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 
 export function EditTraining(props) {
   const navigate = useNavigate();
-  const { contextData, setContextData } = useContext(Context);
+  const { userData, currentTrainingData } = useContext(Context);
 
   useEffect(() => {
-    if (!contextData.userData) {
+    if (!userData) {
       navigate("/login");
       return;
     }
   }, []);
 
-  if (!contextData.currentTrainingData) {
+  if (!currentTrainingData) {
     return <></>;
   }
 
   const { values, changeHandler } = useForm({
-    title: contextData.currentTrainingData.title,
-    level: contextData.currentTrainingData.level,
-    description: contextData.currentTrainingData.description,
-    sentencesCount: contextData.currentTrainingData.sentencesCount,
-    data: contextData.currentTrainingData.data,
+    title: currentTrainingData.title,
+    level: currentTrainingData.level,
+    description: currentTrainingData.description,
+    sentencesCount: currentTrainingData.sentencesCount,
+    data: currentTrainingData.data,
   });
 
   async function onSubmit(e) {
@@ -34,8 +34,8 @@ export function EditTraining(props) {
 
     try {
       props.loading(true);
-      await updateTraining(contextData.currentTrainingData._id, values);
-      navigate(`/trainingDetails/${contextData.currentTrainingData._id}`);
+      await updateTraining(currentTrainingData._id, values);
+      navigate(`/trainingDetails/${currentTrainingData._id}`);
     } catch (error) {
       alert(error.message);
     }

@@ -5,7 +5,7 @@ import { logout } from "../../services/auth";
 import { clearUserData } from "../../services/util";
 
 export function Logout(props) {
-  const { contextData, setContextData } = useContext(Context);
+  const { clearContextUserData } = useContext(Context);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,10 +13,7 @@ export function Logout(props) {
       try {
         props.loading(true);
         await logout();
-        setContextData((prevData) => ({
-          ...prevData,
-          userData: undefined,
-        }));
+        clearContextUserData();
         clearUserData();
         navigate("/");
       } catch (error) {

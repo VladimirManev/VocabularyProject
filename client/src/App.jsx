@@ -18,12 +18,12 @@ import { EditTraining } from "./components/allTrainig/editTraining/EditTraining"
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const { contextData, setContextData } = useContext(Context);
+  const { themeData, setContextUserData } = useContext(Context);
 
   useEffect(() => {
-    const userData = getUserData();
-    if (userData) {
-      setContextData((prevData) => ({ ...prevData, userData }));
+    const sessionStorageUserData = getUserData();
+    if (sessionStorageUserData) {
+      setContextUserData(sessionStorageUserData);
     }
   }, []);
 
@@ -35,8 +35,8 @@ function App() {
     <div
       className="global-div"
       style={{
-        backgroundColor: contextData.currentThemenData?.color1,
-        color: contextData.currentThemenData?.color2,
+        backgroundColor: themeData?.color1,
+        color: themeData?.color2,
       }}
     >
       {isLoading && <Spinner />}

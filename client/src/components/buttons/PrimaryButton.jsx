@@ -3,7 +3,7 @@ import "./PrimaryButton.css";
 import { Context } from "../../context/Context";
 
 export function PrimaryButton(props) {
-  const { contextData } = useContext(Context);
+  const { themeData } = useContext(Context);
 
   let btnClass = "primaryButton";
 
@@ -17,8 +17,8 @@ export function PrimaryButton(props) {
         className={btnClass}
         onClick={props.onClick}
         style={{
-          backgroundColor: contextData.currentThemenData?.color2,
-          color: contextData.currentThemenData?.color3,
+          backgroundColor: themeData?.color2,
+          color: themeData?.color3,
         }}
       >
         {props.text}

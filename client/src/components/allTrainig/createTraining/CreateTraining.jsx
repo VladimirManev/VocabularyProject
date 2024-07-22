@@ -8,10 +8,10 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 
 export function CreateTraining(props) {
   const navigate = useNavigate();
-  const { contextData, setContextData } = useContext(Context);
+  const { userData } = useContext(Context);
 
   useEffect(() => {
-    if (!contextData.userData) {
+    if (!userData) {
       navigate("/login");
     }
   }, []);

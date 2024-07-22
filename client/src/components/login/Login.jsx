@@ -9,17 +9,15 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 export function Login(props) {
   const navigate = useNavigate();
   const { values, changeHandler } = useForm({ email: "", password: "" });
-  const { contextData, setContextData } = useContext(Context);
+  const { setContextUserData } = useContext(Context);
 
   async function onSubmit(e) {
     e.preventDefault();
     try {
       props.loading(true);
       const user = await login(values.email, values.password);
-      setContextData((prevData) => ({
-        ...prevData,
-        userData: user,
-      }));
+
+      setContextUserData(user);
       navigate("/allTraining");
       props.loading(false);
     } catch (error) {

@@ -17,7 +17,7 @@ export function Vocabulary(props) {
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
-  const { contextData } = useContext(Context);
+  const { userData, currentTrainingData } = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -36,8 +36,8 @@ export function Vocabulary(props) {
       try {
         props.loading(true);
         const knownSentences = await getKnownSentences(
-          contextData.userData._id,
-          contextData.currentTrainingData._id,
+          userData._id,
+          currentTrainingData._id,
           abbreviationTranslateMode
         );
 
@@ -54,10 +54,10 @@ export function Vocabulary(props) {
 
     //creates allSentaces if currentTrainingData and userData exist else navigates to login page
     let allSentences = [];
-    if (contextData.currentTrainingData && contextData.userData) {
-      allSentences = Object.entries(
-        JSON.parse(contextData.currentTrainingData.data)
-      ).map(([_id, data]) => ({ _id, ...data }));
+    if (currentTrainingData && userData) {
+      allSentences = Object.entries(JSON.parse(currentTrainingData.data)).map(
+        ([_id, data]) => ({ _id, ...data })
+      );
       fetchFunction();
     } else {
       navigate("/login");
@@ -75,7 +75,7 @@ export function Vocabulary(props) {
       props.loading(true);
       await iKnowItUnit(
         currentSentence._id,
-        contextData.currentTrainingData._id,
+        currentTrainingData._id,
         abbreviationTranslateMode
       );
       setUnknownSentences((data) =>

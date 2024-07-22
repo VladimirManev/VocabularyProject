@@ -4,18 +4,15 @@ import { Context } from "../context/Context";
 
 export function useProgress(trainingId, sentencesCount) {
   const [knownSentencesCount, setKnownSentencesCount] = useState(0);
-  const { contextData } = useContext(Context);
+  const { userData } = useContext(Context);
 
   useEffect(() => {
     try {
       async function fetchFunction() {
-        const count = await getKnownSentencesCount(
-          contextData.userData._id,
-          trainingId
-        );
+        const count = await getKnownSentencesCount(userData._id, trainingId);
         setKnownSentencesCount(count);
       }
-      if (contextData.userData) {
+      if (userData) {
         fetchFunction();
       }
     } catch (error) {

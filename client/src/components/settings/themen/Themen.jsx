@@ -5,16 +5,12 @@ import { Context } from "../../../context/Context";
 import { themenData } from "./themenData";
 
 export function Themen(props) {
-  const { contextData, setContextData } = useContext(Context);
+  const { setContextThemeData, themeData } = useContext(Context);
   const [currentTheme, setCurrentTheme] = useState(
-    contextData.currentThemenData ? contextData.currentThemenData.name : "piano"
+    themeData ? themeData.name : "piano"
   );
-
   useEffect(() => {
-    setContextData((prevData) => ({
-      ...prevData,
-      currentThemenData: themenData[currentTheme],
-    }));
+    setContextThemeData(themenData[currentTheme]);
   }, [currentTheme]);
 
   function themeChangeHandler(e) {

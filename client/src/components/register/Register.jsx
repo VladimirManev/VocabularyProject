@@ -8,7 +8,7 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Register(props) {
   const navigate = useNavigate();
-  const { contextData, setContextData } = useContext(Context);
+  const { setContextUserData } = useContext(Context);
 
   const { values, changeHandler } = useForm({
     email: "",
@@ -22,10 +22,9 @@ export function Register(props) {
     try {
       props.loading(true);
       const user = await register(values.email, values.password);
-      setContextData((prevData) => ({
-        ...prevData,
-        userData: user,
-      }));
+
+      setContextUserData(user);
+
       navigate("/allTraining");
       props.loading(false);
     } catch (error) {

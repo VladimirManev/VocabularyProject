@@ -8,32 +8,30 @@ import { useProgress } from "../../../hooks/useProgress";
 import { ProgressBar } from "../../progressBar/ProgressBar";
 
 export function TrainingDetails(props) {
-  const { contextData, setContextData } = useContext(Context);
+  const { userData, currentTrainingData, setContextCurrentTrainingData } =
+    useContext(Context);
   const { currentTrainingId } = useParams();
   const { knownSentencesCount, progressInPercent } = useProgress(
     currentTrainingId,
-    contextData.currentTrainingData?.sentencesCount
+    currentTrainingData?.sentencesCount
   );
 
-  const isUser = Boolean(contextData.userData);
+  const isUser = Boolean(userData);
   let isOwner = Boolean(
-    contextData.currentTrainingData &&
-      contextData.userData &&
-      contextData.currentTrainingData._ownerId === contextData.userData._id
+    currentTrainingData &&
+      userData &&
+      currentTrainingData._ownerId === userData._id
   );
   const navigate = useNavigate();
 
-  //get currentTrainingData
+  //get currentTrainingData and set it in Context
   useEffect(() => {
     const fetchFunction = async () => {
       try {
         props.loading(true);
         const fetchData = await getCurrentTraining(currentTrainingId);
         if (fetchData) {
-          setContextData((prevData) => ({
-            ...prevData,
-            currentTrainingData: fetchData,
-          }));
+          setContextCurrentTrainingData(fetchData);
         }
       } catch (error) {
         alert(error.message);
@@ -45,31 +43,29 @@ export function TrainingDetails(props) {
 
   async function deleteClickHandler(e) {
     try {
-      await deleteTraining(contextData.currentTrainingData._id);
+      await deleteTraining(currentTrainingData._id);
       navigate("/allTraining");
     } catch (error) {
       alert(error.message);
     }
   }
 
-  if (contextData.currentTrainingData) {
+  if (currentTrainingData) {
     return (
       <div className="training-details-container">
-        <h2>{contextData.currentTrainingData.title}</h2>
+        <h2>{currentTrainingData.title}</h2>
         <div className="level-container">
-          <span className="level">{contextData.currentTrainingData.level}</span>
+          <span className="level">{currentTrainingData.level}</span>
         </div>
         {isUser && (
           <div className="progress">
             <ProgressBar progress={progressInPercent} />
             <p className="progress-text">
-              {`Your progress:   ${progressInPercent}% (${knownSentencesCount}/${contextData.currentTrainingData.sentencesCount})`}
+              {`Your progress:   ${progressInPercent}% (${knownSentencesCount}/${currentTrainingData.sentencesCount})`}
             </p>
           </div>
         )}
-        <p className="description">
-          {contextData.currentTrainingData.description}
-        </p>
+        <p className="description">{currentTrainingData.description}</p>
         <div className="buttons">
           {isOwner && (
             <Link to={"/editTraining"}>

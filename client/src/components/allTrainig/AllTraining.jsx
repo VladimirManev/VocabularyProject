@@ -1,12 +1,14 @@
 import "./AllTraining.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getAllTraining } from "../../services/units";
 import { Training } from "./training/Training";
 import { Link } from "react-router-dom";
 import { PrimaryButton } from "../buttons/PrimaryButton";
+import { Context } from "../../context/Context";
 
 export function AllTraining(props) {
   const [allTrainigData, setAllTrainingdata] = useState([]);
+  const { userData } = useContext(Context);
 
   useEffect(() => {
     const fetchFunction = async () => {
@@ -34,9 +36,11 @@ export function AllTraining(props) {
           </li>
         ))}
       </ul>
-      <Link to={"/createTraining"}>
-        <PrimaryButton text="Add new training" />
-      </Link>
+      {userData && (
+        <Link to={"/createTraining"}>
+          <PrimaryButton text="Add new training" />
+        </Link>
+      )}
     </div>
   );
 }
