@@ -56,19 +56,19 @@ export function TrainingDetails(props) {
     return (
       <div className="training-details-container">
         <h2>{contextData.currentTrainingData.title}</h2>
-
-        <span className="level">{contextData.currentTrainingData.level}</span>
+        <div className="level-container">
+          <span className="level">{contextData.currentTrainingData.level}</span>
+        </div>
         {isUser && (
           <div className="progress">
             <ProgressBar progress={progressInPercent} />
             <p className="progress-text">
-              Your progress: {progressInPercent}% {knownSentencesCount}/
-              {contextData.currentTrainingData.sentencesCount}
+              {`Your progress:   ${progressInPercent}% (${knownSentencesCount}/${contextData.currentTrainingData.sentencesCount})`}
             </p>
           </div>
         )}
         <p className="description">
-          Description:{contextData.currentTrainingData.description}
+          {contextData.currentTrainingData.description}
         </p>
         <div className="buttons">
           {isOwner && (

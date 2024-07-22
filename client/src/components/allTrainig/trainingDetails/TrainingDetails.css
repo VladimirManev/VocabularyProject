@@ -11,13 +11,19 @@
   margin: 8px;
 }
 
-.training-details-container .level {
-  font-size: 30px;
+.training-details-container .level-container {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0 10px rgb(66, 64, 64);
   border-radius: 100%;
-  display: inline-block;
-  padding: 10px;
-  margin: 10px 0 20px 0;
+  margin: 30px auto;
+}
+
+.training-details-container .level {
+  font-size: 30px;
 }
 
 .training-details-container .description {

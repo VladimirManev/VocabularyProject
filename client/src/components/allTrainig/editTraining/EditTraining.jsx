@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Context } from "../../../context/Context";
 import { useForm } from "../../../hooks/useForm";
 import { updateTraining } from "../../../services/units";
+import { PrimaryButton } from "../../buttons/PrimaryButton";
 
 export function EditTraining(props) {
   const navigate = useNavigate();
@@ -85,7 +86,8 @@ export function EditTraining(props) {
           placeholder="data"
           value={values.data}
         />
-        <input type="submit" className="btn" value="Edit" />
+        {/* <input type="submit" className="btn" value="Edit" /> */}
+        <PrimaryButton text={"Edit"} />
       </form>
     </div>
   );
