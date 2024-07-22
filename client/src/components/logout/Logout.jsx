@@ -13,11 +13,12 @@ export function Logout(props) {
       try {
         props.loading(true);
         await logout();
+      } catch (error) {
+        alert(error.message);
+      } finally {
         clearContextUserData();
         clearUserData();
         navigate("/");
-      } catch (error) {
-        alert(error.message);
       }
       props.loading(false);
     }

@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
 import "./Header.css";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
+import { User } from "../../icons/User";
 
 export function Header(props) {
   const { userData } = useContext(Context);
@@ -69,6 +70,11 @@ export function Header(props) {
             )}
           </ul>
         </nav>
+        {userData && (
+          <Link to={"/userPage"}>
+            <User />
+          </Link>
+        )}
       </header>
     </>
   );

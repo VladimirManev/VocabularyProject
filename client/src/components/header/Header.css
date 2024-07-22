@@ -18,6 +18,15 @@
   justify-content: space-around;
 }
 
+.header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
 .header .list-item {
   list-style-type: none;
 }

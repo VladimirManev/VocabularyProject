@@ -9,7 +9,7 @@ export const themenData = {
   moon: {
     name: "moon",
     color1: "rgb(53 53 53)",
-    color2: "rgb(234 234 234)",
+    color2: "rgb(129 121 121)",
     color3: "rgb(20, 163, 220)",
     color4: "rgba(0, 0, 255)",
   },

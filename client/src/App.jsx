@@ -15,6 +15,7 @@ import { TrainingDetails } from "./components/allTrainig/trainingDetails/Trainin
 import { CreateTraining } from "./components/allTrainig/createTraining/CreateTraining";
 import { getUserData } from "./services/util";
 import { EditTraining } from "./components/allTrainig/editTraining/EditTraining";
+import { UserPage } from "./components/userPage/UserPage";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -64,6 +65,7 @@ function App() {
           path="/editTraining"
           element={<EditTraining loading={loading} />}
         />
+        <Route path="/userPage" element={<UserPage loading={loading} />} />
       </Routes>
     </div>
   );
