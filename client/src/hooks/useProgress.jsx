@@ -4,7 +4,7 @@ import { Context } from "../context/Context";
 
 export function useProgress(trainingId, sentencesCount) {
   const [knownSentencesCount, setKnownSentencesCount] = useState(0);
-  const { userData } = useContext(Context);
+  const { userData, showMessage } = useContext(Context);
 
   useEffect(() => {
     try {
@@ -16,7 +16,7 @@ export function useProgress(trainingId, sentencesCount) {
         fetchFunction();
       }
     } catch (error) {
-      alert(error);
+      showMessage("Error", error.message);
     }
   }, []);
 

@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 export function UserPage(props) {
   const { userData } = useContext(Context);
-  console.log(userData);
 
   return (
     <div className="user-page-container">

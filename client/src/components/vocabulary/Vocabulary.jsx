@@ -1,6 +1,6 @@
 import "./Vocabulary.css";
 import { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   unknownSentencesSorter,
   getRandomElementFromArr,
@@ -12,12 +12,10 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Vocabulary(props) {
   const [unknownSentences, setUnknownSentences] = useState([]);
-  const [showCongratulationModal, setShowCongratulationModal] = useState(false);
-
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
-  const { userData, currentTrainingData } = useContext(Context);
+  const { userData, currentTrainingData, showMessage } = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -47,7 +45,7 @@ export function Vocabulary(props) {
           );
         }
       } catch (error) {
-        alert(error);
+        showMessage("Error", error.message);
       }
       props.loading(false);
     };
@@ -68,7 +66,8 @@ export function Vocabulary(props) {
   //sets the current sentence as learned
   async function iKnowItClickHandler(e) {
     if (unknownSentences.length === 1) {
-      setShowCongratulationModal(true);
+      showMessage("Congratulations! ", "You learned all the sentences!");
+      navigate(`/trainingDetails/${currentTrainingData._id}`);
     }
 
     try {
@@ -82,7 +81,7 @@ export function Vocabulary(props) {
         data.filter((x) => x._id !== currentSentence._id)
       );
     } catch (error) {
-      alert(error);
+      showMessage("Error", error.message);
     }
     setShowTranslation(false);
     props.loading(false);
@@ -117,16 +116,6 @@ export function Vocabulary(props) {
 
   return (
     <>
-      {showCongratulationModal && (
-        <div className="congratulation-modal">
-          <h2 className="congratulation-text">
-            Congratulations! You learned all the sentences!
-          </h2>
-          <Link to="/allTraining">
-            <PrimaryButton text="OK" />
-          </Link>
-        </div>
-      )}
       <div className="vocabulary-container">
         <div className="task-container">
           <p className="task">

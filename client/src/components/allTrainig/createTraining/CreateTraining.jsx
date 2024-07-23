@@ -8,7 +8,7 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 
 export function CreateTraining(props) {
   const navigate = useNavigate();
-  const { userData } = useContext(Context);
+  const { userData, showMessage } = useContext(Context);
 
   useEffect(() => {
     if (!userData) {
@@ -32,7 +32,7 @@ export function CreateTraining(props) {
       await createTraining(values);
       navigate("/allTraining");
     } catch (error) {
-      alert(error.message);
+      showMessage("Error", error.message);
     }
     props.loading(false);
   }

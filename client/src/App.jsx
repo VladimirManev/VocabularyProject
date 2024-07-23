@@ -16,10 +16,11 @@ import { CreateTraining } from "./components/allTrainig/createTraining/CreateTra
 import { getUserData } from "./services/util";
 import { EditTraining } from "./components/allTrainig/editTraining/EditTraining";
 import { UserPage } from "./components/userPage/UserPage";
+import { Message } from "./components/message/Message";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const { themeData, setContextUserData } = useContext(Context);
+  const { themeData, setContextUserData, message } = useContext(Context);
 
   useEffect(() => {
     const sessionStorageUserData = getUserData();
@@ -41,6 +42,7 @@ function App() {
       }}
     >
       {isLoading && <Spinner />}
+      {message && <Message />}
       <Header />
       <Routes>
         <Route path="/" element={<Welcome />} />

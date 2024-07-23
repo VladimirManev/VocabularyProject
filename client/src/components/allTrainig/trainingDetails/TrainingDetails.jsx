@@ -8,8 +8,12 @@ import { useProgress } from "../../../hooks/useProgress";
 import { ProgressBar } from "../../progressBar/ProgressBar";
 
 export function TrainingDetails(props) {
-  const { userData, currentTrainingData, setContextCurrentTrainingData } =
-    useContext(Context);
+  const {
+    userData,
+    currentTrainingData,
+    setContextCurrentTrainingData,
+    showMessage,
+  } = useContext(Context);
   const { currentTrainingId } = useParams();
   const { knownSentencesCount, progressInPercent } = useProgress(
     currentTrainingId,
@@ -34,7 +38,7 @@ export function TrainingDetails(props) {
           setContextCurrentTrainingData(fetchData);
         }
       } catch (error) {
-        alert(error.message);
+        showMessage("Error", error.message);
       }
       props.loading(false);
     };
@@ -46,7 +50,7 @@ export function TrainingDetails(props) {
       await deleteTraining(currentTrainingData._id);
       navigate("/allTraining");
     } catch (error) {
-      alert(error.message);
+      showMessage("Error", error.message);
     }
   }
 

@@ -8,7 +8,7 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Register(props) {
   const navigate = useNavigate();
-  const { setContextUserData } = useContext(Context);
+  const { setContextUserData, showMessage } = useContext(Context);
 
   const { values, changeHandler } = useForm({
     email: "",
@@ -29,7 +29,7 @@ export function Register(props) {
       props.loading(false);
     } catch (error) {
       props.loading(false);
-      alert(error.message);
+      showMessage("Error", error.message);
     }
   }
 

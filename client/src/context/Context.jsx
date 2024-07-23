@@ -6,6 +6,7 @@ export const Provider = ({ children }) => {
   const [userData, setUserData] = useState();
   const [themeData, setThemeData] = useState();
   const [currentTrainingData, setCurrentTrainingData] = useState();
+  const [message, setMessage] = useState();
 
   function setContextUserData(data) {
     setUserData({ ...data });
@@ -23,6 +24,14 @@ export const Provider = ({ children }) => {
     setCurrentTrainingData({ ...data });
   }
 
+  function showMessage(title, text) {
+    setMessage({ title, text });
+  }
+
+  function hideMessage() {
+    setMessage(undefined);
+  }
+
   return (
     <Context.Provider
       value={{
@@ -30,9 +39,12 @@ export const Provider = ({ children }) => {
         clearContextUserData,
         setContextThemeData,
         setContextCurrentTrainingData,
+        showMessage,
+        hideMessage,
         userData,
         themeData,
         currentTrainingData,
+        message,
       }}
     >
       {children}

@@ -5,16 +5,16 @@ import { logout } from "../../services/auth";
 import { clearUserData } from "../../services/util";
 
 export function Logout(props) {
-  const { clearContextUserData } = useContext(Context);
+  const { clearContextUserData, showMessage } = useContext(Context);
   const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchFunction() {
       try {
         props.loading(true);
-        await logout();
+        logout();
       } catch (error) {
-        alert(error.message);
+        showMessage("Error", error.message);
       } finally {
         clearContextUserData();
         clearUserData();

@@ -9,7 +9,7 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 export function Login(props) {
   const navigate = useNavigate();
   const { values, changeHandler } = useForm({ email: "", password: "" });
-  const { setContextUserData } = useContext(Context);
+  const { setContextUserData, showMessage } = useContext(Context);
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -22,7 +22,7 @@ export function Login(props) {
       props.loading(false);
     } catch (error) {
       props.loading(false);
-      alert(error.message);
+      showMessage("Error", error.message);
     }
   }
 

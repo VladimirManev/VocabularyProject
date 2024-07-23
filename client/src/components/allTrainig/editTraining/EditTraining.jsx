@@ -8,7 +8,7 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 
 export function EditTraining(props) {
   const navigate = useNavigate();
-  const { userData, currentTrainingData } = useContext(Context);
+  const { userData, currentTrainingData, showMessage } = useContext(Context);
 
   useEffect(() => {
     if (!userData) {
@@ -37,7 +37,7 @@ export function EditTraining(props) {
       await updateTraining(currentTrainingData._id, values);
       navigate(`/trainingDetails/${currentTrainingData._id}`);
     } catch (error) {
-      alert(error.message);
+      showMessage("Error", error.message);
     }
     props.loading(false);
   }
