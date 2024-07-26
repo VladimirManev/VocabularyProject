@@ -8,7 +8,7 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 
 export function Register(props) {
   const navigate = useNavigate();
-  const { setContextUserData, showMessage } = useContext(Context);
+  const { setContextUserData, showNotification } = useContext(Context);
 
   const { values, changeHandler } = useForm({
     email: "",
@@ -20,6 +20,17 @@ export function Register(props) {
     e.preventDefault();
 
     try {
+      if (
+        values.email === "" ||
+        values.password === "" ||
+        values.repass === ""
+      ) {
+        throw new Error("Please fill out all required fields.");
+      }
+
+      if (values.password !== values.repass) {
+        throw new Error("Passwords do not match. Please try again.");
+      }
       props.loading(true);
       const user = await register(values.email, values.password);
 
@@ -29,7 +40,7 @@ export function Register(props) {
       props.loading(false);
     } catch (error) {
       props.loading(false);
-      showMessage("Error", error.message);
+      showNotification("Error", error.message);
     }
   }
 

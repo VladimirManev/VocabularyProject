@@ -8,7 +8,7 @@ import { Context } from "../../context/Context";
 
 export function AllTraining(props) {
   const [allTrainigData, setAllTrainingdata] = useState([]);
-  const { userData, showMessage } = useContext(Context);
+  const { userData, showNotification } = useContext(Context);
 
   useEffect(() => {
     const fetchFunction = async () => {
@@ -19,7 +19,7 @@ export function AllTraining(props) {
           setAllTrainingdata(fetchedData);
         }
       } catch (error) {
-        showMessage("Error", error.message);
+        showNotification("Error", error.message);
       }
       props.loading(false);
     };

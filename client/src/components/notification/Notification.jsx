@@ -1,20 +1,20 @@
 import { useContext } from "react";
 import { PrimaryButton } from "../buttons/PrimaryButton";
-import "./Message.css";
+import "./Notification.css";
 import { Context } from "../../context/Context";
 
-export function Message() {
-  const { hideMessage, message } = useContext(Context);
+export function Notification() {
+  const { hideNotification, notification } = useContext(Context);
   function okBtnClickHandler() {
-    hideMessage();
+    hideNotification();
   }
 
   return (
     <>
-      <div className="message-container">
+      <div className="notification-container">
         <div className="text-container">
-          <h3>{message?.title}</h3>
-          <p className="text">{message?.text}</p>
+          <h3>{notification?.title}</h3>
+          <p className="text">{notification?.text}</p>
         </div>
         <PrimaryButton onClick={okBtnClickHandler} text={"OK"} />
       </div>

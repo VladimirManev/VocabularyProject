@@ -9,11 +9,16 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 export function Login(props) {
   const navigate = useNavigate();
   const { values, changeHandler } = useForm({ email: "", password: "" });
-  const { setContextUserData, showMessage } = useContext(Context);
+  const { setContextUserData, showNotification } = useContext(Context);
 
   async function onSubmit(e) {
     e.preventDefault();
+
+    //validation
     try {
+      if (values.email === "" || values.password === "") {
+        throw new Error("Please fill out all required fields.");
+      }
       props.loading(true);
       const user = await login(values.email, values.password);
 
@@ -22,7 +27,7 @@ export function Login(props) {
       props.loading(false);
     } catch (error) {
       props.loading(false);
-      showMessage("Error", error.message);
+      showNotification("Error", error.message);
     }
   }
 

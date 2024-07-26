@@ -8,7 +8,7 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 
 export function CreateTraining(props) {
   const navigate = useNavigate();
-  const { userData, showMessage } = useContext(Context);
+  const { userData, showNotification } = useContext(Context);
 
   useEffect(() => {
     if (!userData) {
@@ -28,11 +28,21 @@ export function CreateTraining(props) {
     e.preventDefault();
 
     try {
+      if (
+        values.title === "" ||
+        values.level === "" ||
+        values.description === "" ||
+        values.sentencesCount === "" ||
+        values.data === ""
+      ) {
+        throw new Error("Please fill out all required fields.");
+      }
+      props.loading(true);
       props.loading(true);
       await createTraining(values);
       navigate("/allTraining");
     } catch (error) {
-      showMessage("Error", error.message);
+      showNotification("Error", error.message);
     }
     props.loading(false);
   }

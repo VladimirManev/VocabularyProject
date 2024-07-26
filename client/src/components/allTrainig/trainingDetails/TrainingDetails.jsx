@@ -12,7 +12,7 @@ export function TrainingDetails(props) {
     userData,
     currentTrainingData,
     setContextCurrentTrainingData,
-    showMessage,
+    showNotification,
   } = useContext(Context);
   const { currentTrainingId } = useParams();
   const { knownSentencesCount, progressInPercent } = useProgress(
@@ -38,7 +38,7 @@ export function TrainingDetails(props) {
           setContextCurrentTrainingData(fetchData);
         }
       } catch (error) {
-        showMessage("Error", error.message);
+        showNotification("Error", error.message);
       }
       props.loading(false);
     };
@@ -50,7 +50,7 @@ export function TrainingDetails(props) {
       await deleteTraining(currentTrainingData._id);
       navigate("/allTraining");
     } catch (error) {
-      showMessage("Error", error.message);
+      showNotification("Error", error.message);
     }
   }
 

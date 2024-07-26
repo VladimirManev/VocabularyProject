@@ -16,11 +16,11 @@ import { CreateTraining } from "./components/allTrainig/createTraining/CreateTra
 import { getUserData } from "./services/util";
 import { EditTraining } from "./components/allTrainig/editTraining/EditTraining";
 import { UserPage } from "./components/userPage/UserPage";
-import { Message } from "./components/message/Message";
+import { Notification } from "./components/notification/Notification";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const { themeData, setContextUserData, message } = useContext(Context);
+  const { themeData, setContextUserData, notification } = useContext(Context);
 
   useEffect(() => {
     const sessionStorageUserData = getUserData();
@@ -42,7 +42,7 @@ function App() {
       }}
     >
       {isLoading && <Spinner />}
-      {message && <Message />}
+      {notification && <Notification />}
       <Header />
       <Routes>
         <Route path="/" element={<Welcome />} />

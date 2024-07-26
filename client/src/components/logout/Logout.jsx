@@ -5,7 +5,7 @@ import { logout } from "../../services/auth";
 import { clearUserData } from "../../services/util";
 
 export function Logout(props) {
-  const { clearContextUserData, showMessage } = useContext(Context);
+  const { clearContextUserData, showNotification } = useContext(Context);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export function Logout(props) {
         props.loading(true);
         logout();
       } catch (error) {
-        showMessage("Error", error.message);
+        showNotification("Error", error.message);
       } finally {
         clearContextUserData();
         clearUserData();

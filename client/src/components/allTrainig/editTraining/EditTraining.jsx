@@ -8,7 +8,8 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 
 export function EditTraining(props) {
   const navigate = useNavigate();
-  const { userData, currentTrainingData, showMessage } = useContext(Context);
+  const { userData, currentTrainingData, showNotification } =
+    useContext(Context);
 
   useEffect(() => {
     if (!userData) {
@@ -33,11 +34,20 @@ export function EditTraining(props) {
     e.preventDefault();
 
     try {
+      if (
+        values.title === "" ||
+        values.level === "" ||
+        values.description === "" ||
+        values.sentencesCount === "" ||
+        values.data === ""
+      ) {
+        throw new Error("Please fill out all required fields.");
+      }
       props.loading(true);
       await updateTraining(currentTrainingData._id, values);
       navigate(`/trainingDetails/${currentTrainingData._id}`);
     } catch (error) {
-      showMessage("Error", error.message);
+      showNotification("Error", error.message);
     }
     props.loading(false);
   }
@@ -86,7 +96,7 @@ export function EditTraining(props) {
           placeholder="data"
           value={values.data}
         />
-        {/* <input type="submit" className="btn" value="Edit" /> */}
+        <input type="submit" className="btn" value="Edit" />
         <PrimaryButton text={"Edit"} />
       </form>
     </div>

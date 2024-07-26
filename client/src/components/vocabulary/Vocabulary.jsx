@@ -15,7 +15,8 @@ export function Vocabulary(props) {
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
-  const { userData, currentTrainingData, showMessage } = useContext(Context);
+  const { userData, currentTrainingData, showNotification } =
+    useContext(Context);
 
   const navigate = useNavigate();
 
@@ -45,7 +46,7 @@ export function Vocabulary(props) {
           );
         }
       } catch (error) {
-        showMessage("Error", error.message);
+        showNotification("Error", error.message);
       }
       props.loading(false);
     };
@@ -66,7 +67,7 @@ export function Vocabulary(props) {
   //sets the current sentence as learned
   async function iKnowItClickHandler(e) {
     if (unknownSentences.length === 1) {
-      showMessage("Congratulations! ", "You learned all the sentences!");
+      showNotification("Congratulations! ", "You learned all the sentences!");
       navigate(`/trainingDetails/${currentTrainingData._id}`);
     }
 
@@ -81,7 +82,7 @@ export function Vocabulary(props) {
         data.filter((x) => x._id !== currentSentence._id)
       );
     } catch (error) {
-      showMessage("Error", error.message);
+      showNotification("Error", error.message);
     }
     setShowTranslation(false);
     props.loading(false);

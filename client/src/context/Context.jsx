@@ -6,7 +6,7 @@ export const Provider = ({ children }) => {
   const [userData, setUserData] = useState();
   const [themeData, setThemeData] = useState();
   const [currentTrainingData, setCurrentTrainingData] = useState();
-  const [message, setMessage] = useState();
+  const [notification, setnotification] = useState();
 
   function setContextUserData(data) {
     setUserData({ ...data });
@@ -24,12 +24,12 @@ export const Provider = ({ children }) => {
     setCurrentTrainingData({ ...data });
   }
 
-  function showMessage(title, text) {
-    setMessage({ title, text });
+  function showNotification(title, text) {
+    setnotification({ title, text });
   }
 
-  function hideMessage() {
-    setMessage(undefined);
+  function hideNotification() {
+    setnotification(undefined);
   }
 
   return (
@@ -39,12 +39,12 @@ export const Provider = ({ children }) => {
         clearContextUserData,
         setContextThemeData,
         setContextCurrentTrainingData,
-        showMessage,
-        hideMessage,
+        showNotification,
+        hideNotification,
         userData,
         themeData,
         currentTrainingData,
-        message,
+        notification,
       }}
     >
       {children}
