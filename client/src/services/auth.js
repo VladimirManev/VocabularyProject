@@ -1,4 +1,4 @@
-import { clearUserData, setUserData } from "./util.js";
+import { setUserData } from "./util.js";
 import { get, post } from "./api.js";
 
 const endpoints = {

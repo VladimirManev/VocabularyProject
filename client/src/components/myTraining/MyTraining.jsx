@@ -35,11 +35,6 @@ export function MyTraining(props) {
           </li>
         ))}
       </ul>
-      {userData && (
-        <Link to={"/createTraining"}>
-          <PrimaryButton text="Add new training" />
-        </Link>
-      )}
     </div>
   );
 }
