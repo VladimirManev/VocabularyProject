@@ -115,64 +115,72 @@ export function Vocabulary(props) {
   return (
     <>
       <div className="vocabulary-container">
-        <div className="task-container">
-          <div className="language-info-container">
-            <p className="laguage-info-text">{translateMode.sourceLanguage}</p>
-            <div
-              className="language-info-flag"
-              style={{
-                backgroundImage: `url(./src/components/vocabulary/img/${translateMode.sourceLanguage}.png)`,
-              }}
-            ></div>
-          </div>
-          <p className="task">
-            {currentSentence[translateMode.sourceLanguage]}
-          </p>
-        </div>
-        <div className="solution-container" onClick={translateClickHandler1}>
-          <div className="language-info-container">
-            <p className="laguage-info-text">
-              {translateMode.translationLanguage1}
-            </p>
-            <div
-              className="language-info-flag"
-              style={{
-                backgroundImage: `url(./src/components/vocabulary/img/${translateMode.translationLanguage1}.png)`,
-              }}
-            ></div>
-          </div>
-
-          {showTranslation1 ? (
-            <p className="solution">
-              {currentSentence[translateMode.translationLanguage1]}
-            </p>
-          ) : (
-            <p className="click-to-translate">Click to translate!</p>
-          )}
-        </div>
-        {translateMode.translationLanguage2 && (
-          <div className="solution-container" onClick={translateClickHandler2}>
+        <div className="task-salution-container">
+          <div className="task-container">
             <div className="language-info-container">
               <p className="laguage-info-text">
-                {translateMode.translationLanguage2}
+                {translateMode.sourceLanguage}
               </p>
               <div
                 className="language-info-flag"
                 style={{
-                  backgroundImage: `url(./src/components/vocabulary/img/${translateMode.translationLanguage2}.png)`,
+                  backgroundImage: `url(./src/components/vocabulary/img/${translateMode.sourceLanguage}.png)`,
+                }}
+              ></div>
+            </div>
+            <p className="task">
+              {currentSentence[translateMode.sourceLanguage]}
+            </p>
+          </div>
+          <div className="solution-container" onClick={translateClickHandler1}>
+            <div className="language-info-container">
+              <p className="laguage-info-text">
+                {translateMode.translationLanguage1}
+              </p>
+              <div
+                className="language-info-flag"
+                style={{
+                  backgroundImage: `url(./src/components/vocabulary/img/${translateMode.translationLanguage1}.png)`,
                 }}
               ></div>
             </div>
 
-            {showTranslation2 ? (
+            {showTranslation1 ? (
               <p className="solution">
-                {currentSentence[translateMode.translationLanguage2]}
+                {currentSentence[translateMode.translationLanguage1]}
               </p>
             ) : (
               <p className="click-to-translate">Click to translate!</p>
             )}
           </div>
-        )}
+          {translateMode.translationLanguage2 && (
+            <div
+              className="solution-container"
+              onClick={translateClickHandler2}
+            >
+              <div className="language-info-container">
+                <p className="laguage-info-text">
+                  {translateMode.translationLanguage2}
+                </p>
+                <div
+                  className="language-info-flag"
+                  style={{
+                    backgroundImage: `url(./src/components/vocabulary/img/${translateMode.translationLanguage2}.png)`,
+                  }}
+                ></div>
+              </div>
+
+              {showTranslation2 ? (
+                <p className="solution">
+                  {currentSentence[translateMode.translationLanguage2]}
+                </p>
+              ) : (
+                <p className="click-to-translate">Click to translate!</p>
+              )}
+            </div>
+          )}
+        </div>
+
         <div className="btn-container">
           <PrimaryButton
             className="test"
