@@ -9,6 +9,7 @@ import { getKnownSentences, iKnowItUnit } from "../../services/units";
 import { Context } from "../../context/Context";
 
 import { PrimaryButton } from "../buttons/PrimaryButton";
+import { TranslateModeContext } from "../../context/TranslateModeContext";
 
 export function Vocabulary(props) {
   const [unknownSentences, setUnknownSentences] = useState([]);
@@ -17,17 +18,9 @@ export function Vocabulary(props) {
   const [showTranslation, setShowTranslation] = useState(false);
   const { userData, currentTrainingData, showNotification } =
     useContext(Context);
+  const { translateMode } = useContext(TranslateModeContext);
 
   const navigate = useNavigate();
-
-  //temporary hardcored. It will be set in context
-  const translateMode = {
-    sourceLanguage: "bg",
-    traslationLanguage: "en",
-  };
-
-  //set abbreviation for backend
-  const abbreviationTranslateMode = `${translateMode.sourceLanguage}_${translateMode.traslationLanguage}`;
 
   useEffect(() => {
     // get all known sentences and set all unknown sentences
@@ -36,8 +29,7 @@ export function Vocabulary(props) {
         props.loading(true);
         const knownSentences = await getKnownSentences(
           userData._id,
-          currentTrainingData._id,
-          abbreviationTranslateMode
+          currentTrainingData._id
         );
 
         if (knownSentences) {
@@ -73,11 +65,7 @@ export function Vocabulary(props) {
 
     try {
       props.loading(true);
-      await iKnowItUnit(
-        currentSentence._id,
-        currentTrainingData._id,
-        abbreviationTranslateMode
-      );
+      await iKnowItUnit(currentSentence._id, currentTrainingData._id);
       setUnknownSentences((data) =>
         data.filter((x) => x._id !== currentSentence._id)
       );
@@ -119,14 +107,35 @@ export function Vocabulary(props) {
     <>
       <div className="vocabulary-container">
         <div className="task-container">
+          <div className="language-info-container">
+            <p className="laguage-info-text">{translateMode.sourceLanguage}</p>
+            <div
+              className="language-info-flag"
+              style={{
+                backgroundImage: `url(./src/components/vocabulary/img/${translateMode.sourceLanguage}.png)`,
+              }}
+            ></div>
+          </div>
           <p className="task">
             {currentSentence[translateMode.sourceLanguage]}
           </p>
         </div>
         <div className="solution-container" onClick={translateClickHandler}>
+          <div className="language-info-container">
+            <p className="laguage-info-text">
+              {translateMode.translationLanguage1}
+            </p>
+            <div
+              className="language-info-flag"
+              style={{
+                backgroundImage: `url(./src/components/vocabulary/img/${translateMode.translationLanguage1}.png)`,
+              }}
+            ></div>
+          </div>
+
           {showTranslation ? (
             <p className="solution">
-              {currentSentence[translateMode.traslationLanguage]}
+              {currentSentence[translateMode.translationLanguage1]}
             </p>
           ) : (
             <p className="click-to-translate">Click to translate!</p>

@@ -1,4 +1,4 @@
-prev btn
+route guards
 
 flags in fields
 
@@ -8,8 +8,13 @@ search
 
 my training
 
-favorite
+profile icon
 
+language
+
+reset training
+
+add default user in readme
 
 {
     "1kkyrnha-81f1-47e5-aec3-afff9810efe2": {

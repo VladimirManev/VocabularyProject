@@ -35,10 +35,10 @@ export async function updateTraining(id, data) {
 }
 
 //get all known sentences for current user
-export async function getKnownSentences(_ownerId, trainingId, translateMode) {
+export async function getKnownSentences(_ownerId, trainingId) {
   return get(
     endpoints.learnedSentences +
-      `?where=_ownerId%3D%22${_ownerId}%22%20AND%20translateMode%3D%22${translateMode}%22%20AND%20trainingId%3D%22${trainingId}%22`
+      `?where=_ownerId%3D%22${_ownerId}%22%20AND%20trainingId%3D%22${trainingId}%22`
   );
 }
 
@@ -51,11 +51,10 @@ export async function getKnownSentencesCount(_ownerId, trainingId) {
 }
 
 //set unknown sentence to known sentence
-export async function iKnowItUnit(sentenceId, trainingId, translateMode) {
+export async function iKnowItUnit(sentenceId, trainingId) {
   return post(endpoints.learnedSentences, {
     sentenceId,
     trainingId,
-    translateMode,
   });
 }
 export async function getAllUnits() {

@@ -4,12 +4,15 @@ import App from "./App.jsx";
 import "./index.css";
 import { Provider } from "./context/Context";
 import { BrowserRouter } from "react-router-dom";
+import { TranslateModeProvider } from "./context/TranslateModeContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Provider>
-        <App />
+        <TranslateModeProvider>
+          <App />
+        </TranslateModeProvider>
       </Provider>
     </BrowserRouter>
   </StrictMode>

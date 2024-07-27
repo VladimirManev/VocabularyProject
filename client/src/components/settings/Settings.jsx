@@ -1,5 +1,6 @@
 import "./Settings.css";
 import { Themen } from "./themen/Themen";
+import { TranslateMode } from "./translateMode/TranslateMode";
 
 export function Settings(props) {
   return (
@@ -8,6 +9,9 @@ export function Settings(props) {
       <ul className="list">
         <li className="list-item">
           <Themen />
+        </li>
+        <li className="list-item">
+          <TranslateMode />
         </li>
       </ul>
     </div>
