@@ -17,6 +17,7 @@ import { getUserData } from "./services/util";
 import { EditTraining } from "./components/allTrainig/editTraining/EditTraining";
 import { UserPage } from "./components/userPage/UserPage";
 import { Notification } from "./components/notification/Notification";
+import { MyTraining } from "./components/myTraining/MyTraining";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -54,6 +55,7 @@ function App() {
           path="/allTraining"
           element={<AllTraining loading={loading} />}
         />
+        <Route path="/myTraining" element={<MyTraining loading={loading} />} />
         <Route path="/logout" element={<Logout loading={loading} />} />
         <Route
           path="/trainingDetails/:currentTrainingId"

@@ -96,7 +96,6 @@ export function EditTraining(props) {
           placeholder="data"
           value={values.data}
         />
-        <input type="submit" className="btn" value="Edit" />
         <PrimaryButton text={"Edit"} />
       </form>
     </div>

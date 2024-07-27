@@ -1,20 +1,22 @@
 route guards
 
-flags in fields
+x flags in fields
 
-progress review
+x progress review
 
 search
 
 my training
 
-profile icon
+x profile icon
 
 language
 
 reset training
 
 add default user in readme
+
+move create new training in user page
 
 {
     "1kkyrnha-81f1-47e5-aec3-afff9810efe2": {

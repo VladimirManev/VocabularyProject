@@ -14,6 +14,11 @@ export async function getAllTraining() {
   return get(endpoints.allTraining);
 }
 
+//get my training
+export async function getMyTraining(_ownerId) {
+  return get(endpoints.allTraining + `&where=_ownerId%3D%22${_ownerId}%22`);
+}
+
 //get a training
 export async function getCurrentTraining(trainingId) {
   return get(endpoints.currentTraining + trainingId);
