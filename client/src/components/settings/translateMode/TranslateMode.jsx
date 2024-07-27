@@ -3,7 +3,8 @@ import "./TranslateMode.css";
 import { useContext } from "react";
 
 export function TranslateMode() {
-  const { translateMode, setTranslateMode } = useContext(TranslateModeContext);
+  const { translateModeJSON, setTranslateMode } =
+    useContext(TranslateModeContext);
 
   function translateModeChangeHandler(e) {
     setTranslateMode(e.target.value);
@@ -15,7 +16,7 @@ export function TranslateMode() {
       <select
         className="select-item"
         onChange={translateModeChangeHandler}
-        value={JSON.stringify(translateMode)}
+        value={translateModeJSON}
         name=""
         id=""
       >

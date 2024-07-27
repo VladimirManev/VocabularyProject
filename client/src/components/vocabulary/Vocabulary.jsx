@@ -15,10 +15,13 @@ export function Vocabulary(props) {
   const [unknownSentences, setUnknownSentences] = useState([]);
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
-  const [showTranslation, setShowTranslation] = useState(false);
+  const [showTranslation1, setShowTranslation1] = useState(false);
+  const [showTranslation2, setShowTranslation2] = useState(false);
+
   const { userData, currentTrainingData, showNotification } =
     useContext(Context);
-  const { translateMode } = useContext(TranslateModeContext);
+  const { translateModeJSON } = useContext(TranslateModeContext);
+  const translateMode = JSON.parse(translateModeJSON);
 
   const navigate = useNavigate();
 
@@ -72,17 +75,23 @@ export function Vocabulary(props) {
     } catch (error) {
       showNotification("Error", error.message);
     }
-    setShowTranslation(false);
+    setShowTranslation1(false);
+    setShowTranslation2(false);
     props.loading(false);
   }
 
   function nextClickHandler(e) {
-    setShowTranslation(false);
+    setShowTranslation1(false);
+    setShowTranslation2(false);
     currentSentenceSetter();
   }
 
-  function translateClickHandler() {
-    setShowTranslation(true);
+  function translateClickHandler1() {
+    setShowTranslation1(true);
+  }
+
+  function translateClickHandler2() {
+    setShowTranslation2(true);
   }
 
   //check if there are unknown sentences and set currentSentence
@@ -120,7 +129,7 @@ export function Vocabulary(props) {
             {currentSentence[translateMode.sourceLanguage]}
           </p>
         </div>
-        <div className="solution-container" onClick={translateClickHandler}>
+        <div className="solution-container" onClick={translateClickHandler1}>
           <div className="language-info-container">
             <p className="laguage-info-text">
               {translateMode.translationLanguage1}
@@ -133,7 +142,7 @@ export function Vocabulary(props) {
             ></div>
           </div>
 
-          {showTranslation ? (
+          {showTranslation1 ? (
             <p className="solution">
               {currentSentence[translateMode.translationLanguage1]}
             </p>
@@ -141,6 +150,29 @@ export function Vocabulary(props) {
             <p className="click-to-translate">Click to translate!</p>
           )}
         </div>
+        {translateMode.translationLanguage2 && (
+          <div className="solution-container" onClick={translateClickHandler2}>
+            <div className="language-info-container">
+              <p className="laguage-info-text">
+                {translateMode.translationLanguage2}
+              </p>
+              <div
+                className="language-info-flag"
+                style={{
+                  backgroundImage: `url(./src/components/vocabulary/img/${translateMode.translationLanguage2}.png)`,
+                }}
+              ></div>
+            </div>
+
+            {showTranslation2 ? (
+              <p className="solution">
+                {currentSentence[translateMode.translationLanguage2]}
+              </p>
+            ) : (
+              <p className="click-to-translate">Click to translate!</p>
+            )}
+          </div>
+        )}
         <div className="btn-container">
           <PrimaryButton
             className="test"
