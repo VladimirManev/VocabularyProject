@@ -2,8 +2,6 @@ import "./AllTraining.css";
 import { useContext, useEffect, useState } from "react";
 import { getAllTraining } from "../../services/units";
 import { Training } from "./training/Training";
-import { Link } from "react-router-dom";
-import { PrimaryButton } from "../buttons/PrimaryButton";
 import { Context } from "../../context/Context";
 
 export function AllTraining(props) {
@@ -29,13 +27,18 @@ export function AllTraining(props) {
   return (
     <div className="allTraining-container">
       <h1>All Training</h1>
-      <ul className="list">
-        {allTrainigData.map((x) => (
-          <li className="list-item" key={x._id}>
-            <Training data={x} loading={props.loading} />
-          </li>
-        ))}
-      </ul>
+      {allTrainigData.length === 0 && (
+        <p className="no-training">There are no training!</p>
+      )}
+      {allTrainigData.length !== 0 && (
+        <ul className="list">
+          {allTrainigData.map((x) => (
+            <li className="list-item" key={x._id}>
+              <Training data={x} loading={props.loading} />
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

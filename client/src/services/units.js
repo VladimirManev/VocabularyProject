@@ -62,6 +62,15 @@ export async function iKnowItUnit(sentenceId, trainingId) {
     trainingId,
   });
 }
+
+//get active training for current user
+export async function getActiveTraining(_ownerId) {
+  return get(
+    endpoints.learnedSentences +
+      `?where=_ownerId%3D%22${_ownerId}%22&distinct=trainingId&select=trainingId`
+  );
+}
+
 export async function getAllUnits() {
   return get(endpoints.catalog);
 }

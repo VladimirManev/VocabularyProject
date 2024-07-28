@@ -28,13 +28,18 @@ export function MyTraining(props) {
   return (
     <div className="allTraining-container">
       <h1>My Training</h1>
-      <ul className="list">
-        {myTrainigData.map((x) => (
-          <li className="list-item" key={x._id}>
-            <Training data={x} loading={props.loading} />
-          </li>
-        ))}
-      </ul>
+      {myTrainigData.length === 0 && (
+        <p className="no-training">You don't have any training yet</p>
+      )}
+      {myTrainigData.length !== 0 && (
+        <ul className="list">
+          {myTrainigData.map((x) => (
+            <li className="list-item" key={x._id}>
+              <Training data={x} loading={props.loading} />
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

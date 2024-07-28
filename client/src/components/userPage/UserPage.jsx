@@ -15,9 +15,13 @@ export function UserPage(props) {
         <p className="email">{userData?.email}</p>
       </div>
       <div className="buttons">
+        <Link to={"/createTraining"}>
+          <PrimaryButton text={"Add new training"} />
+        </Link>
         <Link to={"/myTraining"}>
           <PrimaryButton text={"My training"} />
         </Link>
+        <Link to={"/activeTraining"}>
           <PrimaryButton text={" Active training "} />
         </Link>
         <Link to={"/logout"}>

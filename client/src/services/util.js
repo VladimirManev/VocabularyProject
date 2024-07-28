@@ -30,6 +30,15 @@ export function unknownSentencesSorter(allSentances, knownSentences) {
   return [];
 }
 
+export function activeTrainingSorter(allTraining, activeTrainingIds) {
+  if (allTraining.length !== 0) {
+    return allTraining.filter((x) =>
+      activeTrainingIds.some((y) => y.trainingId === x._id)
+    );
+  }
+  return [];
+}
+
 export function getRandomElementFromArr(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
