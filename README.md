@@ -7,7 +7,7 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contact](#contact)
+- [Contacts](#contacts)
 
 ## Features
 
@@ -36,7 +36,7 @@ To install and run the project locally:
 
    `npm run dev`
 
-5. Open your browser and navigate to http://localhost:5173 to access the application.
+5. Open your browser and navigate to http://localhost:5173 to access the application. For testing purposes, you can either register a new account or use the test accounts peter@abv.bg and george@abv.bg with password 123456.
 
 ## Usage
 
