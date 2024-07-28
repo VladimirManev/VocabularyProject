@@ -1,22 +1,21 @@
-route guards
+[x] flags in fields
+[x] progress review
+[x] my training
+[x] profile icon
+[x] add default user in readme
+[x] move create new training in user page
+[x] language
+[ ] search
+[ ] reset training
+[ ] route guards
+[ ] persist colection
 
-x flags in fields
 
-x progress review
 
-search
 
-my training
 
-x profile icon
 
-language
 
-reset training
-
-add default user in readme
-
-move create new training in user page
 
 {
     "1kkyrnha-81f1-47e5-aec3-afff9810efe2": {

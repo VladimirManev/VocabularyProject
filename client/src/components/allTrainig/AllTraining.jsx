@@ -3,10 +3,12 @@ import { useContext, useEffect, useState } from "react";
 import { getAllTraining } from "../../services/units";
 import { Training } from "./training/Training";
 import { Context } from "../../context/Context";
+import { LanguageContext } from "../../context/LanguageContext";
 
 export function AllTraining(props) {
+  const { STR } = useContext(LanguageContext);
   const [allTrainigData, setAllTrainingdata] = useState([]);
-  const { userData, showNotification } = useContext(Context);
+  const { showNotification } = useContext(Context);
 
   useEffect(() => {
     const fetchFunction = async () => {
@@ -26,9 +28,9 @@ export function AllTraining(props) {
 
   return (
     <div className="allTraining-container">
-      <h1>All Training</h1>
+      <h1>{STR.str19}</h1>
       {allTrainigData.length === 0 && (
-        <p className="no-training">There are no training!</p>
+        <p className="no-training">{STR.str20}</p>
       )}
       {allTrainigData.length !== 0 && (
         <ul className="list">

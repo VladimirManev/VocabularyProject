@@ -6,8 +6,10 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { useProgress } from "../../../hooks/useProgress";
 import { ProgressBar } from "../../progressBar/ProgressBar";
+import { LanguageContext } from "../../../context/LanguageContext";
 
 export function TrainingDetails(props) {
+  const { STR } = useContext(LanguageContext);
   const {
     userData,
     currentTrainingData,
@@ -65,7 +67,7 @@ export function TrainingDetails(props) {
           <div className="progress">
             <ProgressBar progress={progressInPercent} />
             <p className="progress-text">
-              {`Your progress:   ${progressInPercent}% (${knownSentencesCount}/${currentTrainingData.sentencesCount})`}
+              {`${STR.str15}   ${progressInPercent}% (${knownSentencesCount}/${currentTrainingData.sentencesCount})`}
             </p>
           </div>
         )}
@@ -73,16 +75,16 @@ export function TrainingDetails(props) {
         <div className="buttons">
           {isOwner && (
             <Link to={"/editTraining"}>
-              <PrimaryButton text="Edit" />
+              <PrimaryButton text={STR.str16} />
             </Link>
           )}
           {isOwner && (
-            <PrimaryButton text="Delete" onClick={deleteClickHandler} />
+            <PrimaryButton text={STR.str17} onClick={deleteClickHandler} />
           )}
 
           {isUser && progressInPercent < 100 && (
             <Link to={"/vocabulary"}>
-              <PrimaryButton text="Training" />
+              <PrimaryButton text={STR.str18} />
             </Link>
           )}
         </div>

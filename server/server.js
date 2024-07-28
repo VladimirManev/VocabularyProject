@@ -1446,302 +1446,6 @@
     sessions: {},
   };
   var seedData = {
-    recipes: {
-      "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Easy Lasagna",
-        img: "assets/lasagna.jpg",
-        ingredients: [
-          "1 tbsp Ingredient 1",
-          "2 cups Ingredient 2",
-          "500 g  Ingredient 3",
-          "25 g Ingredient 4",
-        ],
-        steps: ["Prepare ingredients", "Mix ingredients", "Cook until done"],
-        _createdOn: 1613551279012,
-      },
-      "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Grilled Duck Fillet",
-        img: "assets/roast.jpg",
-        ingredients: [
-          "500 g  Ingredient 1",
-          "3 tbsp Ingredient 2",
-          "2 cups Ingredient 3",
-        ],
-        steps: ["Prepare ingredients", "Mix ingredients", "Cook until done"],
-        _createdOn: 1613551344360,
-      },
-      "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Roast Trout",
-        img: "assets/fish.jpg",
-        ingredients: [
-          "4 cups Ingredient 1",
-          "1 tbsp Ingredient 2",
-          "1 tbsp Ingredient 3",
-          "750 g  Ingredient 4",
-          "25 g Ingredient 5",
-        ],
-        steps: ["Prepare ingredients", "Mix ingredients", "Cook until done"],
-        _createdOn: 1613551388703,
-      },
-    },
-    comments: {
-      "0a272c58-b7ea-4e09-a000-7ec988248f66": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        content: "Great recipe!",
-        recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-        _createdOn: 1614260681375,
-        _id: "0a272c58-b7ea-4e09-a000-7ec988248f66",
-      },
-    },
-    records: {
-      i01: {
-        name: "John1",
-        val: 1,
-        _createdOn: 1613551388703,
-      },
-      i02: {
-        name: "John2",
-        val: 1,
-        _createdOn: 1613551388713,
-      },
-      i03: {
-        name: "John3",
-        val: 2,
-        _createdOn: 1613551388723,
-      },
-      i04: {
-        name: "John4",
-        val: 2,
-        _createdOn: 1613551388733,
-      },
-      i05: {
-        name: "John5",
-        val: 2,
-        _createdOn: 1613551388743,
-      },
-      i06: {
-        name: "John6",
-        val: 3,
-        _createdOn: 1613551388753,
-      },
-      i07: {
-        name: "John7",
-        val: 3,
-        _createdOn: 1613551388763,
-      },
-      i08: {
-        name: "John8",
-        val: 2,
-        _createdOn: 1613551388773,
-      },
-      i09: {
-        name: "John9",
-        val: 3,
-        _createdOn: 1613551388783,
-      },
-      i10: {
-        name: "John10",
-        val: 1,
-        _createdOn: 1613551388793,
-      },
-    },
-    catches: {
-      "07f260f4-466c-4607-9a33-f7273b24f1b4": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        angler: "Paulo Admorim",
-        weight: 636,
-        species: "Atlantic Blue Marlin",
-        location: "Vitoria, Brazil",
-        bait: "trolled pink",
-        captureTime: 80,
-        _createdOn: 1614760714812,
-        _id: "07f260f4-466c-4607-9a33-f7273b24f1b4",
-      },
-      "bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        angler: "John Does",
-        weight: 554,
-        species: "Atlantic Blue Marlin",
-        location: "Buenos Aires, Argentina",
-        bait: "trolled pink",
-        captureTime: 120,
-        _createdOn: 1614760782277,
-        _id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d",
-      },
-    },
-    furniture: {},
-    orders: {},
-    movies: {
-      "1240549d-f0e0-497e-ab99-eb8f703713d7": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Black Widow",
-        description:
-          "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-        img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-        _createdOn: 1614935055353,
-        _id: "1240549d-f0e0-497e-ab99-eb8f703713d7",
-      },
-      "143e5265-333e-4150-80e4-16b61de31aa0": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Wonder Woman 1984",
-        description:
-          "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-        img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-        _createdOn: 1614935181470,
-        _id: "143e5265-333e-4150-80e4-16b61de31aa0",
-      },
-      "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Top Gun 2",
-        description:
-          "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-        img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-        _createdOn: 1614935268135,
-        _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
-      },
-    },
-    likes: {},
-    ideas: {
-      "833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "Best Pilates Workout To Do At Home",
-        description:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-        img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-        _createdOn: 1615033373504,
-        _id: "833e0e57-71dc-42c0-b387-0ce0caf5225e",
-      },
-      "247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        title: "4 Eady DIY Idea To Try!",
-        description:
-          "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-        img: "./images/brightideacropped.jpg",
-        _createdOn: 1615033452480,
-        _id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c",
-      },
-      "b8608c22-dd57-4b24-948e-b358f536b958": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        title: "Dinner Recipe",
-        description:
-          "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-        img: "./images/dinner.jpg",
-        _createdOn: 1615033491967,
-        _id: "b8608c22-dd57-4b24-948e-b358f536b958",
-      },
-    },
-    catalog: {
-      "53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        make: "Table",
-        model: "Swedish",
-        year: 2015,
-        description: "Medium table",
-        price: 235,
-        img: "./images/table.png",
-        material: "Hardwood",
-        _createdOn: 1615545143015,
-        _id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95",
-      },
-      "f5929b5c-bca4-4026-8e6e-c09e73908f77": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        make: "Sofa",
-        model: "ES-549-M",
-        year: 2018,
-        description: "Three-person sofa, blue",
-        price: 1200,
-        img: "./images/sofa.jpg",
-        material: "Frame - steel, plastic; Upholstery - fabric",
-        _createdOn: 1615545572296,
-        _id: "f5929b5c-bca4-4026-8e6e-c09e73908f77",
-      },
-      "c7f51805-242b-45ed-ae3e-80b68605141b": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        make: "Chair",
-        model: "Bright Dining Collection",
-        year: 2017,
-        description: "Dining chair",
-        price: 180,
-        img: "./images/chair.jpg",
-        material: "Wood laminate; leather",
-        _createdOn: 1615546332126,
-        _id: "c7f51805-242b-45ed-ae3e-80b68605141b",
-      },
-    },
-    teams: {
-      "34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        name: "Storm Troopers",
-        logoUrl: "/assets/atat.png",
-        description: "These ARE the droids we're looking for",
-        _createdOn: 1615737591748,
-        _id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-      },
-      "dc888b1a-400f-47f3-9619-07607966feb8": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Team Rocket",
-        logoUrl: "/assets/rocket.png",
-        description: "Gotta catch 'em all!",
-        _createdOn: 1615737655083,
-        _id: "dc888b1a-400f-47f3-9619-07607966feb8",
-      },
-      "733fa9a1-26b6-490d-b299-21f120b2f53a": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        name: "Minions",
-        logoUrl: "/assets/hydrant.png",
-        description:
-          "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-        _createdOn: 1615737688036,
-        _id: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-      },
-    },
-    members: {
-      "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-        status: "member",
-        _createdOn: 1616236790262,
-        _updatedOn: 1616236792930,
-      },
-      "61a19986-3b86-4347-8ca4-8c074ed87591": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-        status: "member",
-        _createdOn: 1616237188183,
-        _updatedOn: 1616237189016,
-      },
-      "8a03aa56-7a82-4a6b-9821-91349fbc552f": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        teamId: "733fa9a1-26b6-490d-b299-21f120b2f53a",
-        status: "member",
-        _createdOn: 1616237193355,
-        _updatedOn: 1616237195145,
-      },
-      "9be3ac7d-2c6e-4d74-b187-04105ab7e3d6": {
-        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-        status: "member",
-        _createdOn: 1616237231299,
-        _updatedOn: 1616237235713,
-      },
-      "280b4a1a-d0f3-4639-aa54-6d9158365152": {
-        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-        teamId: "dc888b1a-400f-47f3-9619-07607966feb8",
-        status: "member",
-        _createdOn: 1616237257265,
-        _updatedOn: 1616237278248,
-      },
-      "e797fa57-bf0a-4749-8028-72dba715e5f8": {
-        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-        teamId: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1",
-        status: "member",
-        _createdOn: 1616237272948,
-        _updatedOn: 1616237293676,
-      },
-    },
     vocabulary: {
       "34a1cab1-81f1-47e5-aec3-afff9810e001": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -1763,7 +1467,7 @@
         sentencesCount: "20",
         data: '{"1a2b3c4d-81f1-47e5-aec3-afff9810efe1":{"bg":"Аз бях у дома.","en":"I was at home.","de":"Ich war zu Hause."},"2b3c4d5e-81f1-47e5-aec3-afff9810efe2":{"bg":"Той чете книга.","en":"He read a book.","de":"Er las ein Buch."},"3c4d5e6f-81f1-47e5-aec3-afff9810efe3":{"bg":"Тя написа писмо.","en":"She wrote a letter.","de":"Sie schrieb einen Brief."},"4d5e6f7g-81f1-47e5-aec3-afff9810efe4":{"bg":"Ние пихме кафе.","en":"We drank coffee.","de":"Wir tranken Kaffee."},"5e6f7g8h-81f1-47e5-aec3-afff9810efe5":{"bg":"Те играха футбол.","en":"They played football.","de":"Sie spielten Fußball."},"6f7g8h9i-81f1-47e5-aec3-afff9810efe6":{"bg":"Аз приготвих вечеря.","en":"I cooked dinner.","de":"Ich kochte Abendessen."},"7g8h9i0j-81f1-47e5-aec3-afff9810efe7":{"bg":"Той говореше по телефона.","en":"He talked on the phone.","de":"Er sprach am Telefon."},"8h9i0j1k-81f1-47e5-aec3-afff9810efe8":{"bg":"Тя учеше английски.","en":"She studied English.","de":"Sie lernte Englisch."},"9i0j1k2l-81f1-47e5-aec3-afff9810efe9":{"bg":"Ние ходихме на работа.","en":"We went to work.","de":"Wir gingen zur Arbeit."},"0j1k2l3m-81f1-47e5-aec3-afff9810efea":{"bg":"Те купиха храна.","en":"They bought food.","de":"Sie kauften Essen."},"1k2l3m4n-81f1-47e5-aec3-afff9810efeb":{"bg":"Аз четох вестник.","en":"I read the newspaper.","de":"Ich las die Zeitung."},"2l3m4n5o-81f1-47e5-aec3-afff9810efec":{"bg":"Той караше кола.","en":"He drove a car.","de":"Er fuhr ein Auto."},"3m4n5o6p-81f1-47e5-aec3-afff9810efed":{"bg":"Тя слушаше музика.","en":"She listened to music.","de":"Sie hörte Musik."},"4n5o6p7q-81f1-47e5-aec3-afff9810efee":{"bg":"Ние ядохме в ресторант.","en":"We ate at a restaurant.","de":"Wir aßen im Restaurant."},"5o6p7q8r-81f1-47e5-aec3-afff9810efef":{"bg":"Те написаха съобщение.","en":"They wrote a message.","de":"Sie schrieben eine Nachricht."},"6p7q8r9s-81f1-47e5-aec3-afff9810eff0":{"bg":"Аз отидох на училище.","en":"I went to school.","de":"Ich ging zur Schule."},"7q8r9s0t-81f1-47e5-aec3-afff9810eff1":{"bg":"Той почиваше в парка.","en":"He rested in the park.","de":"Er ruhte sich im Park aus."},"8r9s0t1u-81f1-47e5-aec3-afff9810eff2":{"bg":"Тя купи дрехи.","en":"She bought clothes.","de":"Sie kaufte Kleidung."},"9s0t1u2v-81f1-47e5-aec3-afff9810eff3":{"bg":"Ние написахме имейли.","en":"We wrote emails.","de":"Wir schrieben E-Mails."},"0t1u2v3w-81f1-47e5-aec3-afff9810eff4":{"bg":"Те се срещнаха с приятели.","en":"They met friends.","de":"Sie trafen Freunde."}}',
       },
-      "34agtab1-81f1-47e5-aec3-afff9810e002": {
+      "34agtab1-81f1-47e5-aec3-afff9810e003": {
         _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
         _createdOn: "1725876457111",
         title: "Grammatical structures",
@@ -1773,24 +1477,71 @@
         sentencesCount: "20",
         data: '{"a1b2c3d4-81f1-47e5-aec3-afff9810efe1":{"bg":"Миналата година завършихме важен проект в компанията.","en":"Last year, we completed an important project at the company.","de":"Letztes Jahr haben wir ein wichtiges Projekt in der Firma abgeschlossen."},"b2c3d4e5-81f1-47e5-aec3-afff9810efe2":{"bg":"Той е работил в различни международни компании.","en":"He has worked in various international companies.","de":"Er hat in verschiedenen internationalen Firmen gearbeitet."},"c3d4e5f6-81f1-47e5-aec3-afff9810efe3":{"bg":"Ще посетим новия музей следващата седмица.","en":"We will visit the new museum next week.","de":"Wir werden nächste Woche das neue Museum besuchen."},"d4e5f6g7-81f1-47e5-aec3-afff9810efe4":{"bg":"Аз пътувах до Париж миналото лято и видях много забележителности.","en":"I traveled to Paris last summer and saw many sights.","de":"Ich reiste letzten Sommer nach Paris und sah viele Sehenswürdigkeiten."},"e5f6g7h8-81f1-47e5-aec3-afff9810efe5":{"bg":"Тя учи испански от три години и говори много добре.","en":"She has been learning Spanish for three years and speaks very well.","de":"Sie lernt seit drei Jahren Spanisch und spricht sehr gut."},"f6g7h8i9-81f1-47e5-aec3-afff9810efe6":{"bg":"Ние обикновено ходим на фитнес три пъти седмично.","en":"We usually go to the gym three times a week.","de":"Wir gehen normalerweise dreimal pro Woche ins Fitnessstudio."},"g7h8i9j0-81f1-47e5-aec3-afff9810efe7":{"bg":"Той е завършил курса и сега има нова работа.","en":"He has completed the course and now has a new job.","de":"Er hat den Kurs abgeschlossen und hat jetzt einen neuen Job."},"h8i9j0k1-81f1-47e5-aec3-afff9810efe8":{"bg":"Тя не можеше да намери ключовете си вчера сутринта.","en":"She could not find her keys yesterday morning.","de":"Sie konnte ihre Schlüssel gestern Morgen nicht finden."},"i9j0k1l2-81f1-47e5-aec3-afff9810efe9":{"bg":"Ние сме били на тази конференция преди две години.","en":"We have been to that conference two years ago.","de":"Wir waren vor zwei Jahren auf dieser Konferenz."},"j0k1l2m3-81f1-47e5-aec3-afff9810efea":{"bg":"Той започна нова работа миналата седмица и се чувства много щастлив.","en":"He started a new job last week and feels very happy.","de":"Er hat letzte Woche einen neuen Job angefangen und fühlt sich sehr glücklich."},"k1l2m3n4-81f1-47e5-aec3-afff9810efeb":{"bg":"Тя е написала доклад и го е изпратила на своя ръководител.","en":"She has written a report and sent it to her supervisor.","de":"Sie hat einen Bericht geschrieben und ihn an ihren Vorgesetzten gesendet."},"l2m3n4o5-81f1-47e5-aec3-afff9810efec":{"bg":"Той планира да започне нов проект през следващия месец.","en":"He plans to start a new project next month.","de":"Er plant, nächsten Monat ein neues Projekt zu beginnen."},"m3n4o5p6-81f1-47e5-aec3-afff9810efed":{"bg":"Ние прекарахме много време на плажа миналото лято.","en":"We spent a lot of time at the beach last summer.","de":"Wir verbrachten letzten Sommer viel Zeit am Strand."},"n4o5p6q7-81f1-47e5-aec3-afff9810efee":{"bg":"Тя е посещавала курс по фотография, за да подобри уменията си.","en":"She has attended a photography course to improve her skills.","de":"Sie hat an einem Fotografie-Kurs teilgenommen, um ihre Fähigkeiten zu verbessern."},"o5p6q7r8-81f1-47e5-aec3-afff9810efef":{"bg":"Той ще се срещне с клиентите си следващата седмица.","en":"He will meet his clients next week.","de":"Er wird nächste Woche seine Kunden treffen."},"p6q7r8s9-81f1-47e5-aec3-afff9810eff0":{"bg":"Аз съм завършил университет преди пет години и сега работя като инженер.","en":"I graduated from university five years ago and now work as an engineer.","de":"Ich habe vor fünf Jahren die Universität abgeschlossen und arbeite jetzt als Ingenieur."},"q7r8s9t0-81f1-47e5-aec3-afff9810eff1":{"bg":"Тя посещаваше детската градина в този град, когато беше малка.","en":"She attended kindergarten in this city when she was little.","de":"Sie besuchte den Kindergarten in dieser Stadt, als sie klein war."},"r8s9t0u1-81f1-47e5-aec3-afff9810eff2":{"bg":"Ние сме се срещали много пъти през последните години.","en":"We have met many times over the past years.","de":"Wir haben uns in den letzten Jahren viele Male getroffen."},"s9t0u1v2-81f1-47e5-aec3-afff9810eff3":{"bg":"Той ще завърши курса до края на месеца.","en":"He will finish the course by the end of the month.","de":"Er wird den Kurs bis Ende des Monats abschließen."},"t0u1v2w3-81f1-47e5-aec3-afff9810eff4":{"bg":"Те са завършили много важни проекти през последните години.","en":"They have completed many important projects in recent years.","de":"Sie haben in den letzten Jahren viele wichtige Projekte abgeschlossen."}}',
       },
-    },
+      "34a1cab1-81f1-47e5-aec3-afff9810e004": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: "17215154649111",
+        title: "Present Perfect Tense",
+        level: "A2",
+        description:
+          "This training module is designed for learners at the A2 level who want to improve their understanding and use of the present perfect tense. Participants will practice forming sentences about experiences, actions that have relevance to the present, and life accomplishments.",
+        sentencesCount: "20",
+        data: '{"1kkyrnha-81f1-47e5-aec3-afff9810efe1":{"bg":"Аз съм бил в Италия.","en":"I have been to Italy.","de":"Ich bin in Italien gewesen."},"2kajrbgm-81f1-47e5-aec3-afff9810efe2":{"bg":"Тя е написала писмо.","en":"She has written a letter.","de":"Sie hat einen Brief geschrieben."},"3nalbrgn-81f1-47e5-aec3-afff9810efe3":{"bg":"Ние сме се срещали преди.","en":"We have met before.","de":"Wir haben uns schon einmal getroffen."},"4jakbgtn-81f1-47e5-aec3-afff9810efe4":{"bg":"Той е завършил задачата.","en":"He has finished the task.","de":"Er hat die Aufgabe beendet."},"5najrbgn-81f1-47e5-aec3-afff9810efe5":{"bg":"Те са купили нова къща.","en":"They have bought a new house.","de":"Sie haben ein neues Haus gekauft."},"6balbgpn-81f1-47e5-aec3-afff9810efe6":{"bg":"Аз съм чела тази книга.","en":"I have read this book.","de":"Ich habe dieses Buch gelesen."},"7lakrgnn-81f1-47e5-aec3-afff9810efe7":{"bg":"Той е гледал този филм.","en":"He has watched this movie.","de":"Er hat diesen Film gesehen."},"8jakrbgn-81f1-47e5-aec3-afff9810efe8":{"bg":"Тя е изучавала английски език.","en":"She has studied English.","de":"Sie hat Englisch studiert."},"9makrbgn-81f1-47e5-aec3-afff9810efe9":{"bg":"Ние сме живели тук от две години.","en":"We have lived here for two years.","de":"Wir wohnen hier seit zwei Jahren."},"10jakrbgn-81f1-47e5-aec3-afff9810efea":{"bg":"Те са направили план.","en":"They have made a plan.","de":"Sie haben einen Plan gemacht."},"11jakrbgm-81f1-47e5-aec3-afff9810efeb":{"bg":"Аз съм бил на този концерт.","en":"I have been to that concert.","de":"Ich war auf diesem Konzert."},"12makrbgn-81f1-47e5-aec3-afff9810efec":{"bg":"Той е загубил ключовете си.","en":"He has lost his keys.","de":"Er hat seine Schlüssel verloren."},"13jakrbgn-81f1-47e5-aec3-afff9810efed":{"bg":"Тя е видяла тази картина.","en":"She has seen this painting.","de":"Sie hat dieses Gemälde gesehen."},"14jakrbgn-81f1-47e5-aec3-afff9810efee":{"bg":"Ние сме се срещнали с новите съседи.","en":"We have met the new neighbors.","de":"Wir haben die neuen Nachbarn getroffen."},"15jakrbgn-81f1-47e5-aec3-afff9810efef":{"bg":"Те са ходили на почивка в Испания.","en":"They have gone on vacation to Spain.","de":"Sie sind in den Urlaub nach Spanien gegangen."},"16jakrbgn-81f1-47e5-aec3-afff9810eff0":{"bg":"Аз съм яла суши.","en":"I have eaten sushi.","de":"Ich habe Sushi gegessen."},"17jakrbgn-81f1-47e5-aec3-afff9810eff1":{"bg":"Той е завършил университет.","en":"He has graduated from university.","de":"Er hat die Universität abgeschlossen."},"18jakrbgn-81f1-47e5-aec3-afff9810eff2":{"bg":"Тя е изминала този маршрут преди.","en":"She has taken this route before.","de":"Sie ist diesen Weg schon einmal gegangen."},"19jakrbgn-81f1-47e5-aec3-afff9810eff3":{"bg":"Ние сме чули новината.","en":"We have heard the news.","de":"Wir haben die Nachrichten gehört."},"20jakrbgn-81f1-47e5-aec3-afff9810eff4":{"bg":"Те са продали стария си автомобил.","en":"They have sold their old car.","de":"Sie haben ihr altes Auto verkauft."}}',
+      },
+      "34a1cab1-81f1-47e5-aec3-afff9810e005": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: "17215154649111",
+        title: "Present Simple Questions",
+        level: "A1",
+        description:
+          "This training module is designed for beginners at the A1 level to practice forming and understanding basic questions in the present simple tense. Participants will learn how to ask about habits, routines, and preferences.",
+        sentencesCount: "20",
+        data: '{"1kkyrnha-81f1-47e5-aec3-afff9810efe1":{"bg":"Къде живееш?","en":"Where do you live?","de":"Wo wohnst du?"},"2kajrbgm-81f1-47e5-aec3-afff9810efe2":{"bg":"Какво работиш?","en":"What do you do?","de":"Was machst du beruflich?"},"3nalbrgn-81f1-47e5-aec3-afff9810efe3":{"bg":"Той ходи ли на училище?","en":"Does he go to school?","de":"Geht er zur Schule?"},"4jakbgtn-81f1-47e5-aec3-afff9810efe4":{"bg":"Какво обичаш да ядеш?","en":"What do you like to eat?","de":"Was isst du gerne?"},"5najrbgn-81f1-47e5-aec3-afff9810efe5":{"bg":"Те говорят ли английски?","en":"Do they speak English?","de":"Sprechen sie Englisch?"},"6balbgpn-81f1-47e5-aec3-afff9810efe6":{"bg":"Колко често тренираш?","en":"How often do you exercise?","de":"Wie oft trainierst du?"},"7lakrgnn-81f1-47e5-aec3-afff9810efe7":{"bg":"Той играе ли футбол?","en":"Does he play football?","de":"Spielt er Fußball?"},"8jakrbgn-81f1-47e5-aec3-afff9810efe8":{"bg":"Какво обичаш да четеш?","en":"What do you like to read?","de":"Was liest du gerne?"},"9makrbgn-81f1-47e5-aec3-afff9810efe9":{"bg":"Къде работят твоите родители?","en":"Where do your parents work?","de":"Wo arbeiten deine Eltern?"},"10jakrbgn-81f1-47e5-aec3-afff9810efea":{"bg":"Тя свири ли на пиано?","en":"Does she play the piano?","de":"Spielt sie Klavier?"},"11jakrbgm-81f1-47e5-aec3-afff9810efeb":{"bg":"Какъв е твоят любим спорт?","en":"What is your favorite sport?","de":"Was ist dein Lieblingssport?"},"12makrbgn-81f1-47e5-aec3-afff9810efec":{"bg":"Какво време предпочиташ?","en":"What weather do you prefer?","de":"Welches Wetter magst du am liebsten?"},"13jakrbgn-81f1-47e5-aec3-afff9810efed":{"bg":"Тя ходи ли на работа с кола?","en":"Does she go to work by car?","de":"Fährt sie mit dem Auto zur Arbeit?"},"14jakrbgn-81f1-47e5-aec3-afff9810efee":{"bg":"Какво учиш?","en":"What do you study?","de":"Was studierst du?"},"15jakrbgn-81f1-47e5-aec3-afff9810efef":{"bg":"Кой е твоят любим цвят?","en":"What is your favorite color?","de":"Was ist deine Lieblingsfarbe?"},"16jakrbgn-81f1-47e5-aec3-afff9810eff0":{"bg":"Колко често четеш книги?","en":"How often do you read books?","de":"Wie oft liest du Bücher?"},"17jakrbgn-81f1-47e5-aec3-afff9810eff1":{"bg":"Те имат ли домашни любимци?","en":"Do they have pets?","de":"Haben sie Haustiere?"},"18jakrbgn-81f1-47e5-aec3-afff9810eff2":{"bg":"Кога започваш работа?","en":"When do you start work?","de":"Wann beginnst du mit der Arbeit?"},"19jakrbgn-81f1-47e5-aec3-afff9810eff3":{"bg":"Къде обикновено почиваш?","en":"Where do you usually vacation?","de":"Wo machst du normalerweise Urlaub?"},"20jakrbgn-81f1-47e5-aec3-afff9810eff4":{"bg":"Какво обичаш да готвиш?","en":"What do you like to cook?","de":"Was kochst du gerne?"}}',
+      },
+      "34a1cab1-81f1-47e5-aec3-afff9810e006": {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: "17215154649111",
+        title: "Negative Sentences",
+        level: "B1",
+        description:
+          "This training module is designed for learners at the B1 level to practice forming negative sentences in the present simple tense. Participants will practice using negative forms to talk about habits, routines, and preferences.",
+        sentencesCount: "20",
+        data: '{"1kkyrnha-81f1-47e5-aec3-afff9810efe1":{"bg":"Аз не говоря френски.","en":"I do not speak French.","de":"Ich spreche kein Französisch."},"2kajrbgm-81f1-47e5-aec3-afff9810efe2":{"bg":"Той не яде месо.","en":"He does not eat meat.","de":"Er isst kein Fleisch."},"3nalbrgn-81f1-47e5-aec3-afff9810efe3":{"bg":"Ние не ходим на фитнес.","en":"We do not go to the gym.","de":"Wir gehen nicht ins Fitnessstudio."},"4jakbgtn-81f1-47e5-aec3-afff9810efe4":{"bg":"Тя не пие кафе.","en":"She does not drink coffee.","de":"Sie trinkt keinen Kaffee."},"5najrbgn-81f1-47e5-aec3-afff9810efe5":{"bg":"Те не гледат телевизия.","en":"They do not watch TV.","de":"Sie sehen kein Fernsehen."},"6balbgpn-81f1-47e5-aec3-afff9810efe6":{"bg":"Аз не обичам зимата.","en":"I do not like winter.","de":"Ich mag den Winter nicht."},"7lakrgnn-81f1-47e5-aec3-afff9810efe7":{"bg":"Той не чете книги.","en":"He does not read books.","de":"Er liest keine Bücher."},"8jakrbgn-81f1-47e5-aec3-afff9810efe8":{"bg":"Ние не готвим често.","en":"We do not cook often.","de":"Wir kochen nicht oft."},"9makrbgn-81f1-47e5-aec3-afff9810efe9":{"bg":"Тя не пътува с влак.","en":"She does not travel by train.","de":"Sie fährt nicht mit dem Zug."},"10jakrbgn-81f1-47e5-aec3-afff9810efea":{"bg":"Те не ходят на кино.","en":"They do not go to the cinema.","de":"Sie gehen nicht ins Kino."},"11jakrbgm-81f1-47e5-aec3-afff9810efeb":{"bg":"Аз не ям сладкиши.","en":"I do not eat sweets.","de":"Ich esse keine Süßigkeiten."},"12makrbgn-81f1-47e5-aec3-afff9810efec":{"bg":"Той не плува в басейна.","en":"He does not swim in the pool.","de":"Er schwimmt nicht im Pool."},"13jakrbgn-81f1-47e5-aec3-afff9810efed":{"bg":"Тя не използва социални медии.","en":"She does not use social media.","de":"Sie nutzt keine sozialen Medien."},"14jakrbgn-81f1-47e5-aec3-afff9810efee":{"bg":"Ние не играем видео игри.","en":"We do not play video games.","de":"Wir spielen keine Videospiele."},"15jakrbgn-81f1-47e5-aec3-afff9810efef":{"bg":"Те не слушат класическа музика.","en":"They do not listen to classical music.","de":"Sie hören keine klassische Musik."},"16jakrbgn-81f1-47e5-aec3-afff9810eff0":{"bg":"Аз не правя йога.","en":"I do not do yoga.","de":"Ich mache kein Yoga."},"17jakrbgn-81f1-47e5-aec3-afff9810eff1":{"bg":"Той не кара колело.","en":"He does not ride a bike.","de":"Er fährt nicht Fahrrad."},"18jakrbgn-81f1-47e5-aec3-afff9810eff2":{"bg":"Тя не рисува картини.","en":"She does not paint pictures.","de":"Sie malt keine Bilder."},"19jakrbgn-81f1-47e5-aec3-afff9810eff3":{"bg":"Ние не пеем песни.","en":"We do not sing songs.","de":"Wir singen keine Lieder."},"20jakrbgn-81f1-47e5-aec3-afff9810eff4":{"bg":"Те не разбират немски.","en":"They do not understand German.","de":"Sie verstehen kein Deutsch."}}',
+      },
 
-    learnedSentences: {
-      // "34a1cab1-81f1-47e5-aec3-afff9810efe1": {
-      //   trainingId: "34a1cab1-81f1-47e5-aec3-afff9810e001",
-      //   _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-      //   sentenceId: "cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
-      //   translateMode: "bg_en",
-      //   _createdOn: 1718553150484,
-      // },
-      // "34a1cab1-81f1-47e5-aec3-afff9810efe2": {
-      //   trainingId: "34a1cab1-81f1-47e5-aec3-afff9810e001",
-      //   _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-      //   sentenceId: "bb9b0a0f-655d-45d7-9857-0a61c6bb2c4d",
-      //   translateMode: "en_bg",
-      //   _createdOn: 1718553150484,
-      // },
+      "34a1cab1-81f1-47e5-aec3-afff9810e007": {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: "17215154649111",
+        title: "Future Simple Tense",
+        level: "A1",
+        description:
+          "This training module is designed for beginners at the A1 level to learn how to form basic sentences in the future simple tense. Participants will practice talking about future plans and intentions.",
+        sentencesCount: "20",
+        data: '{"1kkyrnha-81f1-47e5-aec3-afff9810efe1":{"bg":"Аз ще отида на кино.","en":"I will go to the cinema.","de":"Ich werde ins Kino gehen."},"2kajrbgm-81f1-47e5-aec3-afff9810efe2":{"bg":"Той ще пътува утре.","en":"He will travel tomorrow.","de":"Er wird morgen reisen."},"3nalbrgn-81f1-47e5-aec3-afff9810efe3":{"bg":"Ние ще се срещнем в парка.","en":"We will meet in the park.","de":"Wir werden uns im Park treffen."},"4jakbgtn-81f1-47e5-aec3-afff9810efe4":{"bg":"Тя ще купи хляб.","en":"She will buy bread.","de":"Sie wird Brot kaufen."},"5najrbgn-81f1-47e5-aec3-afff9810efe5":{"bg":"Те ще играят футбол.","en":"They will play football.","de":"Sie werden Fußball spielen."},"6balbgpn-81f1-47e5-aec3-afff9810efe6":{"bg":"Аз ще уча английски.","en":"I will study English.","de":"Ich werde Englisch lernen."},"7lakrgnn-81f1-47e5-aec3-afff9810efe7":{"bg":"Той ще готви вечеря.","en":"He will cook dinner.","de":"Er wird das Abendessen kochen."},"8jakrbgn-81f1-47e5-aec3-afff9810efe8":{"bg":"Ние ще посетим музея.","en":"We will visit the museum.","de":"Wir werden das Museum besuchen."},"9makrbgn-81f1-47e5-aec3-afff9810efe9":{"bg":"Тя ще види приятелите си.","en":"She will see her friends.","de":"Sie wird ihre Freunde sehen."},"10jakrbgn-81f1-47e5-aec3-afff9810efea":{"bg":"Те ще играят шах.","en":"They will play chess.","de":"Sie werden Schach spielen."},"11jakrbgm-81f1-47e5-aec3-afff9810efeb":{"bg":"Аз ще отида на почивка.","en":"I will go on vacation.","de":"Ich werde in den Urlaub fahren."},"12makrbgn-81f1-47e5-aec3-afff9810efec":{"bg":"Той ще учи за изпита.","en":"He will study for the exam.","de":"Er wird für die Prüfung lernen."},"13jakrbgn-81f1-47e5-aec3-afff9810efed":{"bg":"Тя ще гледа телевизия.","en":"She will watch TV.","de":"Sie wird fernsehen."},"14jakrbgn-81f1-47e5-aec3-afff9810efee":{"bg":"Ние ще отидем на пазар.","en":"We will go shopping.","de":"Wir werden einkaufen gehen."},"15jakrbgn-81f1-47e5-aec3-afff9810efef":{"bg":"Те ще учат нови думи.","en":"They will learn new words.","de":"Sie werden neue Wörter lernen."},"16jakrbgn-81f1-47e5-aec3-afff9810eff0":{"bg":"Аз ще пиша имейл.","en":"I will write an email.","de":"Ich werde eine E-Mail schreiben."},"17jakrbgn-81f1-47e5-aec3-afff9810eff1":{"bg":"Той ще слуша музика.","en":"He will listen to music.","de":"Er wird Musik hören."},"18jakrbgn-81f1-47e5-aec3-afff9810eff2":{"bg":"Тя ще спортува.","en":"She will exercise.","de":"Sie wird Sport treiben."},"19jakrbgn-81f1-47e5-aec3-afff9810eff3":{"bg":"Ние ще се храним в ресторант.","en":"We will eat at a restaurant.","de":"Wir werden im Restaurant essen."},"20jakrbgn-81f1-47e5-aec3-afff9810eff4":{"bg":"Те ще работят в градината.","en":"They will work in the garden.","de":"Sie werden im Garten arbeiten."}}',
+      },
+
+      "34a1cab1-81f1-47e5-aec3-afff9810e008": {
+        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+        _createdOn: "17215154649112",
+        title: "Future Simple Tense - A2",
+        level: "A2",
+        description:
+          "This training module is designed for learners at the A2 level to improve their use of the future simple tense. Participants will practice forming sentences about future events, plans, and predictions.",
+        sentencesCount: "20",
+        data: '{"1kkyrnha-81f1-47e5-aec3-afff9810efe1":{"bg":"Аз ще участвам в маратона утре.","en":"I will participate in the marathon tomorrow.","de":"Ich werde morgen am Marathon teilnehmen."},"2kajrbgm-81f1-47e5-aec3-afff9810efe2":{"bg":"Те ще се преместят в нов апартамент следващия месец.","en":"They will move to a new apartment next month.","de":"Sie werden nächsten Monat in eine neue Wohnung umziehen."},"3nalbrgn-81f1-47e5-aec3-afff9810efe3":{"bg":"Тя ще завърши проекта си до края на седмицата.","en":"She will complete her project by the end of the week.","de":"Sie wird ihr Projekt bis Ende der Woche abschließen."},"4jakbgtn-81f1-47e5-aec3-afff9810efe4":{"bg":"Ние ще организираме партито тази събота.","en":"We will organize the party this Saturday.","de":"Wir werden die Party diesen Samstag organisieren."},"5najrbgn-81f1-47e5-aec3-afff9810efe5":{"bg":"Той ще посети Париж за първи път.","en":"He will visit Paris for the first time.","de":"Er wird Paris zum ersten Mal besuchen."},"6balbgpn-81f1-47e5-aec3-afff9810efe6":{"bg":"Аз ще науча нов език тази година.","en":"I will learn a new language this year.","de":"Ich werde dieses Jahr eine neue Sprache lernen."},"7lakrgnn-81f1-47e5-aec3-afff9810efe7":{"bg":"Тя ще започне нова работа следващия понеделник.","en":"She will start a new job next Monday.","de":"Sie wird nächsten Montag eine neue Stelle antreten."},"8jakrbgn-81f1-47e5-aec3-afff9810efe8":{"bg":"Ние ще направим резервация за вечеря в ресторанта.","en":"We will make a reservation for dinner at the restaurant.","de":"Wir werden eine Reservierung für das Abendessen im Restaurant machen."},"9makrbgn-81f1-47e5-aec3-afff9810efe9":{"bg":"Те ще отидат на почивка в Гърция това лято.","en":"They will go on vacation to Greece this summer.","de":"Sie werden diesen Sommer in Griechenland Urlaub machen."},"10jakrbgn-81f1-47e5-aec3-afff9810efea":{"bg":"Аз ще чета новата книга през уикенда.","en":"I will read the new book over the weekend.","de":"Ich werde das neue Buch am Wochenende lesen."},"11jakrbgm-81f1-47e5-aec3-afff9810efeb":{"bg":"Той ще работи върху нов проект в следващите няколко седмици.","en":"He will work on a new project in the next few weeks.","de":"Er wird in den nächsten Wochen an einem neuen Projekt arbeiten."},"12makrbgn-81f1-47e5-aec3-afff9810efec":{"bg":"Ние ще посетим баба и дядо през ваканцията.","en":"We will visit our grandparents during the vacation.","de":"Wir werden in den Ferien unsere Großeltern besuchen."},"13jakrbgn-81f1-47e5-aec3-afff9810efed":{"bg":"Тя ще подготви презентация за утрешната среща.","en":"She will prepare a presentation for tomorrow\'s meeting.","de":"Sie wird eine Präsentation für das morgige Treffen vorbereiten."},"14jakrbgn-81f1-47e5-aec3-afff9810efee":{"bg":"Те ще направят ремонт на къщата през пролетта.","en":"They will renovate the house in the spring.","de":"Sie werden das Haus im Frühjahr renovieren."},"15jakrbgn-81f1-47e5-aec3-afff9810efef":{"bg":"Аз ще гледам новия филм следващия уикенд.","en":"I will watch the new movie next weekend.","de":"Ich werde mir nächsten Samstag den neuen Film ansehen."},"16jakrbgn-81f1-47e5-aec3-afff9810eff0":{"bg":"Тя ще вземе участие в изложбата.","en":"She will participate in the exhibition.","de":"Sie wird an der Ausstellung teilnehmen."},"17jakrbgn-81f1-47e5-aec3-afff9810eff1":{"bg":"Ние ще готвим заедно на рождения му ден.","en":"We will cook together on his birthday.","de":"Wir werden an seinem Geburtstag gemeinsam kochen."},"18jakrbgn-81f1-47e5-aec3-afff9810eff2":{"bg":"Те ще пишат доклад по време на курса.","en":"They will write a report during the course.","de":"Sie werden während des Kurses einen Bericht schreiben."},"19jakrbgn-81f1-47e5-aec3-afff9810eff3":{"bg":"Аз ще се включа в доброволческата програма.","en":"I will join the volunteer program.","de":"Ich werde an dem Freiwilligenprogramm teilnehmen."},"20jakrbgn-81f1-47e5-aec3-afff9810eff4":{"bg":"Те ще организират събиране на семейството.","en":"They will organize a family reunion.","de":"Sie werden ein Familientreffen organisieren."}}',
+      },
+
+      "34a1cab1-81f1-47e5-aec3-afff9810e009": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        _createdOn: "17215154649113",
+        title: "Future Simple Tense - B1",
+        level: "B1",
+        description:
+          "This training module is designed for learners at the B1 level to advance their use of the future simple tense. Participants will practice forming sentences about plans, predictions, and intentions for the future.",
+        sentencesCount: "20",
+        data: '{"1kkyrnha-81f1-47e5-aec3-afff9810efe1":{"bg":"Аз ще работя върху проект, който ще продължи шест месеца.","en":"I will work on a project that will last six months.","de":"Ich werde an einem Projekt arbeiten, das sechs Monate dauern wird."},"2kajrbgm-81f1-47e5-aec3-afff9810efe2":{"bg":"Те ще започнат нов бизнес, който ще се фокусира върху устойчивостта.","en":"They will start a new business that will focus on sustainability.","de":"Sie werden ein neues Geschäft gründen, das sich auf Nachhaltigkeit konzentrieren wird."},"3nalbrgn-81f1-47e5-aec3-afff9810efe3":{"bg":"Тя ще напише книга за своя опит в чужбина.","en":"She will write a book about her experiences abroad.","de":"Sie wird ein Buch über ihre Erfahrungen im Ausland schreiben."},"4jakbgtn-81f1-47e5-aec3-afff9810efe4":{"bg":"Ние ще инвестираме в технологични иновации през следващата година.","en":"We will invest in technological innovations next year.","de":"Wir werden nächstes Jahr in technologische Innovationen investieren."},"5najrbgn-81f1-47e5-aec3-afff9810efe5":{"bg":"Той ще завърши магистърска степен в областта на екологичните науки.","en":"He will complete a master\'s degree in environmental science.","de":"Er wird einen Master in Umweltwissenschaften abschließen."},"6balbgpn-81f1-47e5-aec3-afff9810efe6":{"bg":"Аз ще създам уебсайт, който ще помага на хората да научават нови езици.","en":"I will create a website that helps people learn new languages.","de":"Ich werde eine Website erstellen, die Menschen hilft, neue Sprachen zu lernen."},"7lakrgnn-81f1-47e5-aec3-afff9810efe7":{"bg":"Те ще проведат научно изследване по проблеми на климата.","en":"They will conduct scientific research on climate issues.","de":"Sie werden wissenschaftliche Forschungen zu Klimaproblemen durchführen."},"8jakrbgn-81f1-47e5-aec3-afff9810efe8":{"bg":"Тя ще организира благотворителна кампания за подпомагане на децата в нужда.","en":"She will organize a charity campaign to help children in need.","de":"Sie wird eine Wohltätigkeitskampagne organisieren, um bedürftigen Kindern zu helfen."},"9makrbgn-81f1-47e5-aec3-afff9810efe9":{"bg":"Ние ще участваме в международна конференция по въпроси на образованието.","en":"We will participate in an international conference on education issues.","de":"Wir werden an einer internationalen Konferenz zu Bildungsthemen teilnehmen."},"10jakrbgn-81f1-47e5-aec3-afff9810efea":{"bg":"Те ще представят своите изобретения на изложение за нови технологии.","en":"They will showcase their inventions at a new technology exhibition.","de":"Sie werden ihre Erfindungen auf einer Ausstellung für neue Technologien präsentieren."},"11jakrbgm-81f1-47e5-aec3-afff9810efeb":{"bg":"Аз ще се включа в програма за обмен на студенти в Азия.","en":"I will join a student exchange program in Asia.","de":"Ich werde an einem Studentenaustauschprogramm in Asien teilnehmen."},"12makrbgn-81f1-47e5-aec3-afff9810efec":{"bg":"Той ще започне да учи за докторска степен по литература.","en":"He will begin studying for a doctorate in literature.","de":"Er wird ein Studium für einen Doktortitel in Literatur beginnen."},"13jakrbgn-81f1-47e5-aec3-afff9810efed":{"bg":"Ние ще започнем нова инициатива за екологична осведоменост в нашата общност.","en":"We will launch a new environmental awareness initiative in our community.","de":"Wir werden eine neue Initiative zur Umweltbewusstseinsbildung in unserer Gemeinschaft starten."},"14jakrbgn-81f1-47e5-aec3-afff9810efee":{"bg":"Тя ще се обучава за пилот и ще получи лиценз.","en":"She will train to become a pilot and obtain a license.","de":"Sie wird sich zur Pilotin ausbilden lassen und eine Lizenz erwerben."},"15jakrbgn-81f1-47e5-aec3-afff9810efef":{"bg":"Те ще разработят ново приложение за подобряване на здравословния начин на живот.","en":"They will develop a new app to improve healthy living.","de":"Sie werden eine neue App zur Verbesserung eines gesunden Lebensstils entwickeln."},"16jakrbgn-81f1-47e5-aec3-afff9810eff0":{"bg":"Аз ще направя обиколка на европейските столици след завършването си.","en":"I will take a tour of European capitals after my graduation.","de":"Ich werde nach meinem Abschluss eine Tour durch die europäischen Hauptstädte machen."},"17jakrbgn-81f1-47e5-aec3-afff9810eff1":{"bg":"Те ще построят нова обществена библиотека в града.","en":"They will build a new public library in the city.","de":"Sie werden eine neue öffentliche Bibliothek in der Stadt bauen."},"18jakrbgn-81f1-47e5-aec3-afff9810eff2":{"bg":"Тя ще създаде организация за защита на животните.","en":"She will establish an organization for animal protection.","de":"Sie wird eine Organisation zum Schutz von Tieren gründen."},"19jakrbgn-81f1-47e5-aec3-afff9810eff3":{"bg":"Ние ще изучаваме влиянието на технологиите върху обществото.","en":"We will study the impact of technology on society.","de":"Wir werden die Auswirkungen der Technologie auf die Gesellschaft untersuchen."},"20jakrbgn-81f1-47e5-aec3-afff9810eff4":{"bg":"Те ще посрещнат експерти от различни сфери за обмен на опит.","en":"They will welcome experts from various fields for an exchange of experience.","de":"Sie werden Experten aus verschiedenen Bereichen zum Erfahrungsaustausch begrüßen."}}',
+      },
     },
+    learnedSentences: {},
   };
   var rules$1 = {
     users: {

@@ -3,8 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../context/Context";
 import { User } from "../../icons/User";
+import { LanguageContext } from "../../context/LanguageContext";
 
 export function Header(props) {
+  const { STR } = useContext(LanguageContext);
   const { userData } = useContext(Context);
 
   return (
@@ -20,7 +22,7 @@ export function Header(props) {
                     isActive ? "active-link" : undefined
                   }
                 >
-                  Login
+                  {STR.str21}
                 </NavLink>
               </li>
             )}
@@ -32,7 +34,7 @@ export function Header(props) {
                     isActive ? "active-link" : undefined
                   }
                 >
-                  Register
+                  {STR.str22}
                 </NavLink>
               </li>
             )}
@@ -43,30 +45,23 @@ export function Header(props) {
                   isActive ? "active-link" : undefined
                 }
               >
-                Training
+                {STR.str23}
               </NavLink>
             </li>
-            <li className="list-item">
-              <NavLink
-                to="/settings"
-                className={({ isActive }) =>
-                  isActive ? "active-link" : undefined
-                }
-              >
-                Settings
-              </NavLink>
-            </li>
+
             {userData && (
-              <li className="list-item">
-                <NavLink
-                  to="/logout"
-                  className={({ isActive }) =>
-                    isActive ? "active-link" : undefined
-                  }
-                >
-                  Logout
-                </NavLink>
-              </li>
+              <>
+                <li className="list-item">
+                  <NavLink
+                    to="/settings"
+                    className={({ isActive }) =>
+                      isActive ? "active-link" : undefined
+                    }
+                  >
+                    {STR.str24}
+                  </NavLink>
+                </li>
+              </>
             )}
           </ul>
         </nav>

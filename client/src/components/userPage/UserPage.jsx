@@ -4,8 +4,10 @@ import { Context } from "../../context/Context";
 import { User } from "../../icons/User";
 import { PrimaryButton } from "../buttons/PrimaryButton";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "../../context/LanguageContext";
 
 export function UserPage(props) {
+  const { STR } = useContext(LanguageContext);
   const { userData } = useContext(Context);
 
   return (
@@ -16,16 +18,16 @@ export function UserPage(props) {
       </div>
       <div className="buttons">
         <Link to={"/createTraining"}>
-          <PrimaryButton text={"Add new training"} />
+          <PrimaryButton text={STR.str42} />
         </Link>
         <Link to={"/myTraining"}>
-          <PrimaryButton text={"My training"} />
+          <PrimaryButton text={STR.str43} />
         </Link>
         <Link to={"/activeTraining"}>
-          <PrimaryButton text={" Active training "} />
+          <PrimaryButton text={STR.str44} />
         </Link>
         <Link to={"/logout"}>
-          <PrimaryButton text={"Logout"} />
+          <PrimaryButton text={STR.str45} />
         </Link>
       </div>
     </div>

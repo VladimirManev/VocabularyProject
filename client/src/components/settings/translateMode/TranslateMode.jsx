@@ -1,8 +1,10 @@
+import { LanguageContext } from "../../../context/LanguageContext";
 import { TranslateModeContext } from "../../../context/TranslateModeContext";
 import "./TranslateMode.css";
 import { useContext } from "react";
 
 export function TranslateMode() {
+  const { STR } = useContext(LanguageContext);
   const { translateModeJSON, setTranslateMode } =
     useContext(TranslateModeContext);
 
@@ -12,7 +14,7 @@ export function TranslateMode() {
 
   return (
     <div className="translate-mode-container">
-      <h3>Translate Mode</h3>
+      <h3>{STR.str40}</h3>
       <select
         className="select-item"
         onChange={translateModeChangeHandler}

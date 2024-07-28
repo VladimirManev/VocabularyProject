@@ -1,12 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import "./EditTraining.css";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../../context/Context";
 import { useForm } from "../../../hooks/useForm";
 import { updateTraining } from "../../../services/units";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
+import { LanguageContext } from "../../../context/LanguageContext";
 
 export function EditTraining(props) {
+  const { STR } = useContext(LanguageContext);
   const navigate = useNavigate();
   const { userData, currentTrainingData, showNotification } =
     useContext(Context);
@@ -54,14 +56,14 @@ export function EditTraining(props) {
 
   return (
     <div className="createTraining-container">
-      <h2 className="title">Edit training</h2>
+      <h2 className="title">{STR.str13}</h2>
       <form onSubmit={onSubmit} action="" className="form">
         <input
           onChange={changeHandler}
           type="text"
           className="input"
           name="title"
-          placeholder="title"
+          placeholder={STR.str7}
           value={values.title}
         />
         <input
@@ -69,7 +71,7 @@ export function EditTraining(props) {
           type="text"
           className="input"
           name="level"
-          placeholder="level"
+          placeholder={STR.str8}
           value={values.level}
         />
         <input
@@ -77,7 +79,7 @@ export function EditTraining(props) {
           type="text"
           className="input"
           name="description"
-          placeholder="description"
+          placeholder={STR.str9}
           value={values.description}
         />
         <input
@@ -85,18 +87,17 @@ export function EditTraining(props) {
           type="number"
           className="input"
           name="sentencesCount"
-          placeholder="sentences count"
+          placeholder={STR.str10}
           value={values.sentencesCount}
         />
         <input
           onChange={changeHandler}
-          type="text"
           className="input"
           name="data"
-          placeholder="data"
+          placeholder={STR.str11}
           value={values.data}
         />
-        <PrimaryButton text={"Edit"} />
+        <PrimaryButton text={STR.str16} />
       </form>
     </div>
   );

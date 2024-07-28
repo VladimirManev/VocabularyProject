@@ -10,8 +10,10 @@ import { Context } from "../../context/Context";
 
 import { PrimaryButton } from "../buttons/PrimaryButton";
 import { TranslateModeContext } from "../../context/TranslateModeContext";
+import { LanguageContext } from "../../context/LanguageContext";
 
 export function Vocabulary(props) {
+  const { STR } = useContext(LanguageContext);
   const [unknownSentences, setUnknownSentences] = useState([]);
   const [currentSentence, setCurrentSentence] = useState({});
   const [lastSentence, setLastSentence] = useState({});
@@ -150,7 +152,7 @@ export function Vocabulary(props) {
                 {currentSentence[translateMode.translationLanguage1]}
               </p>
             ) : (
-              <p className="click-to-translate">Click to translate!</p>
+              <p className="click-to-translate">{STR.str46}</p>
             )}
           </div>
           {translateMode.translationLanguage2 && (
@@ -175,7 +177,7 @@ export function Vocabulary(props) {
                   {currentSentence[translateMode.translationLanguage2]}
                 </p>
               ) : (
-                <p className="click-to-translate">Click to translate!</p>
+                <p className="click-to-translate">{STR.str46}</p>
               )}
             </div>
           )}
@@ -184,10 +186,10 @@ export function Vocabulary(props) {
         <div className="btn-container">
           <PrimaryButton
             className="test"
-            text="I know it !"
+            text={STR.str47}
             onClick={iKnowItClickHandler}
           />
-          <PrimaryButton text="Next" onClick={nextClickHandler} />
+          <PrimaryButton text={STR.str48} onClick={nextClickHandler} />
         </div>
       </div>
     </>

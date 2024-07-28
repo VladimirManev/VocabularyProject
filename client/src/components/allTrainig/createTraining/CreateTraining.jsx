@@ -5,9 +5,11 @@ import { Context } from "../../../context/Context";
 import { useForm } from "../../../hooks/useForm";
 import { createTraining } from "../../../services/units";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
+import { LanguageContext } from "../../../context/LanguageContext";
 
 export function CreateTraining(props) {
   const navigate = useNavigate();
+  const { STR } = useContext(LanguageContext);
   const { userData, showNotification } = useContext(Context);
 
   useEffect(() => {
@@ -49,14 +51,14 @@ export function CreateTraining(props) {
 
   return (
     <div className="createTraining-container">
-      <h2 className="title">Create new training</h2>
+      <h2 className="title">{STR.str6}</h2>
       <form onSubmit={onSubmit} action="" className="form">
         <input
           onChange={changeHandler}
           type="text"
           className="input"
           name="title"
-          placeholder="title"
+          placeholder={STR.str7}
           value={values.title}
         />
         <input
@@ -64,7 +66,7 @@ export function CreateTraining(props) {
           type="text"
           className="input"
           name="level"
-          placeholder="level"
+          placeholder={STR.str8}
           value={values.level}
         />
         <input
@@ -72,7 +74,7 @@ export function CreateTraining(props) {
           type="text"
           className="input"
           name="description"
-          placeholder="description"
+          placeholder={STR.str9}
           value={values.description}
         />
         <input
@@ -80,18 +82,18 @@ export function CreateTraining(props) {
           type="number"
           className="input"
           name="sentencesCount"
-          placeholder="sentences count"
+          placeholder={STR.str10}
           value={values.sentencesCount}
         />
         <input
           onChange={changeHandler}
           className="input"
           name="data"
-          placeholder="data"
+          placeholder={STR.str11}
           value={values.data}
         />
 
-        <PrimaryButton text={"Create"} />
+        <PrimaryButton text={STR.str12} />
       </form>
     </div>
   );

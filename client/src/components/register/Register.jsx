@@ -5,8 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { Context } from "../../context/Context";
 import { PrimaryButton } from "../buttons/PrimaryButton";
+import { LanguageContext } from "../../context/LanguageContext";
 
 export function Register(props) {
+  const { STR } = useContext(LanguageContext);
   const navigate = useNavigate();
   const { setContextUserData, showNotification } = useContext(Context);
 
@@ -53,7 +55,7 @@ export function Register(props) {
           type="email"
           className="input"
           name="email"
-          placeholder="email"
+          placeholder={STR.str27}
           value={values.email}
         />
         <input
@@ -61,7 +63,7 @@ export function Register(props) {
           type="password"
           className="input"
           name="password"
-          placeholder="password"
+          placeholder={STR.str28}
           value={values.password}
         />
         <input
@@ -69,10 +71,10 @@ export function Register(props) {
           type="password"
           className="input"
           name="repass"
-          placeholder="repeat password"
+          placeholder={STR.str33}
           value={values.repass}
         />
-        <PrimaryButton text="Register" type="submit" />
+        <PrimaryButton text={STR.str34} type="submit" />
       </form>
     </div>
   );

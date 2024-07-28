@@ -3,8 +3,10 @@ import { useContext, useEffect, useState } from "react";
 
 import { Context } from "../../../context/Context";
 import { themenData } from "./themenData";
+import { LanguageContext } from "../../../context/LanguageContext";
 
 export function Themen(props) {
+  const { STR } = useContext(LanguageContext);
   const { setContextThemeData, themeData } = useContext(Context);
   const [currentTheme, setCurrentTheme] = useState(
     themeData ? themeData.name : "piano"
@@ -19,7 +21,7 @@ export function Themen(props) {
 
   return (
     <div className="themen-container">
-      <h3>Theme</h3>
+      <h3>{STR.str35}</h3>
       <select
         className="select-item"
         onChange={themeChangeHandler}
@@ -28,16 +30,16 @@ export function Themen(props) {
         id=""
       >
         <option className="option-item" value="piano">
-          Piano
+          {STR.str36}
         </option>
         <option className="option-item" value="moon">
-          Moon
+          {STR.str37}
         </option>
         <option className="option-item" value="fruits">
-          Fruits
+          {STR.str38}
         </option>
         <option className="option-item" value="crazy">
-          Crazy
+          {STR.str39}
         </option>
       </select>
     </div>

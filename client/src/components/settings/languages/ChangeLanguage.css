@@ -1,11 +1,11 @@
-.themen-container {
+.language-settings-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 20px;
 }
 
-.themen-container .select-item {
+.language-settings-container .select-item {
   margin: 14px;
   width: 120px;
   height: 40px;
@@ -18,11 +18,11 @@
   color: inherit;
 }
 
-.themen-container .option-item {
+.language-settings-container .option-item {
   padding: 10px;
 }
 
-.themen-container select:focus {
+.language-settings-container select:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);

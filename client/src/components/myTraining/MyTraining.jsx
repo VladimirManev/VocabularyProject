@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getMyTraining } from "../../services/units";
 import { Context } from "../../context/Context";
-import { PrimaryButton } from "../buttons/PrimaryButton";
 import { Training } from "../allTrainig/training/Training";
+import { LanguageContext } from "../../context/LanguageContext";
 
 export function MyTraining(props) {
+  const { STR } = useContext(LanguageContext);
   const [myTrainigData, setMyTrainingdata] = useState([]);
   const { userData, showNotification } = useContext(Context);
 
@@ -27,10 +27,8 @@ export function MyTraining(props) {
 
   return (
     <div className="allTraining-container">
-      <h1>My Training</h1>
-      {myTrainigData.length === 0 && (
-        <p className="no-training">You don't have any training yet</p>
-      )}
+      <h1>{STR.str30}</h1>
+      {myTrainigData.length === 0 && <p className="no-training">{STR.str31}</p>}
       {myTrainigData.length !== 0 && (
         <ul className="list">
           {myTrainigData.map((x) => (
