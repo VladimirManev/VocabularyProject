@@ -9,6 +9,7 @@
 [ ] reset training
 [ ] route guards
 [ ] persist colection
+[ ] pagenation
 
 
 

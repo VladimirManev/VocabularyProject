@@ -5,8 +5,13 @@ import { logout } from "../../services/auth";
 import { clearUserData } from "../../services/util";
 
 export function Logout(props) {
-  const { clearContextUserData, showNotification } = useContext(Context);
+  const { clearContextUserData, showNotification, userData } =
+    useContext(Context);
+
   const navigate = useNavigate();
+  if (!userData) {
+    return;
+  }
 
   useEffect(() => {
     async function fetchFunction() {
