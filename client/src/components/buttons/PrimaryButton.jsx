@@ -8,7 +8,7 @@ export function PrimaryButton(props) {
   let btnClass = "primaryButton";
 
   if (props.className) {
-    btnClass += ` ${props.className}`;
+    btnClass += ` ${props.className} `;
   }
 
   return (

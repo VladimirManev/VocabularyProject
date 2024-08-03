@@ -3,12 +3,19 @@ import { get, post, put, del } from "./api.js";
 const trainingEndpoint = "/data/vocabulary";
 const sentansesEndpoint = "/data/learnedSentences";
 
-trainingEndpoint + "/";
 //**TRAINING**
 
 //get all training
-export async function getAllTraining() {
-  return get(trainingEndpoint + "?select=_id%2Ctitle%2CsentencesCount");
+export async function getAllTraining(skip, take) {
+  return get(
+    trainingEndpoint +
+      `?select=_id%2Ctitle%2CsentencesCount&offset=${skip}&pageSize=${take}`
+  );
+}
+
+//get all training count
+export async function getAllTrainingCount() {
+  return get(trainingEndpoint + "?count");
 }
 
 //get my training

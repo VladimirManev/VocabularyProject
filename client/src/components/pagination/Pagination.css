@@ -1,0 +1,32 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pagination-container .btn {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 3px 0 0;
+}
+
+.pagination-container .inactiv {
+  opacity: 40%;
+}
+
+.pagination-container .inactiv:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.pagination-container .pageNum {
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgb(128 128 128);
+  padding: 6px;
+}
