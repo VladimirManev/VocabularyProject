@@ -9,7 +9,7 @@ import { Spinner } from "./components/spinner/Spinner";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { AllTraining } from "./components/allTrainig/AllTraining";
-import { Context, Provider } from "./context/Context";
+import { Context } from "./context/Context";
 import { Logout } from "./components/logout/Logout";
 import { TrainingDetails } from "./components/allTrainig/trainingDetails/TrainingDetails";
 import { CreateTraining } from "./components/allTrainig/createTraining/CreateTraining";
@@ -20,6 +20,7 @@ import { Notification } from "./components/notification/Notification";
 import { MyTraining } from "./components/myTraining/MyTraining";
 import { ActiveTraining } from "./components/activeTraining/ActiveTraining";
 import { AuthGuard } from "./guards/authGuard";
+import { DeleteTraining } from "./components/deleteTraining/DeleteTraining";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,17 +50,31 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Welcome />} />
+
         <Route path="/settings" element={<Settings />} />
+
         <Route path="/login" element={<Login loading={loading} />} />
+
         <Route path="/register" element={<Register loading={loading} />} />
+
         <Route
           path="/allTraining"
           element={<AllTraining loading={loading} />}
         />
+
+        <Route
+          path="/trainingDetails/:currentTrainingId"
+          element={<TrainingDetails loading={loading} />}
+        />
+
         <Route element={<AuthGuard />}>
           <Route
             path="/myTraining"
             element={<MyTraining loading={loading} />}
+          />
+          <Route
+            path="/deleteTraining/:currentTrainingId"
+            element={<DeleteTraining loading={loading} />}
           />
           <Route
             path="/vocabulary"
@@ -80,11 +95,6 @@ function App() {
           />
           <Route path="/userPage" element={<UserPage loading={loading} />} />
         </Route>
-
-        <Route
-          path="/trainingDetails/:currentTrainingId"
-          element={<TrainingDetails loading={loading} />}
-        />
       </Routes>
     </div>
   );

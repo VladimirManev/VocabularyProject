@@ -1,8 +1,8 @@
 import "./TrainingDetails.css";
 import { useContext, useEffect } from "react";
 import { Context } from "../../../context/Context";
-import { deleteTraining, getCurrentTraining } from "../../../services/units";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { getCurrentTraining } from "../../../services/units";
+import { useParams, Link } from "react-router-dom";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { useProgress } from "../../../hooks/useProgress";
 import { ProgressBar } from "../../progressBar/ProgressBar";
@@ -10,25 +10,28 @@ import { LanguageContext } from "../../../context/LanguageContext";
 
 export function TrainingDetails(props) {
   const { STR } = useContext(LanguageContext);
+
   const {
     userData,
     currentTrainingData,
     setContextCurrentTrainingData,
     showNotification,
   } = useContext(Context);
+
   const { currentTrainingId } = useParams();
+
   const { knownSentencesCount, progressInPercent } = useProgress(
     currentTrainingId,
     currentTrainingData?.sentencesCount
   );
 
   const isUser = Boolean(userData);
+
   let isOwner = Boolean(
     currentTrainingData &&
       userData &&
       currentTrainingData._ownerId === userData._id
   );
-  const navigate = useNavigate();
 
   //get currentTrainingData and set it in Context
   useEffect(() => {
@@ -47,50 +50,47 @@ export function TrainingDetails(props) {
     fetchFunction();
   }, []);
 
-  async function deleteClickHandler(e) {
-    try {
-      await deleteTraining(currentTrainingData._id);
-      navigate("/allTraining");
-    } catch (error) {
-      showNotification("Error", error.message);
-    }
-  }
-
-  if (currentTrainingData) {
-    return (
-      <div className="training-details-container">
-        <h2>{currentTrainingData.title}</h2>
-        <div className="level-container">
-          <span className="level">{currentTrainingData.level}</span>
-        </div>
-        {isUser && (
-          <div className="progress">
-            <ProgressBar progress={progressInPercent} />
-            <p className="progress-text">
-              {`${STR.str15}   ${progressInPercent}% (${knownSentencesCount}/${currentTrainingData.sentencesCount})`}
-            </p>
-          </div>
-        )}
-        <p className="description">{currentTrainingData.description}</p>
-        <div className="buttons">
-          {isOwner && (
-            <Link to={"/editTraining"}>
-              <PrimaryButton text={STR.str16} />
-            </Link>
-          )}
-          {isOwner && (
-            <PrimaryButton text={STR.str17} onClick={deleteClickHandler} />
-          )}
-
-          {isUser && progressInPercent < 100 && (
-            <Link to={"/vocabulary"}>
-              <PrimaryButton text={STR.str18} />
-            </Link>
-          )}
-        </div>
-      </div>
-    );
-  } else {
+  if (!currentTrainingData) {
     return null;
   }
+
+  return (
+    <div className="training-details-container">
+      <h2>{currentTrainingData.title}</h2>
+      <div className="level-container">
+        <span className="level">{currentTrainingData.level}</span>
+      </div>
+
+      {isUser && (
+        <div className="progress">
+          <ProgressBar progress={progressInPercent} />
+          <p className="progress-text">
+            {`${STR.str15}   ${progressInPercent}% (${knownSentencesCount}/${currentTrainingData.sentencesCount})`}
+          </p>
+        </div>
+      )}
+
+      <p className="description">{currentTrainingData.description}</p>
+
+      <div className="buttons">
+        {isOwner && (
+          <Link to={"/editTraining"}>
+            <PrimaryButton text={STR.str16} />
+          </Link>
+        )}
+
+        {isOwner && (
+          <Link to={`/deleteTraining/${currentTrainingData._id}`}>
+            <PrimaryButton text={STR.str17} />
+          </Link>
+        )}
+
+        {isUser && progressInPercent < 100 && (
+          <Link to={"/vocabulary"}>
+            <PrimaryButton text={STR.str18} />
+          </Link>
+        )}
+      </div>
+    </div>
+  );
 }
