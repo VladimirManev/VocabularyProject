@@ -1,0 +1,32 @@
+[x] flags in fields
+[x] progress review
+[x] my training
+[x] profile icon
+[x] add default user in readme
+[x] move create new training in user page
+[x] language
+[x] route guards
+[x] persist colection
+[ ] search
+[ ] reset training
+[ ] pagenation
+[ ] refactor context
+
+
+{
+  "6balbgpn-81f1-47e5-aec3-afff9810efe7":{
+    "bg": "Искам да уча нов език.",
+    "en": "I want to learn a new language.",
+    "de": "Ich möchte eine neue Sprache lernen."
+  },
+  "7lakrgnn-81f1-47e5-aec3-afff9810efe8":{
+    "bg": "Колко струва това?",
+    "en": "How much does this cost?",
+    "de": "Wie viel kostet das?"
+  },
+  "8jakrbgn-81f1-47e5-aec3-afff9810efe9":{
+    "bg": "Много съм уморен днес.",
+    "en": "I am very tired today.",
+    "de": "Ich bin heute sehr müde."
+  }
+}

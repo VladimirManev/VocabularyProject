@@ -54,6 +54,8 @@ export const languagesData = {
     str52: "Deutsch",
     str53: "Are you sure you want to delete this training?",
     str54: "Cancel",
+    str55: "Congratulations! ",
+    str56: "You learned all the sentences in this training!",
   },
   bg: {
     str1: "Здравейте!",
@@ -110,6 +112,8 @@ export const languagesData = {
     str52: "Deutsch",
     str53: "Сигурни ли сте, че искате да изтриете тава обучение?",
     str54: "Отказ",
+    str55: "Поздравления! ",
+    str56: "Научихте всички изречения в това обучение!",
   },
   de: {
     str1: "Hallo!",
@@ -166,5 +170,7 @@ export const languagesData = {
     str52: "Deutsch",
     str53: "Sind Sie sicher, dass Sie diese Übung löschen möchten?",
     str54: "Abrechen",
+    str55: "Gratulationen! ",
+    str56: "Du hast alle Sätze in diesem Training gelernt!",
   },
 };

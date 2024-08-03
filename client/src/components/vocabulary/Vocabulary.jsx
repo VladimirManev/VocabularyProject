@@ -64,8 +64,8 @@ export function Vocabulary(props) {
   //sets the current sentence as learned
   async function iKnowItClickHandler(e) {
     if (unknownSentences.length === 1) {
-      showNotification("Congratulations! ", "You learned all the sentences!");
-      navigate(`/trainingDetails/${currentTrainingData._id}`);
+      showNotification(STR.str55, STR.str56);
+      navigate("/allTraining");
     }
 
     try {
