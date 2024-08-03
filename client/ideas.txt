@@ -5,12 +5,12 @@
 [x] add default user in readme
 [x] move create new training in user page
 [x] language
+[x] route guards
 [ ] search
 [ ] reset training
-[ ] route guards
 [ ] persist colection
 [ ] pagenation
-
+[ ] refactor context
 
 
 

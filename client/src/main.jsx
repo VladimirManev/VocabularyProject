@@ -8,15 +8,15 @@ import { TranslateModeProvider } from "./context/TranslateModeContext.jsx";
 import { LanguageContextProvider } from "./context/LanguageContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Provider>
-        <TranslateModeProvider>
-          <LanguageContextProvider>
-            <App />
-          </LanguageContextProvider>
-        </TranslateModeProvider>
-      </Provider>
-    </BrowserRouter>
-  </StrictMode>
+  // <StrictMode>
+  <BrowserRouter>
+    <Provider>
+      <TranslateModeProvider>
+        <LanguageContextProvider>
+          <App />
+        </LanguageContextProvider>
+      </TranslateModeProvider>
+    </Provider>
+  </BrowserRouter>
+  // </StrictMode>
 );

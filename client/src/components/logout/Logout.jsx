@@ -17,7 +17,7 @@ export function Logout(props) {
     async function fetchFunction() {
       try {
         props.loading(true);
-        logout();
+        await logout();
       } catch (error) {
         showNotification("Error", error.message);
       } finally {

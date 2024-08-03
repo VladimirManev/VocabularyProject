@@ -1,112 +1,156 @@
 import { get, post, put, del } from "./api.js";
 
-const endpoints = {
-  catalog: "/data/a1",
-  byId: "/data/a1",
-  like: "/data/likes",
-  learnedSentences: "/data/learnedSentences",
-  allTraining: "/data/vocabulary?select=_id%2Ctitle%2CsentencesCount",
-  currentTraining: "/data/vocabulary/",
-};
+const trainingEndpoint = "/data/vocabulary";
+const sentansesEndpoint = "/data/learnedSentences";
+
+trainingEndpoint + "/";
+//**TRAINING**
 
 //get all training
 export async function getAllTraining() {
-  return get(endpoints.allTraining);
+  return get(trainingEndpoint + "?select=_id%2Ctitle%2CsentencesCount");
 }
 
 //get my training
 export async function getMyTraining(_ownerId) {
-  return get(endpoints.allTraining + `&where=_ownerId%3D%22${_ownerId}%22`);
+  return get(
+    trainingEndpoint +
+      `?select=_id%2Ctitle%2CsentencesCount + &where=_ownerId%3D%22${_ownerId}%22`
+  );
 }
 
-//get a training
+//get my active training ids
+export async function getActiveTraining(_ownerId) {
+  return get(
+    sentansesEndpoint +
+      `?where=_ownerId%3D%22${_ownerId}%22&distinct=trainingId&select=trainingId`
+  );
+}
+
+//get one training by id
 export async function getCurrentTraining(trainingId) {
-  return get(endpoints.currentTraining + trainingId);
+  return get(trainingEndpoint + "/" + trainingId);
 }
 
 //create new training
 export async function createTraining(data) {
-  return post(endpoints.currentTraining, data);
-}
-
-//delete a training
-export async function deleteTraining(id) {
-  return del(endpoints.currentTraining + "/" + id);
+  return post(trainingEndpoint + "/", data);
 }
 
 //edit a trining
 export async function updateTraining(id, data) {
-  return put(endpoints.currentTraining + "/" + id, data);
+  return put(trainingEndpoint + "/" + "/" + id, data);
 }
+
+//delete a training
+export async function deleteTraining(id) {
+  return del(trainingEndpoint + "/" + id);
+}
+
+//**SENTANSES**
 
 //get all known sentences for current user
 export async function getKnownSentences(_ownerId, trainingId) {
   return get(
-    endpoints.learnedSentences +
+    sentansesEndpoint +
       `?where=_ownerId%3D%22${_ownerId}%22%20AND%20trainingId%3D%22${trainingId}%22`
   );
 }
 
-//get count to all known sentences for current user
+//get count of all known sentences for current user
 export async function getKnownSentencesCount(_ownerId, trainingId) {
   return get(
-    endpoints.learnedSentences +
+    sentansesEndpoint +
       `?where=_ownerId%3D%22${_ownerId}%22%20AND%20trainingId%3D%22${trainingId}%22&distinct=sentenceId&count`
   );
 }
 
 //set unknown sentence to known sentence
 export async function iKnowItUnit(sentenceId, trainingId) {
-  return post(endpoints.learnedSentences, {
+  return post(sentansesEndpoint, {
     sentenceId,
     trainingId,
   });
 }
 
-//get active training for current user
-export async function getActiveTraining(_ownerId) {
-  return get(
-    endpoints.learnedSentences +
-      `?where=_ownerId%3D%22${_ownerId}%22&distinct=trainingId&select=trainingId`
-  );
-}
+// import { get, post, put, del } from "./api.js";
 
-export async function getAllUnits() {
-  return get(endpoints.catalog);
-}
+// const endpoints = {
+//   learnedSentences: "/data/learnedSentences",
+//   allTraining: "/data/vocabulary?select=_id%2Ctitle%2CsentencesCount",
+//   currentTraining: "/data/vocabulary/",
+// };
 
-export async function getById(id) {
-  return get(endpoints.byId + "/" + id);
-}
+// //**TRAINING**
 
-export async function createUnit(data) {
-  return post(endpoints.byId, data);
-}
-
-export async function updateUnit(id, data) {
-  return put(endpoints.byId + "/" + id, data);
-}
-
-export async function deleteUnit(id) {
-  return del(endpoints.byId + "/" + id);
-}
-
-export async function getUnitsCount() {
-  return get(`/data/vocabulary?count`);
-}
-
-//Option search
-export async function searchUnits(query) {
-  return get(`/data/cars?where=model%20LIKE%20%22${query}%22`);
-}
-
-//Option Like
-// export async function likeUnit(data) {
-//   return post(endpoints.like, data);
+// //get all training
+// export async function getAllTraining() {
+//   return get(endpoints.allTraining);
 // }
 
-export async function isAlreadyLiked(factId, userId) {
-  return get(
-    `/data/likes?where=factId%3D%22${factId}%22%20and%20_ownerId%3D%22${userId}%22&count`
-  );
-}
+// //get my training
+// export async function getMyTraining(_ownerId) {
+//   return get(endpoints.allTraining + `&where=_ownerId%3D%22${_ownerId}%22`);
+// }
+
+// //get my active training ids
+// export async function getActiveTraining(_ownerId) {
+//   return get(
+//     endpoints.learnedSentences +
+//       `?where=_ownerId%3D%22${_ownerId}%22&distinct=trainingId&select=trainingId`
+//   );
+// }
+
+// //get one training by id
+// export async function getCurrentTraining(trainingId) {
+//   return get(endpoints.currentTraining + trainingId);
+// }
+
+// //create new training
+// export async function createTraining(data) {
+//   return post(endpoints.currentTraining, data);
+// }
+
+// //edit a trining
+// export async function updateTraining(id, data) {
+//   return put(endpoints.currentTraining + "/" + id, data);
+// }
+
+// //delete a training
+// export async function deleteTraining(id) {
+//   return del(endpoints.currentTraining + "/" + id);
+// }
+
+// //**SENTANSES**
+
+// //get all known sentences for current user
+// export async function getKnownSentences(_ownerId, trainingId) {
+//   return get(
+//     endpoints.learnedSentences +
+//       `?where=_ownerId%3D%22${_ownerId}%22%20AND%20trainingId%3D%22${trainingId}%22`
+//   );
+// }
+
+// //get count of all known sentences for current user
+// export async function getKnownSentencesCount(_ownerId, trainingId) {
+//   return get(
+//     endpoints.learnedSentences +
+//       `?where=_ownerId%3D%22${_ownerId}%22%20AND%20trainingId%3D%22${trainingId}%22&distinct=sentenceId&count`
+//   );
+// }
+
+// //set unknown sentence to known sentence
+// export async function iKnowItUnit(sentenceId, trainingId) {
+//   return post(endpoints.learnedSentences, {
+//     sentenceId,
+//     trainingId,
+//   });
+// }
+
+// //get active training for current user
+// export async function getActiveTraining(_ownerId) {
+//   return get(
+//     endpoints.learnedSentences +
+//       `?where=_ownerId%3D%22${_ownerId}%22&distinct=trainingId&select=trainingId`
+//   );
+// }
