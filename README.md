@@ -27,11 +27,11 @@ To install and run the project locally:
 
 
 2. In a new terminal, navigate to the server directory and start the server
-
+   `cd server`
    `node server.js`
    
 3. In a new terminal, navigate to the client directory and install the dependencies:
-
+   `cd client`
    `npm install`
 
 5. In the same directory start the client server
