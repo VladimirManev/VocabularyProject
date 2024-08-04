@@ -21,6 +21,7 @@ import { MyTraining } from "./components/myTraining/MyTraining";
 import { ActiveTraining } from "./components/activeTraining/ActiveTraining";
 import { AuthGuard } from "./guards/authGuard";
 import { DeleteTraining } from "./components/deleteTraining/DeleteTraining";
+import { UserGuard } from "./guards/userGuard";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -46,16 +47,15 @@ function App() {
       }}
     >
       {isLoading && <Spinner />}
+
       {notification && <Notification />}
+
       <Header />
+
       <Routes>
         <Route path="/" element={<Welcome />} />
 
         <Route path="/settings" element={<Settings />} />
-
-        <Route path="/login" element={<Login loading={loading} />} />
-
-        <Route path="/register" element={<Register loading={loading} />} />
 
         <Route
           path="/allTraining"
@@ -66,6 +66,12 @@ function App() {
           path="/trainingDetails/:currentTrainingId"
           element={<TrainingDetails loading={loading} />}
         />
+
+        <Route element={<UserGuard />}>
+          <Route path="/login" element={<Login loading={loading} />} />
+
+          <Route path="/register" element={<Register loading={loading} />} />
+        </Route>
 
         <Route element={<AuthGuard />}>
           <Route
