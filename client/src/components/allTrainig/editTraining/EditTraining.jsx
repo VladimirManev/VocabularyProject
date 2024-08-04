@@ -8,6 +8,7 @@ import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { LanguageContext } from "../../../context/LanguageContext";
 import { NotificationContext } from "../../../context/NotificationContext";
 import { TrainingDataContext } from "../../../context/TrainingDataContext";
+import { TrainingDataValidator } from "../../../services/util";
 
 export function EditTraining(props) {
   const { STR } = useContext(LanguageContext);
@@ -16,13 +17,6 @@ export function EditTraining(props) {
   const { currentTrainingData } = useContext(TrainingDataContext);
 
   const { showNotification } = useContext(NotificationContext);
-
-  useEffect(() => {
-    if (!userData) {
-      navigate("/login");
-      return;
-    }
-  }, []);
 
   if (!currentTrainingData) {
     return <></>;
@@ -40,6 +34,7 @@ export function EditTraining(props) {
     e.preventDefault();
 
     try {
+      //validation for all fields
       if (
         values.title === "" ||
         values.level === "" ||
@@ -47,8 +42,11 @@ export function EditTraining(props) {
         values.sentencesCount === "" ||
         values.data === ""
       ) {
-        throw new Error("Please fill out all required fields.");
+        throw new Error("Please fill out all required fields!");
       }
+      //validation for data
+      TrainingDataValidator(values.data);
+
       props.loading(true);
       await updateTraining(currentTrainingData._id, values);
       navigate(`/trainingDetails/${currentTrainingData._id}`);
