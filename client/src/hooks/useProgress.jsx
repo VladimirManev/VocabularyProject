@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { getKnownSentencesCount } from "../services/units";
-import { Context } from "../context/Context";
+import { AuthContext } from "../context/Context";
+import { NotificationContext } from "../context/NotificationContext";
 
 export function useProgress(trainingId, sentencesCount) {
   const [knownSentencesCount, setKnownSentencesCount] = useState(0);
-  const { userData, showNotification } = useContext(Context);
+  const { userData } = useContext(AuthContext);
+  const { showNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     try {

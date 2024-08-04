@@ -6,11 +6,13 @@ import {
   getRandomElementFromArr,
 } from "../../services/util";
 import { getKnownSentences, iKnowItUnit } from "../../services/units";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
+import { NotificationContext } from "../../context/NotificationContext";
+import { TrainingDataContext } from "../../context/TrainingDataContext";
+import { LanguageContext } from "../../context/LanguageContext";
+import { TranslateModeContext } from "../../context/TranslateModeContext";
 
 import { PrimaryButton } from "../buttons/PrimaryButton";
-import { TranslateModeContext } from "../../context/TranslateModeContext";
-import { LanguageContext } from "../../context/LanguageContext";
 
 export function Vocabulary(props) {
   const { STR } = useContext(LanguageContext);
@@ -19,9 +21,9 @@ export function Vocabulary(props) {
   const [lastSentence, setLastSentence] = useState({});
   const [showTranslation1, setShowTranslation1] = useState(false);
   const [showTranslation2, setShowTranslation2] = useState(false);
-
-  const { userData, currentTrainingData, showNotification } =
-    useContext(Context);
+  const { userData } = useContext(AuthContext);
+  const { currentTrainingData } = useContext(TrainingDataContext);
+  const { showNotification } = useContext(NotificationContext);
   const { translateModeJSON } = useContext(TranslateModeContext);
   const translateMode = JSON.parse(translateModeJSON);
 

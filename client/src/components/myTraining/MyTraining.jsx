@@ -1,13 +1,15 @@
 import { useContext, useEffect, useState } from "react";
 import { getMyTraining } from "../../services/units";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
 import { Training } from "../allTrainig/training/Training";
 import { LanguageContext } from "../../context/LanguageContext";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export function MyTraining(props) {
   const { STR } = useContext(LanguageContext);
   const [myTrainigData, setMyTrainingdata] = useState([]);
-  const { userData, showNotification } = useContext(Context);
+  const { userData } = useContext(AuthContext);
+  const { showNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     const fetchFunction = async () => {

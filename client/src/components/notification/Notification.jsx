@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { PrimaryButton } from "../buttons/PrimaryButton";
 import "./Notification.css";
-import { Context } from "../../context/Context";
 import { LanguageContext } from "../../context/LanguageContext";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export function Notification() {
   const { STR } = useContext(LanguageContext);
-  const { hideNotification, notification } = useContext(Context);
+  const { hideNotification, notification } = useContext(NotificationContext);
   function okBtnClickHandler() {
     hideNotification();
   }

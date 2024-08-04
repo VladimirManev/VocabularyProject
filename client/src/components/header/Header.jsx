@@ -1,13 +1,13 @@
 import "./Header.css";
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
 import { User } from "../../icons/User";
 import { LanguageContext } from "../../context/LanguageContext";
 
 export function Header(props) {
   const { STR } = useContext(LanguageContext);
-  const { userData } = useContext(Context);
+  const { userData } = useContext(AuthContext);
 
   return (
     <>

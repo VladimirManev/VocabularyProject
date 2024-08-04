@@ -9,7 +9,7 @@ import { Spinner } from "./components/spinner/Spinner";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
 import { AllTraining } from "./components/allTrainig/AllTraining";
-import { Context } from "./context/Context";
+import { AuthContext } from "./context/Context";
 import { Logout } from "./components/logout/Logout";
 import { TrainingDetails } from "./components/allTrainig/trainingDetails/TrainingDetails";
 import { CreateTraining } from "./components/allTrainig/createTraining/CreateTraining";
@@ -22,10 +22,15 @@ import { ActiveTraining } from "./components/activeTraining/ActiveTraining";
 import { AuthGuard } from "./guards/authGuard";
 import { DeleteTraining } from "./components/deleteTraining/DeleteTraining";
 import { UserGuard } from "./guards/userGuard";
+import { ThemenContext } from "./context/ThemenContext";
+import { NotificationContext } from "./context/NotificationContext";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const { themeData, setContextUserData, notification } = useContext(Context);
+  const { setContextUserData } = useContext(AuthContext);
+  const { notification } = useContext(NotificationContext);
+
+  const { themeData } = useContext(ThemenContext);
 
   useEffect(() => {
     const sessionStorageUserData = getUserData();

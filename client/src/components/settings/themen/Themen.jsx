@@ -1,13 +1,13 @@
 import "./Themen.css";
 import { useContext, useEffect, useState } from "react";
 
-import { Context } from "../../../context/Context";
 import { themenData } from "./themenData";
 import { LanguageContext } from "../../../context/LanguageContext";
+import { ThemenContext } from "../../../context/ThemenContext";
 
 export function Themen(props) {
   const { STR } = useContext(LanguageContext);
-  const { setContextThemeData, themeData } = useContext(Context);
+  const { setContextThemeData, themeData } = useContext(ThemenContext);
   const [currentTheme, setCurrentTheme] = useState(
     themeData ? themeData.name : "piano"
   );

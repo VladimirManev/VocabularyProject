@@ -1,22 +1,23 @@
 import "./TrainingDetails.css";
 import { useContext, useEffect } from "react";
-import { Context } from "../../../context/Context";
+import { AuthContext } from "../../../context/Context";
 import { getCurrentTraining } from "../../../services/units";
 import { useParams, Link } from "react-router-dom";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { useProgress } from "../../../hooks/useProgress";
 import { ProgressBar } from "../../progressBar/ProgressBar";
 import { LanguageContext } from "../../../context/LanguageContext";
+import { NotificationContext } from "../../../context/NotificationContext";
+import { TrainingDataContext } from "../../../context/TrainingDataContext";
 
 export function TrainingDetails(props) {
   const { STR } = useContext(LanguageContext);
 
-  const {
-    userData,
-    currentTrainingData,
-    setContextCurrentTrainingData,
-    showNotification,
-  } = useContext(Context);
+  const { userData } = useContext(AuthContext);
+  const { currentTrainingData, setContextCurrentTrainingData } =
+    useContext(TrainingDataContext);
+
+  const { showNotification } = useContext(NotificationContext);
 
   const { currentTrainingId } = useParams();
 

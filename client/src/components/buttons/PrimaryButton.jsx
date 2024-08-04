@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import "./PrimaryButton.css";
-import { Context } from "../../context/Context";
+import { ThemenContext } from "../../context/ThemenContext";
 
 export function PrimaryButton(props) {
-  const { themeData } = useContext(Context);
+  const { themeData } = useContext(ThemenContext);
 
   let btnClass = "primaryButton";
 

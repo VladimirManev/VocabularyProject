@@ -4,11 +4,11 @@ import { PrimaryButton } from "../buttons/PrimaryButton";
 import { useContext } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 import { deleteTraining } from "../../services/units";
-import { Context } from "../../context/Context";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export function DeleteTraining() {
   const { STR } = useContext(LanguageContext);
-  const { showNotification } = useContext(Context);
+  const { showNotification } = useContext(NotificationContext);
   const { currentTrainingId } = useParams();
   const navigate = useNavigate();
 

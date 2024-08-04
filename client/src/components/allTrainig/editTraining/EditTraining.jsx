@@ -1,17 +1,21 @@
 import { useContext, useEffect } from "react";
 import "./EditTraining.css";
 import { useNavigate } from "react-router-dom";
-import { Context } from "../../../context/Context";
+import { AuthContext } from "../../../context/Context";
 import { useForm } from "../../../hooks/useForm";
 import { updateTraining } from "../../../services/units";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { LanguageContext } from "../../../context/LanguageContext";
+import { NotificationContext } from "../../../context/NotificationContext";
+import { TrainingDataContext } from "../../../context/TrainingDataContext";
 
 export function EditTraining(props) {
   const { STR } = useContext(LanguageContext);
   const navigate = useNavigate();
-  const { userData, currentTrainingData, showNotification } =
-    useContext(Context);
+  const { userData } = useContext(AuthContext);
+  const { currentTrainingData } = useContext(TrainingDataContext);
+
+  const { showNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (!userData) {

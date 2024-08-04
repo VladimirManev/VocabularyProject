@@ -1,6 +1,6 @@
 import "./UserPage.css";
 import { useContext } from "react";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
 import { User } from "../../icons/User";
 import { PrimaryButton } from "../buttons/PrimaryButton";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { LanguageContext } from "../../context/LanguageContext";
 
 export function UserPage(props) {
   const { STR } = useContext(LanguageContext);
-  const { userData } = useContext(Context);
+  const { userData } = useContext(AuthContext);
 
   return (
     <div className="user-page-container">

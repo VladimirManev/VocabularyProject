@@ -18,6 +18,7 @@
   height: 100vh;
   position: relative;
   z-index: 0;
+  overflow: auto;
 }
 
 .fade-enter {

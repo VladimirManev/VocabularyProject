@@ -1,7 +1,7 @@
 import "./ChangeLanguage.css";
 import { useContext, useEffect, useState } from "react";
 
-import { Context } from "../../../context/Context";
+import { AuthContext } from "../../../context/Context";
 import { LanguageContext } from "../../../context/LanguageContext";
 
 export function ChangeLanguage(props) {

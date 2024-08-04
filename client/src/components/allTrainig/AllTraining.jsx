@@ -2,14 +2,15 @@ import "./AllTraining.css";
 import { useContext, useEffect, useState } from "react";
 import { getAllTraining, getAllTrainingCount } from "../../services/units";
 import { Training } from "./training/Training";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
 import { LanguageContext } from "../../context/LanguageContext";
 import { Pagination } from "../pagination/Pagination";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export function AllTraining(props) {
   const { STR } = useContext(LanguageContext);
   const [allTrainigData, setAllTrainingdata] = useState([]);
-  const { showNotification } = useContext(Context);
+  const { showNotification } = useContext(NotificationContext);
   const [pageData, setPageData] = useState({ page: 1, count: 2 });
 
   useEffect(() => {

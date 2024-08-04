@@ -1,12 +1,14 @@
 import { useContext, useEffect } from "react";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../services/auth";
 import { clearUserData } from "../../services/util";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export function Logout(props) {
-  const { clearContextUserData, showNotification, userData } =
-    useContext(Context);
+  const { clearContextUserData, userData } = useContext(AuthContext);
+
+  const { showNotification } = useContext(NotificationContext);
 
   const navigate = useNavigate();
   if (!userData) {

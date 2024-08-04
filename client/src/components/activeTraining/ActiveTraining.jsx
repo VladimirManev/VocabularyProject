@@ -1,13 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { getActiveTraining, getAllTraining } from "../../services/units";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
 import { Training } from "../allTrainig/training/Training";
 import { activeTrainingSorter } from "../../services/util";
 import { LanguageContext } from "../../context/LanguageContext";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export function ActiveTraining(props) {
   const [activeTrainigData, setActiveTrainingdata] = useState([]);
-  const { userData, showNotification } = useContext(Context);
+  const { userData } = useContext(AuthContext);
+  const { showNotification } = useContext(NotificationContext);
+
   const { STR } = useContext(LanguageContext);
 
   useEffect(() => {

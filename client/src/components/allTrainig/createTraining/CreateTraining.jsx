@@ -1,17 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import "./CreateTraining.css";
 import { useNavigate } from "react-router-dom";
-import { Context } from "../../../context/Context";
+import { AuthContext } from "../../../context/Context";
 import { useForm } from "../../../hooks/useForm";
 import { createTraining } from "../../../services/units";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { LanguageContext } from "../../../context/LanguageContext";
 import { TrainingDataValidator } from "../../../services/util";
+import { NotificationContext } from "../../../context/NotificationContext";
 
 export function CreateTraining(props) {
   const navigate = useNavigate();
   const { STR } = useContext(LanguageContext);
-  const { userData, showNotification } = useContext(Context);
+  const { userData } = useContext(AuthContext);
+  const { showNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (!userData) {

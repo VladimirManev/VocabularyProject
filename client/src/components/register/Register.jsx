@@ -3,14 +3,16 @@ import "./Register.css";
 import { register } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { Context } from "../../context/Context";
+import { AuthContext } from "../../context/Context";
 import { PrimaryButton } from "../buttons/PrimaryButton";
 import { LanguageContext } from "../../context/LanguageContext";
+import { NotificationContext } from "../../context/NotificationContext";
 
 export function Register(props) {
   const { STR } = useContext(LanguageContext);
   const navigate = useNavigate();
-  const { setContextUserData, showNotification } = useContext(Context);
+  const { setContextUserData } = useContext(AuthContext);
+  const { showNotification } = useContext(NotificationContext);
 
   const { values, changeHandler } = useForm({
     email: "",
