@@ -6,6 +6,7 @@ import { useForm } from "../../../hooks/useForm";
 import { createTraining } from "../../../services/units";
 import { PrimaryButton } from "../../buttons/PrimaryButton";
 import { LanguageContext } from "../../../context/LanguageContext";
+import { TrainingDataValidator } from "../../../services/util";
 
 export function CreateTraining(props) {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ export function CreateTraining(props) {
     e.preventDefault();
 
     try {
+      //validation for all fields
       if (
         values.title === "" ||
         values.level === "" ||
@@ -37,9 +39,11 @@ export function CreateTraining(props) {
         values.sentencesCount === "" ||
         values.data === ""
       ) {
-        throw new Error("Please fill out all required fields.");
+        throw new Error("Please fill out all required fields!");
       }
-      props.loading(true);
+      //validation for data
+      TrainingDataValidator(values.data);
+
       props.loading(true);
       await createTraining(values);
       navigate("/allTraining");

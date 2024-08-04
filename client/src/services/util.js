@@ -43,3 +43,36 @@ export function getRandomElementFromArr(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
+
+export function TrainingDataValidator(data) {
+  let dataAsObj;
+  // check parse to JSON
+  try {
+    dataAsObj = JSON.parse(data);
+  } catch (error) {
+    throw new Error(
+      `Incorrect data format. Please use the following format: {"unique id":{"bg": "котка","en": "cat","de": "Katze",}, ...} Data cannot be parsed`
+    );
+  }
+
+  //check if dataAsObj is a object
+  if (typeof dataAsObj !== "object") {
+    throw new Error(
+      `Incorrect data format. Please use the following format: {"unique id":{"bg": "котка","en": "cat","de": "Katze",}, ...} Data is no object`
+    );
+  }
+
+  //check if three languages are available
+
+  const firstUnit = Object.values(dataAsObj)[0];
+
+  if (
+    !firstUnit.hasOwnProperty("bg") ||
+    !firstUnit.hasOwnProperty("en") ||
+    !firstUnit.hasOwnProperty("de")
+  ) {
+    throw new Error(
+      `Incorrect data format. Please use the following format: {"unique id":{"bg": "котка","en": "cat","de": "Katze",}, ...} No all languages available`
+    );
+  }
+}
