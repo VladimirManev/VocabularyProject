@@ -24,19 +24,21 @@
 To install and run the project locally:
 
 1. Clone the repository
-2. Install the dependencies:
+
+
+2. In a new terminal, navigate to the server directory and start the server
+
+   `node server.js`
+   
+3. In a new terminal, navigate to the client directory and install the dependencies:
 
    `npm install`
 
-3. In a new terminal, navigate to the server directory and start the server
-
-   `node server.js`
-
-4. In a new terminal, navigate to the client directory and start the server
+5. In the same directory start the client server
 
    `npm run dev`
 
-5. Open your browser and navigate to http://localhost:5173 to access the application. For testing purposes, you can either register a new account or use the test accounts peter@abv.bg and george@abv.bg with password 123456.
+6. Open your browser and navigate to http://localhost:5173 to access the application. The user interface is designed to be used primarily on mobile devices. It is recommended to test the application in responsive design mode with a resolution of 375x667 (iPhone SE) or on another mobile resolution to ensure optimal user experience. For testing purposes, you can either register a new account or use the test accounts peter@abv.bg and george@abv.bg with password 123456.
 
 ## Usage
 
