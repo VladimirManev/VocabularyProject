@@ -22,7 +22,7 @@ export async function getAllTrainingCount() {
 export async function getMyTraining(_ownerId) {
   return get(
     trainingEndpoint +
-      `?select=_id%2Ctitle%2CsentencesCount + &where=_ownerId%3D%22${_ownerId}%22`
+      `?select=_id%2Ctitle%2CsentencesCount&where=_ownerId%3D%22${_ownerId}%22`
   );
 }
 
