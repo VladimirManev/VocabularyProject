@@ -2,7 +2,6 @@ import "./AllTraining.css";
 import { useContext, useEffect, useState } from "react";
 import { getAllTraining, getAllTrainingCount } from "../../services/units";
 import { Training } from "./training/Training";
-import { AuthContext } from "../../context/Context";
 import { LanguageContext } from "../../context/LanguageContext";
 import { Pagination } from "../pagination/Pagination";
 import { NotificationContext } from "../../context/NotificationContext";

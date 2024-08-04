@@ -6,7 +6,6 @@ import { LanguageContext } from "../../context/LanguageContext";
 
 export function Welcome(props) {
   const { STR } = useContext(LanguageContext);
-  // const STR = { str1: "Hi there!", str2: "Welcome to", str3: "Get started!" };
   return (
     <>
       <div className="welcome-container">

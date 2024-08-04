@@ -26,6 +26,6 @@
 .allTraining-container .list-page-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-grow: 1;
 }

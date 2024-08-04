@@ -12,14 +12,7 @@ import { NotificationContext } from "../../../context/NotificationContext";
 export function CreateTraining(props) {
   const navigate = useNavigate();
   const { STR } = useContext(LanguageContext);
-  const { userData } = useContext(AuthContext);
   const { showNotification } = useContext(NotificationContext);
-
-  useEffect(() => {
-    if (!userData) {
-      navigate("/login");
-    }
-  }, []);
 
   const { values, changeHandler } = useForm({
     title: "",
