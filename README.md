@@ -48,8 +48,8 @@ To install and run the project locally:
 - Welcome page 
 
 
+<kbd><img src="./client/src/screenShots/welcome.jpg" alt="Описание на изображението" width="187" height="333"></kbd> <kbd><img src="./client/src/screenShots/create.jpg" alt="Описание на изображението" width="187" height="333"></kbd>
 
-<img src="./client/src/screenShots/welcome.jpg" alt="Описание на изображението" width="187" height="333">
 
 
 
