@@ -15,9 +15,9 @@ export const themenData = {
   },
   fruits: {
     name: "fruits",
-    color1: "rgb(71 214 138)",
-    color2: "rgb(210 59 9)",
-    color3: "rgb(227 224 91)",
+    color1: "rgb(156 255 203)",
+    color2: "rgb(243 114 73)",
+    color3: "rgb(254 252 146)",
     color4: "rgba(0, 0, 255)",
   },
   crazy: {
