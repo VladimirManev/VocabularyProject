@@ -1,6 +1,6 @@
 # Vocabulary
 
-**Vocabulary** is an educational React project designed to help users learn foreign languages. The web application provides an interactive way for learners to practice and improve their language skills by generating sentences in the target language.
+**Vocabulary** is an educational React project designed to help users learn foreign languages. The project aims to practice the functionality of React. The use of external libraries is kept to a minimum. The web application provides an interactive way for learners to practice and improve their language skills by generating sentences in the target language.
 
 ## Table of Contents
 
