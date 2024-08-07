@@ -1,6 +1,6 @@
+import "./Notification.css";
 import { useContext } from "react";
 import { PrimaryButton } from "../buttons/PrimaryButton";
-import "./Notification.css";
 import { LanguageContext } from "../../context/LanguageContext";
 import { NotificationContext } from "../../context/NotificationContext";
 

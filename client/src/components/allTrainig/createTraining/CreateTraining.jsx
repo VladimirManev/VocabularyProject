@@ -41,7 +41,7 @@ export function CreateTraining(props) {
 
       props.loading(true);
       await createTraining(values);
-      navigate("/allTraining");
+      navigate("/MyTraining");
     } catch (error) {
       showNotification("Error", error.message);
     }
