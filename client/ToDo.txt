@@ -7,11 +7,21 @@
 [x] language
 [x] route guards
 [x] persist colection
-[ ] search
+[x] data validation for training data
+[x] pagination
+[x] refactor context
+[x] bug fix root with scroll
+[x] data validation in edit training
+[x] info used technologies
+[ ] UI 
 [ ] reset training
-[ ] pagenation
-[ ] refactor context
+[ ] search
+[ ] full functionality check
+[ ] deploy
 
+
+
+** Test data
 
 {
   "6balbgpn-81f1-47e5-aec3-afff9810efe7":{
@@ -30,3 +40,23 @@
     "de": "Ich bin heute sehr müde."
   }
 }
+
+
+
+
+** Format data
+
+
+{
+  "unique id":{
+    "bg": "sentence in bulgarian",
+    "en": "sentence in english",
+    "de": "sentence in german",
+  },
+  "unique id":{
+    "bg": "sentence in bulgarian",
+    "en": "sentence in english",
+    "de": "sentence in german",
+  },
+}
+
